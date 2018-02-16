@@ -7,47 +7,54 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="container">
       <header class="header">
-        <nav class="navbar">
-          <ul class="menu">
-            <li class="menu-item"> <a href="#" class="menu-link">link A</a> </li>
-            <li class="menu-item"> <a href="#" class="menu-link">link B</a> </li>
-            <li class="menu-item"> <a href="#" class="menu-link">link C</a> </li>
-            <li class="menu-item"> <a href="#" class="menu-link" target="_blank">link D</a> </li>
-          </ul>
-        </nav>
+        <section class="header__navbar-container">
+          <nav class="navbar">
+            <ul class="navbar__menu">
+              <li class="navbar__menu-item"> <a href="#" class="navbar__menu-link">link A</a> </li>
+              <li class="navbar__menu-item"> <a href="#" class="navbar__menu-link">link B</a> </li>
+              <li class="navbar__menu-item"> <a href="#" class="navbar__menu-link">link C</a> </li>
+              <li class="navbar__menu-item navbar__menu-item_last-item"> <a href="#" class="navbar__menu-link navbar__menu-link_last-item" target="_blank">link D</a> </li>
+            </ul>
+          </nav>
+        </section>
       </header>
       <section class="main clearfix">
-        <h1 class="main-header">Main part</h1>
-        <aside class="sidebar">
-          <form method="post">
-            <label class="form-input">Login <input type="text" class="text-input"> </label>
-            <label class="form-input">Email <input type="email" class="text-input"> </label>
-            <label class="form-input"><input type="checkbox">Are you ready?</label>
-            <div class="form-btn-container">
-              <button type="submit" class="btn btn-submit">Submit form</button>
-              <button type="reset" class="btn btn-reset">Clear</button>
-            </div>
-          </form>
-        </aside>
-        <article class="content">
-          <h2 class="text-header">Text header</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <span class="text-red">ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-          <ol class="list">
-            <li class="list-item">first</li>
-            <li class="list-item">second</li>
-            <li class="list-item">third</li>
-          </ol>
+        <section class="main__col-1">
+          <aside class="sidebar">
+            <form class="signin-form" method="post">
+              <label class="signin-form__form-input">Login <input type="text" class="signin-form__text-input"> </label>
+              <label class="signin-form__form-input">Email <input type="email" class="signin-form__text-input"> </label>
+              <label class="signin-form__form-input"><input class="signin-form__checkbox-input" type="checkbox">Are you ready?</label>
+              <div class="form-buttons-container">
+                <button type="submit" class="form-buttons-container__submit form-buttons-container__submit_bg-color">Submit form</button>
+                <button type="reset" class="form-buttons-container__reset form-buttons-container__reset_bg-color">Clear</button>
+              </div>
+            </form>
+          </aside>
+        </section>
+        <h1 class="main__header">Main part</h1>
+        <section class="main__col-2">
+          <article class="main-news">
+            <h2 class="main-news__title">Text header</h2>
+            <p class="main-news__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </article>
+          <article class="other-news">
+            <h3 class="other-news__title">Text header</h2>
+            <p class="other-news__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </article>
+          <article class="other-news__title">
+            <h3 class="other-news__title">Text header</h2>
+            <p "other-news__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </article>
           <div class="absolute">
-            <span>Absolute div</span>
+            <span class="absolute__text absolute__text_bg-color">Absolute div</span>
           </div>
-        </article>
+        </section>
       </section>
       <footer class="footer">
-        <p class="footer_text">This is footer.</p>
-        <p class="copyright"> &copy; 2018.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="footer__text footer__text_color">This is footer.</p>
+        <p class="footer__copyright footer__text_color"> &copy; 2018.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </footer>
-    </div>
   </body>
 </html>
