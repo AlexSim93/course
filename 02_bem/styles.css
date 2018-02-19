@@ -26,30 +26,30 @@
   display: inline-block;
   margin-left: 10px;
   margin-bottom: 10px;
-  background-color: white;
   list-style-type: none;
 }
 .navbar__menu-item_position_separated {
   margin-left: 25px;
   margin-bottom: 0;
 }
-.navbar__menu-item:hover {
-  background: AntiqueWhite;
-}
-.navbar__menu-link_style_important:hover{
-  background: OrangeRed;
-}
 .navbar__menu-link {
   display: block;
   padding: 15px 20px;
   width: 140px;
   color: black;
+  background-color: white;
   text-decoration: none;
   text-align: center;
+}
+.navbar__menu-link:hover {
+  background: AntiqueWhite;
 }
 .navbar__menu-link_style_important {
   background-color: orange;
   color: white;
+}
+.navbar__menu-link_style_important:hover{
+  background: OrangeRed;
 }
 .main {
   min-height: calc(100vh - 126px - 170px);
