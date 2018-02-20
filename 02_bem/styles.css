@@ -12,10 +12,9 @@
   background: LightGrey;
   font-family: Arial, sans-serif;
 }
-.header__navbar{
-  padding: 10px;
-}
 .navbar {
+  box-sizing: border-box;
+  padding: 10px;
   font-family: Arial, sans-serif;
 }
 .navbar__menu {
@@ -28,7 +27,7 @@
   margin-bottom: 10px;
   list-style-type: none;
 }
-.navbar__menu-item_position_separated {
+.navbar__menu-item_separated {
   margin-left: 25px;
   margin-bottom: 0;
 }
@@ -57,7 +56,7 @@
   background: #e6e6e6;
   font-family: Arial, sans-serif;
 }
-.clearfix::after {
+.main::after {
   content: "";
   display: table;
   clear: both;
@@ -87,7 +86,7 @@
   border-radius: 3px;
   border: 2px solid Silver;
 }
-.sidebar__signin-form {
+.signin-form {
   padding: 20px 15px;
 }
 .signin-form__input-container {
@@ -156,18 +155,20 @@
   margin: 0;
   padding: 20px 10px;
 }
-.news-article__title_size_lg {
+.news-article__title_type_important {
   font-size: 1.8em;
 }
-.news-article_type_important {
+.news-block__news-article {
   margin: 0 20px;
+}
+.news-article_type_important {
   border: 2px dotted red;
 }
 .news-article__content {
   margin: 0;
   padding: 0 10px 10px;
 }
-.absolute-block {
+.sticker {
   height: 60px;
   width: 150px;
   background-color: Crimson;
@@ -176,12 +177,12 @@
   text-align: center;
   border-radius: 50%;
 }
-.absolute-block_position_bottom-right{
+.news-block__sticker{
   position: absolute;
   right: 30px;
   bottom: -30px; /* Равен половине высоты блока */
 }
-.absolute-block__text {
+.sticker__text {
   display: inline-block;
   line-height: 1.25;
   font-size: 20px;
