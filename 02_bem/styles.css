@@ -1,5 +1,5 @@
 .page {
-  min-width: 100vh;
+  min-width: 440px;
   padding: 0;
   margin: 0;
 }
@@ -140,7 +140,6 @@
 .news-block {
   position: relative;
   box-sizing: border-box;
-  min-width: 270px;
   padding: 10px 15px 30px 15px; /* padding-bottom равен половине высоты абсолютно позиционированного блока */
   background: Silver;
   font-family: Arial, sans-serif;
