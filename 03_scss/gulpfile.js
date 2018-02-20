@@ -18,7 +18,7 @@ var path = {
     },
     src: {
         scss: [
-            './src/scss/*.scss'
+            './src/scss/**'
         ],
         js: [
           './src/js/**'

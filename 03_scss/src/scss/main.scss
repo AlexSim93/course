@@ -1,3 +1,6 @@
 @import 'vendors/normalize.css';
 @import 'helpers/variables';
-@import 'blocks/someblock';
+@import 'helpers/extends';
+@import 'blocks/header';
+@import 'blocks/navbar';
+@import 'blocks/main';
