@@ -1,0 +1,7 @@
+.sidebar {
+  background: $sidebar-bg;
+  font-family: $page-font-family;
+  &_bordered {
+    @include border(3px, 2px, solid, Silver);
+  }
+}

@@ -1,0 +1,17 @@
+.news-block {
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px 15px 30px 15px; /* padding-bottom равен половине высоты абсолютно позиционированного блока */
+  background: $news-block-bg;
+  font-family: $page-font-family;
+  border-radius: 10px;
+  box-shadow: inset 0 0 7px black;
+  &__sticker {
+    position: absolute;
+    right: 30px;
+    bottom: -30px; /* Равен половине высоты блока */
+  }
+  &__news-article {
+    margin: 0 20px;
+  }
+}

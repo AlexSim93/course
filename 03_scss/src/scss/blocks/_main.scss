@@ -1,8 +1,8 @@
 .main {
   min-height: calc(100vh - 78px - 130px);
   min-width: 320px;
-  background: $main-bg-color;
-  font-family: $font-family;
+  background: $main-bg;
+  font-family: $page-font-family;
   &__title {
     margin: 0px;
     padding: 20px;

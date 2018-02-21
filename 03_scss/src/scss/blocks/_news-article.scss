@@ -1,0 +1,18 @@
+.news-article {
+  box-sizing: border-box;
+  font-family: $page-font-family;
+  &__title {
+    margin: 0;
+    padding: 20px 10px;
+    &_type_important {
+      font-size: 1.8em;
+    }
+  }
+  &__content {
+    margin: 0;
+    padding: 0 10px 10px;
+  }
+  &_type_important {
+    @include border(0px, 2px, dotted, red);
+  }
+}
