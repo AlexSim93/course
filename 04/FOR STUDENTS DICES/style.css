@@ -1,0 +1,93 @@
+
+
+/* OTHER STYLES */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/*Ширина 104px, не использовать width!*/
+.container {
+  min-height: 100%;
+  align-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.face {
+    height: 104px;
+    margin: 16px;
+    padding: 4px;
+
+    background-color: #e7e7e7;
+
+    box-shadow:
+            inset 0 5px white,
+            inset 0 -5px #bbb,
+            inset 5px 0 #d7d7d7,
+            inset -5px 0 #d7d7d7;
+
+    border-radius: 10%;
+    display: flex;
+    flex-basis: 104px;
+    flex-shrink: 0;
+}
+
+
+/*Ширина 24px, не использовать width!*/
+.pip {
+    display: block;
+    height: 24px;
+    border-radius: 50%;
+    margin: 4px;
+    flex-basis: 24px;
+    background-color: #333;
+    box-shadow: inset 0 3px #111, inset 0 -3px #555;
+}
+.one .pip {
+  margin: auto;
+}
+.two {
+  justify-content: space-between;
+}
+.two .pip:last-child {
+  align-self: flex-end;
+}
+.three {
+  justify-content: space-between;
+}
+.three .pip:nth-child(2) {
+  align-self: center;
+}
+.three .pip:nth-child(3) {
+  align-self: flex-end;
+}
+.four {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.five {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.six {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.five .row:nth-child(2) {
+  justify-content: center;
+}
