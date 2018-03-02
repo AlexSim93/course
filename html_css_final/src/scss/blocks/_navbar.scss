@@ -1,0 +1,14 @@
+.navbar {
+  box-sizing: border-box;
+  &__logo-container {
+    display: flex;
+    justify-content: center;
+  }
+  &__menu-container {
+    display: flex;
+    justify-content: center;
+  }
+  &__sign-in-container {
+
+  }
+}

@@ -1,0 +1,18 @@
+.course-card {
+  display: block;
+  width: 235px;
+  height: 135px;
+  background-size: cover;
+  &_mobile-dev {
+    background-image: url(../../assets/img-1.jpg);
+  }
+  &_web-dev {
+    background-image: url(../../assets/img-2.jpg);
+  }
+  &_front-end-advanced {
+    background-image: url(../../assets/img-3.jpg);
+  }
+  &_machine-basics {
+    background-image: url(../../assets/img-4.jpg);
+  }
+}

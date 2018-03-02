@@ -1,0 +1,13 @@
+.about-course {
+  &__title {
+
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__card {
+    margin-bottom: 20px;
+  }
+}
