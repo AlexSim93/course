@@ -1,0 +1,14 @@
+.review {
+  display: flex;
+  align-items: center;
+  &__avatar-container {
+    flex-basis: 50px;
+  }
+  &__content-container {
+    flex-basis: 225px;
+  }
+  &_avatar {
+    border-radius: 50%;
+    max-width: 100%;
+  }
+}

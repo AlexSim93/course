@@ -1,4 +1,5 @@
 @import 'vendors/normalize';
+@import 'helpers/variables';
 @import 'blocks/header';
 @import 'blocks/navbar';
 @import 'blocks/logo';
@@ -9,3 +10,8 @@
 @import 'blocks/other-courses';
 @import 'blocks/course-card';
 @import 'blocks/special-offer';
+@import 'blocks/reviews';
+@import 'blocks/review';
+@import 'blocks/footer';
+@import 'blocks/footer-menu';
+@import 'blocks/button';

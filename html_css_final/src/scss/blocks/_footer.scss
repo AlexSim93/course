@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  background: #38383a;
+  &__col-1 {
+    padding: 10px 20px 10px 20px;
+  }
+  &__col-2 {
+    padding: 10px 20px 10px 20px;
+  }
+}
