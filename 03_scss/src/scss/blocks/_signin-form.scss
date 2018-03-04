@@ -1,0 +1,36 @@
+.signin-form {
+  padding: 20px 15px;
+  font-family: $page-font-family;
+  &__input-container  {
+    padding: 10px;
+  }
+  &__text-input {
+    max-width: 90%;
+  }
+  &__buttons-container {
+    margin: 10px 15px;
+  }
+  &__submit {
+    @extend %signin-btn-shared;
+    width: 120px;
+    background: $btn-submit-bg;
+    &:hover {
+      background: $btn-submit-bg-hover;
+    }
+    &:active {
+      background: $btn-submit-bg-active;
+    }
+  }
+  &__reset {
+    @extend %signin-btn-shared;
+    width: 80px;
+    margin-left: 15px;
+    background: $btn-reset-bg;
+    &:hover {
+      background: $btn-reset-bg-hover;
+    }
+    &:active {
+      background: $btn-reset-bg-active;
+    }
+  }
+}

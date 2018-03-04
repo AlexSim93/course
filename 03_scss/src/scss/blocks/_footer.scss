@@ -1,0 +1,20 @@
+.footer {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 130px;
+  color: $footer-text-color;
+  background: $footer-bg;
+  font-family: $page-font-family;
+  &__text {
+    text-align: center;
+    margin: 0;
+    padding: 20px 15px 0px;
+  }
+  &__copyright {
+    margin: 0;
+    padding: 20px 15px 10px;
+    text-align: center;
+  }
+}

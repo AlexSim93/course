@@ -1,0 +1,36 @@
+.navbar {
+  box-sizing: border-box;
+  padding: 10px;
+  font-family: $page-font-family;
+  &__menu {
+    padding: 0;
+    margin: 0;
+  }
+  &__menu-item {
+    display: inline-block;
+    margin: 10px 0 10px 10px;
+    list-style-type: none;
+    &_separated {
+      margin-left: 25px;
+    }
+  }
+  &__menu-link {
+    display: block;
+    padding: 15px 20px;
+    width: 140px;
+    color: $menu-link-text-color;
+    background-color: $menu-link-bg;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+      background: $menu-link-bg-hover;
+    }
+    &_style_important {
+      color: $menu-link-text-color-important;
+      background: $menu-link-bg-important;
+      &:hover {
+        background: $menu-link-bg-important-hover;
+      }
+    }
+  }
+}

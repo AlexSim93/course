@@ -1,0 +1,16 @@
+.sticker {
+  height: 60px;
+  width: 150px;
+  background-color: $sticker-bg;
+  color: $sticker-text-color;
+  font-family: $page-font-family;
+  line-height: 60px; /* Равен высоте блока */
+  text-align: center;
+  border-radius: 50%;
+  &__text {
+    display: inline-block;
+    line-height: 1.25;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+}
