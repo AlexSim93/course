@@ -36,6 +36,12 @@
     min-width: 100%;
     top: 60px;
     left: 0;
+    transition: top 1s;
+    &_hidden {
+      top: -100%;
+      transition: top 1s;
+      // display: none;
+    }
   }
   &__toggle {
     position: relative;
@@ -67,7 +73,38 @@
   }
 }
 @media only screen and (min-width: 768px){
-
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &__toggle {
+      display: none;
+    }
+    &__list-sign-in-container {
+      position: static;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+    &__list {
+      display: flex;
+      flex-direction: row;
+    }
+    &__item {
+      width: auto;
+      margin: 5px;
+      border: 0 solid black;
+    }
+    &__link {
+      background-color: transparent;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    &__sign-in {
+      margin-left: 25px;
+      background-color: transparent;
+    }
+  }
 }
 @media only screen and (min-width: 1200px){
   .menu {

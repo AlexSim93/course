@@ -44,10 +44,6 @@
   }
   &_sign-in {
     box-sizing: border-box;
-    // height: 60px;
-    // background-image: url(../../assets/user.svg);
-    // background-size: 24px;
-    // background-position: 25px center;
     width: 100%;
     font-size: 18px;
     font-weight: normal;
@@ -70,10 +66,50 @@
     &_special-offer{
       width: 300px;
     }
+    &_sign-in{
+      box-sizing: border-box;
+      font-weight: normal;
+      border-radius: 5px;
+      border: 1px solid white;
+      height: 36px;
+      width: 80px;
+      font-size: 16px;
+      background-size: 12px;
+      background-position: 15px center;
+      background-color: transparent;
+      height: 36px;
+      // background-image: url(../../assets/user.svg);
+      // background-size: 12px;
+      // background-position: 12px center;
+      &:hover {
+        text-decoration: none;
+        background: white;
+        color: #254fad;
+      }
+    }
   }
 }
 @media only screen and (min-width: 1200px){
   .button {
+    svg {
+      width: 14px;
+      height: 14px;
+      margin-right: 10px;
+      circle {
+        fill: white;
+      }
+      path {
+        fill: white;
+      }
+    }
+    &:hover {
+      circle {
+        fill: navy;
+      }
+      path {
+        fill: navy;
+      }
+    }
     &_sign-in{
       box-sizing: border-box;
       font-weight: normal;
@@ -82,10 +118,11 @@
       height: 36px;
       width: 120px;
       font-size: 16px;
-      background-size: 12px;
-      background-position: 15px center;
-      background-color: transparent;
+      // background-size: 12px;
+      // background-position: 15px center;
+      // background-color: transparent;
       &:hover {
+        text-decoration: none;
         background: white;
         color: #254fad;
       }

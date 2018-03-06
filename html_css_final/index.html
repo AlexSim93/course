@@ -19,15 +19,23 @@
           </a>
         </div>
         <div class="navbar__menu-container">
-          <div class="menu"> <span class="menu__toggle"></span>
-            <div class="menu__list-sign-in-container">
+          <div class="menu"> <span class="menu__toggle" id="menu__toggle"></span>
+            <div class="menu__list-sign-in-container" id="menu__list-sign-in-container">
               <ul class="menu__list">
                 <li class="menu__item"><a href="#" class="menu__link">Программа</a></li>
                 <li class="menu__item"><a href="#" class="menu__link">Расписание</a></li>
                 <li class="menu__item"><a href="#" class="menu__link">Преподаватели</a></li>
               </ul>
               <div class="menu__sign-in">
-                <a href="" class="button button_sign-in">Войти</a>
+                <a href="" class="button button_sign-in">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 416 416" style="enable-background:new 0 0 416 416;" xml:space="preserve">
+		                <g>
+			                <circle cx="208" cy="96" r="96"/>
+			                <path d="M394.4,291.872c-108-90.656-264.832-90.656-372.832,0C18.048,294.848,16,299.2,16,303.84c0,15.456,0,52.832,0,80.192     C16,401.696,30.336,416,48,416h320c17.664,0,32-14.304,32-31.968v-73.92C400,299.2,397.952,294.848,394.4,291.872z"/>
+		                </g>
+                  </svg>
+                  <span>Войти</span>
+                </a>
               </div>
             </div>
           </div>
@@ -188,5 +196,12 @@
       </nav>
     </section>
   </footer>
+  <script type="text/javascript">
+    let toggleBar = document.getElementById('menu__toggle');
+    let toggleMenu = document.getElementById('menu__list-sign-in-container');
+    toggleBar.onclick = function(){
+      toggleMenu.classList.toggle('menu__list-sign-in-container_hidden');
+    }
+  </script>
 </body>
 </html>

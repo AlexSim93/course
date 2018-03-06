@@ -76,14 +76,14 @@
       height: 80px;
     }
     &__arrow-right{
-      height: 75px;
+      height: 80px;
     }
   }
 }
 @media only screen and (min-width: 1200px){
   .carousel {
     &__main-part-container{
-
+      flex-basis: 1000px;
     }
     &__arrow-left-container {
       flex-basis: 100px;

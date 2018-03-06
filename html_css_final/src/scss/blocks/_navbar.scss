@@ -16,17 +16,23 @@
     flex-basis: 30%;
     justify-content: center;
   }
-  &__sign-in-container {
-    display: flex;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-image: url(../../assets/user.svg);
-  }
+  // &__sign-in-container {
+  //   height: 100px;
+  //   width: 100px;
+  //   display: flex;
+  //   justify-content: center;
+  //   background-size: cover;
+  //   background-image: url(../../assets/user.svg);
+  // }
 }
 @media only screen and (min-width: 768px){
-
+  .navbar {
+    align-items: center;
+    &__logo-container {
+      justify-content: flex-start;
+      flex-basis: 25%;
+    }
+  }
 }
 @media only screen and (min-width: 1200px){
   .navbar {

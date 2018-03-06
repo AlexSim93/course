@@ -3,6 +3,7 @@
   background-image: url(../../assets/hero-background.jpg);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   &__title_hidden {
     display: none;
   }
@@ -11,6 +12,13 @@
   }
   &__carousel-container {
     padding: 20px 0;
+  }
+}
+@media only screen and (min-width: 768px){
+  .header {
+    &__navbar-container {
+      padding: 20px 40px 20px 40px;
+    }
   }
 }
 @media only screen and (min-width: 1200px){
