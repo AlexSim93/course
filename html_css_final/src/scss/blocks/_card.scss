@@ -1,15 +1,48 @@
 .card {
-  flex-basis: 235px;
-  flex-shrink: 0;
+  box-sizing: border-box;
+  height: 235px;
   width: 235px;
-  background: #e7e9ee;
+  background: $card-bg;
+  color: $card-color;
+  font-family: $page-font-family;
+  overflow: hidden;
+  transform: scale(1.0);
+  transition: background-color $about-course-transition-time, transform $about-course-transition-time;
+  &:hover {
+    color: $card-color-hover;
+    background-color: $card-bg-hover;
+    transform: scale(1.1);
+    transition: background-color $about-course-transition-time, transform $about-course-transition-time;
+  }
   &__content{
-
+    position: relative;
+    transform:  translateY(0);
+    transition: transform $about-course-transition-time;
+    &:hover {
+      transform: translateY(-30px);
+      transition: transform $about-course-transition-time;
+    }
+    min-height: 100%;
+    @extend %flex-center;
+    flex-direction: column;
   }
   &__main {
-
+    margin-bottom: 10px;
+    font-size: 72px;
+    font-weight: bold;
   }
   &__secondary {
-
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  &__button {
+    position: absolute;
+    bottom: 10px;
+    transform: translateY(150px);
+    transition: transform $about-course-transition-time;
+  }
+  &:hover .card__button {
+    transform: translateY(0);
+    transition: transform $about-course-transition-time;
   }
 }

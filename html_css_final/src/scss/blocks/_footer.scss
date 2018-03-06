@@ -1,11 +1,47 @@
 .footer {
   display: flex;
+  min-width: 100%;
   flex-wrap: wrap-reverse;
-  background: #38383a;
+  background: $footer-bg;
+  color: $footer-color;
+  font-family: $page-font-family;
   &__col-1 {
-    padding: 10px 20px 10px 20px;
+    box-sizing: border-box;
+    padding: 10px 25px 10px 25px;
   }
   &__col-2 {
-    padding: 10px 20px 10px 20px;
+    box-sizing: border-box;
+    padding: 10px 25px 10px 25px;
+  }
+  &__copyright {
+    font-size: 12px;
+  }
+  &__text {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .footer {
+    &__col-1 {
+      padding: 20px 10px 20px 25px;
+      flex-basis: 50%;
+    }
+    &__col-2 {
+      padding: 20px 25px 20px 10px;
+      flex-basis: 50%;
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .footer {
+    height: 300px;
+    &__col-1 {
+      padding: 20px 10px 20px 100px;
+      flex-basis: 50%;
+    }
+    &__col-2 {
+      padding: 20px 100px 20px 10px;
+      flex-basis: 50%;
+    }
   }
 }

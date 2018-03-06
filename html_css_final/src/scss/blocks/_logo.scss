@@ -1,5 +1,8 @@
 .logo {
+  box-sizing: border-box;
   display: block;
+  padding: 10px;
+  height: 40px;
   &__image {
     max-width: 100%;
   }

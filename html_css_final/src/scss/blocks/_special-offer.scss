@@ -1,3 +1,47 @@
 .special-offer {
-  background: #e17055;
+  box-sizing: border-box;
+  padding: 15px 5px;
+  background: $special-offer-bg;
+  color: $special-offer-color;
+  font-family: $page-font-family;
+  &__text {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: center;
+  }
+  &__important-text {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+  &__button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .special-offer {
+    &__text {
+      font-size: 30px;
+    }
+    &__important-text{
+      font-size: 48px;
+    }
+  }
+}
+@media only screen and (min-width: 1200px){
+  .special-offer {
+    &__text {
+      margin-bottom: 20px;
+    }
+    &__important-text {
+      margin-bottom: 40px;
+    }
+    &__button {
+      margin-bottom: 35px;
+    }
+  }
 }

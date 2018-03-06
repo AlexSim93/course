@@ -1,7 +1,95 @@
 .button {
-  display: block;
-  width: 120px;
+  box-sizing: border-box;
+  @extend %flex-center;
+  height: 50px;
+  width: 218px;
   padding: 10px 20px;
-  border: 3px solid white;
-  border-radius: 5px;
+  color: $btn-color;
+  font-family: $page-font-family;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: 3px solid $btn-border-color;
+  border-radius: 10px;
+  text-decoration: none;
+  &:hover {
+    // color: rgba(255,255,255, 0.5);
+    background: white;
+  }
+  &_carousel {
+    &:hover {
+      color: #254fad;
+    }
+  }
+  &_about-course {
+    height: 40px;
+    width: 175px;
+    &:hover {
+      color: $card-btn-color-hover;
+    }
+  }
+  &_primary {
+    color: $review-btn-color;
+    border: 3px solid $review-btn-border-color;
+    &:hover {
+      background-color: $review-btn-bg-hover;
+      color: $review-btn-color-hover;
+    }
+  }
+  &_special-offer {
+    &:hover {
+      color: $special-offer-btn-color-hover;
+      background: $special-offer-btn-bg-hover;
+    }
+  }
+  &_sign-in {
+    box-sizing: border-box;
+    // height: 60px;
+    // background-image: url(../../assets/user.svg);
+    // background-size: 24px;
+    // background-position: 25px center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: normal;
+    border: 0px solid blue;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    &:hover {
+      background-color: #254fad;
+      text-decoration: underline;
+    }
+    border-radius: 0px;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    background-repeat: no-repeat;
+  }
+}
+@media only screen and (min-width: 768px){
+  .button {
+    &_special-offer{
+      width: 300px;
+    }
+  }
+}
+@media only screen and (min-width: 1200px){
+  .button {
+    &_sign-in{
+      box-sizing: border-box;
+      font-weight: normal;
+      border-radius: 5px;
+      border: 1px solid white;
+      height: 36px;
+      width: 120px;
+      font-size: 16px;
+      background-size: 12px;
+      background-position: 15px center;
+      background-color: transparent;
+      &:hover {
+        background: white;
+        color: #254fad;
+      }
+    }
+
+  }
 }

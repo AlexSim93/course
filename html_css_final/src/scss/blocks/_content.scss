@@ -1,8 +1,29 @@
 .content {
   &__container {
-    padding: 0 25px;
+    // padding: 0 25px;
   }
   &__special-offer {
-    margin: 0 -25px;
+    // margin: 0 -25px;
+  }
+
+}
+@media only screen and (min-width: 768px){
+  .content{
+    &__container {
+      // padding: 0 50px;
+    }
+    &__special-offer {
+      // margin: 0 -50px;
+    }
+  }
+}
+@media only screen and (min-width: 1200px){
+  .content{
+    &__container {
+      // padding: 0 80px;
+    }
+    &__special-offer {
+      // margin: 0 -100px;
+    }
   }
 }
