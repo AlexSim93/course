@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 20px 40px;
   &__title {
-    margin: 30px 0;
+    margin: 0 0 30px;
     font-family: $page-font-family;
     font-weight: normal;
     font-size: 32px;
@@ -33,7 +33,6 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 70px;
     }
   }
 }

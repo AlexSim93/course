@@ -13,12 +13,11 @@
   border-radius: 10px;
   text-decoration: none;
   &:hover {
-    // color: rgba(255,255,255, 0.5);
     background: white;
   }
   &_carousel {
     &:hover {
-      color: #254fad;
+      color: $carousel-btn-color;
     }
   }
   &_about-course {
@@ -28,7 +27,7 @@
       color: $card-btn-color-hover;
     }
   }
-  &_primary {
+  &_reviews {
     color: $review-btn-color;
     border: 3px solid $review-btn-border-color;
     &:hover {
@@ -47,18 +46,18 @@
     width: 100%;
     font-size: 18px;
     font-weight: normal;
-    border: 0px solid blue;
+    border: 0px solid black;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
-    &:hover {
-      background-color: #254fad;
-      text-decoration: underline;
-    }
     border-radius: 0px;
     text-align: center;
     vertical-align: middle;
     align-items: center;
     background-repeat: no-repeat;
+    &:hover {
+      background-color: $sign-in-btn-mobile-bg-hover;
+      text-decoration: underline;
+    }
   }
 }
 @media only screen and (min-width: 768px){
@@ -70,7 +69,7 @@
       box-sizing: border-box;
       font-weight: normal;
       border-radius: 5px;
-      border: 1px solid white;
+      border: 1px solid $sign-in-btn-border-color;
       height: 36px;
       width: 80px;
       font-size: 16px;
@@ -78,53 +77,42 @@
       background-position: 15px center;
       background-color: transparent;
       height: 36px;
-      // background-image: url(../../assets/user.svg);
-      // background-size: 12px;
-      // background-position: 12px center;
       &:hover {
         text-decoration: none;
         background: white;
-        color: #254fad;
+        color: $sign-in-btn-color-hover;
       }
     }
   }
 }
 @media only screen and (min-width: 1200px){
   .button {
-    svg {
-      width: 14px;
-      height: 14px;
+    &__icon {
       margin-right: 10px;
-      circle {
-        fill: white;
-      }
-      path {
-        fill: white;
-      }
+
     }
     &:hover {
-      circle {
-        fill: navy;
-      }
-      path {
-        fill: navy;
+      .button__icon{
+        .icon__head {
+          fill: $icon-color-hover;
+        }
+        .icon__body {
+          fill: $icon-color-hover;
+        }
       }
     }
     &_sign-in{
-      box-sizing: border-box;
-      font-weight: normal;
-      border-radius: 5px;
-      border: 1px solid white;
       height: 36px;
       width: 120px;
+      box-sizing: border-box;
       font-size: 16px;
-      // background-size: 12px;
-      // background-position: 15px center;
-      // background-color: transparent;
+      font-weight: normal;
+      border-radius: 5px;
+      border: 1px solid $sign-in-btn-border-color;
       &:hover {
+        background: $sign-in-btn-desktop-bg-hover;
+        color: $sign-in-btn-desktop-color-hover;
         text-decoration: none;
-        background: white;
-        color: #254fad;
       }
     }
 

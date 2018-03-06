@@ -19,7 +19,7 @@
     font-size: 18px;
     text-align: center;
     color: white;
-    background: #254fad;
+    background: $menu-link-mobile-bg;
     &:hover {
       text-decoration: underline;
     }
@@ -28,19 +28,18 @@
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    background: #254fad;
+    background: $menu-sign-in-mobile-bg;
   }
   &__list-sign-in-container {
-    box-sizing: border-box;
     position: absolute;
-    min-width: 100%;
     top: 60px;
     left: 0;
+    box-sizing: border-box;
+    min-width: 100%;
     transition: top 1s;
     &_hidden {
       top: -100%;
       transition: top 1s;
-      // display: none;
     }
   }
   &__toggle {
@@ -49,27 +48,26 @@
     width: 30px;
     height: 3px;
     vertical-align: bottom;
-    background: white;
+    background: $toggle-menu-bg;
+    font-size: 34px;
     &::before {
       position: absolute;
       top: 10px;
       left: 0;
-      content: "";
       height: 3px;
       width: 100%;
-      background-color: white;
+      background-color: $toggle-menu-bg;
+      content: "";
     }
     &::after {
       position: absolute;
       top: -10px;
       left: 0;
-      content: "";
       height: 3px;
       width: 100%;
-      background-color: white;
+      background-color: $toggle-menu-bg;
+      content: "";
     }
-    color: white;
-    font-size: 34px;
   }
 }
 @media only screen and (min-width: 768px){
