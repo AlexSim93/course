@@ -14,34 +14,49 @@
     padding: 10px 25px 10px 25px;
   }
   &__copyright {
-    font-size: 12px;
+    font-size: 10px;
   }
   &__text {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 @media only screen and (min-width: 768px){
   .footer {
+    width: 100%;
     &__col-1 {
       padding: 20px 10px 20px 25px;
       flex-basis: 50%;
+      max-width: 50%;
     }
     &__col-2 {
       padding: 20px 25px 20px 10px;
       flex-basis: 50%;
+      max-width: 50%;
     }
   }
 }
 @media only screen and (min-width: 1200px) {
   .footer {
-    height: 300px;
+    max-height: 300px;
+    width: 100%;
+    flex-direction: row;
     &__col-1 {
+      max-height: 300px;
       padding: 20px 10px 20px 100px;
       flex-basis: 50%;
+      max-width: 50%;
     }
     &__col-2 {
+      max-height: 300px;
       padding: 20px 100px 20px 10px;
       flex-basis: 50%;
+      max-width: 50%;
+    }
+    &__copyright {
+      font-size: 12px;
+    }
+    &__text {
+      font-size: 12px;
     }
   }
 }

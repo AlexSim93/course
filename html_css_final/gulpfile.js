@@ -58,7 +58,10 @@ gulp.task('css_dev', function () {
     return gulp.src(path.src.scss)
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(autoprefixer())
+        .pipe(autoprefixer({
+            browsers: ['last 16 versions'],
+            cascade: false
+        }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream:true}));

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  // min-width: 1000px;
   &__logo-container {
     box-sizing: border-box;
     display: flex;
@@ -23,6 +24,11 @@
     &__logo-container {
       justify-content: flex-start;
       flex-basis: 25%;
+      width: 25%;
+    }
+    &__menu-container {
+      flex-basis: 75%;
+      width: 75%;
     }
   }
 }
@@ -31,7 +37,12 @@
     align-items: center;
     &__logo-container {
       justify-content: flex-start;
+      width: 30%;
       flex-basis: 30%;
+    }
+    &__menu-container {
+      width: 70%;
+      flex-basis: 70%;
     }
   }
 }
