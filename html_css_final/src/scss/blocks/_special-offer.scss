@@ -22,7 +22,7 @@
     margin-bottom: 10px;
   }
 }
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) and (max-width: 1199px){
   .special-offer {
     &__text {
       font-size: 30px;
@@ -36,9 +36,11 @@
   .special-offer {
     &__text {
       margin-bottom: 20px;
+      font-size: 30px;
     }
     &__important-text {
       margin-bottom: 40px;
+      font-size: 48px;
     }
     &__button {
       margin-bottom: 35px;

@@ -14,7 +14,7 @@
     padding: 20px 0;
   }
 }
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) and (max-width: 1199px){
   .header {
     &__navbar-container {
       padding: 20px 40px 20px 40px;
