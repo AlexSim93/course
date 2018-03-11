@@ -36,10 +36,10 @@
     left: 0;
     box-sizing: border-box;
     min-width: 100%;
-    transition: top 1s;
+    transition: top 0.1s;
     &_hidden {
       top: -100%;
-      transition: top 1s;
+      transition: top 0.1s;
     }
   }
   &__toggle {
@@ -126,7 +126,7 @@
     }
     &__item {
       width: auto;
-      margin: 10px;
+      margin: 10px 5px;
       border: 0 solid black;
     }
     &__link {
@@ -135,7 +135,7 @@
       font-weight: normal;
     }
     &__sign-in {
-      margin-left: 135px;
+      margin-left: 110px;
       background-color: transparent;
     }
   }

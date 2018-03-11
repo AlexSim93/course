@@ -33,6 +33,7 @@
 }
 @media only screen and (min-width: 1200px){
   .navbar {
+    max-width: 1000px;
     align-items: center;
     &__logo-container {
       justify-content: flex-start;

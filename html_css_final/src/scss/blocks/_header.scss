@@ -24,6 +24,8 @@
 @media only screen and (min-width: 1200px){
   .header {
     &__navbar-container {
+      width: 1000px;
+      margin: 0 auto;
       padding: 20px 100px 20px 100px;
     }
   }
