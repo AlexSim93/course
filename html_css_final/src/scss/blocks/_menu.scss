@@ -36,10 +36,10 @@
     left: 0;
     box-sizing: border-box;
     min-width: 100%;
-    transition: top 0.1s;
+    transition: top 0.7s;
     &_hidden {
       top: -100%;
-      transition: top 0.1s;
+      transition: top 0.7s;
     }
   }
   &__toggle {

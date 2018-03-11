@@ -42,17 +42,18 @@
     max-height: 300px;
     width: 100%;
     flex-direction: row;
+    justify-content: center;
     &__col-1 {
       max-height: 300px;
-      padding: 20px 10px 20px 100px;
-      flex-basis: 50%;
-      max-width: 50%;
+      padding: 20px 10px 20px 0;
+      flex-basis: 500px;
+      max-width: 500px;
     }
     &__col-2 {
       max-height: 300px;
-      padding: 20px 100px 20px 10px;
-      flex-basis: 50%;
-      max-width: 50%;
+      padding: 20px 0 20px 10px;
+      flex-basis: 500px;
+      max-width: 500px;
     }
     &__copyright {
       font-size: 12px;
