@@ -4,7 +4,7 @@
   &__title {
     margin: 0 0 30px;
     font-family: $page-font-family;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 32px;
     text-align: center;
   }
@@ -26,11 +26,13 @@
 }
 @media only screen and (min-width: 1200px){
   .reviews {
+    padding-top: 0;
+    padding-bottom: 0;
     &__title {
       font-size: 48px;
     }
     &__review {
-      margin: 0 10px 30px 10px;
+      margin: 0 10px 50px 10px;
     }
     &__container {
       margin-left: auto;
