@@ -1,44 +1,49 @@
 function Comment(author, text) {
   this.author = author;
   this.text = text;
-  this.quote= function(userName){
-    return `${userName}: "${this.author} написал: ${this.text}"`;
-  }
-  this.render = function(){
-    return `${this.author} написал: ${this.text}`;
-  }
-}
-
+};
+Comment.prototype.quote = function (userName) {
+  return `${userName}: "${this.author} написал: ${this.text}"`;
+};
+Comment.prototype.render = function () {
+  return `${this.author} написал: ${this.text}`;
+};
 function UserComment(name, text, date){
-  Comment.call(this, name);
+  Comment.apply(this, arguments);
   this.name = name;
   this.text = text;
-  this.rate = 0;
   this.date = date;
-  this.like = function(){
-    this.rate++;
-  }
-  this.render = function(){
-    return `${this.name} написал ${this.date.getDate() + "." + (this.date.getMonth() + 1) + "." + (this.date.getFullYear())}: ${this.text}; Рейтинг: ${this.rate}`;
-  }
-  this.dislike = function(){
-    this.rate--;
-  }
-}
-
+  this.rate = 0;
+};
 function AdComment(name, text, link){
-  Comment.call(this, name);
+  Comment.apply(this, arguments);
   this.name = name;
   this.text = text;
   this.link = link;
-  var hiddenComment = false;
-  this.render = function(){
-    return !hiddenComment?`${this.name} написал: ${this.text}; Перейти >> ${this.link}`:'Реклама скрыта';
-  }
-  this.hide = function(){
-    hiddenComment = true;
-  }
-}
+  this.commentIsHidden = false;
+};
+function inherit(Child, Parent){
+  Child.prototype = Object.create(Parent.prototype);
+  Child.prototype.constructor = Child;
+};
+inherit(AdComment, Comment);
+inherit(UserComment, Comment);
+
+UserComment.prototype.like = function () {
+  this.rate++;
+};
+UserComment.prototype.dislike = function () {
+  this.rate--;
+};
+UserComment.prototype.render = function () {
+  return `${this.name} написал ${this.date.getDate() + "." + (this.date.getMonth() + 1) + "." + (this.date.getFullYear())}: ${this.text}; Рейтинг: ${this.rate}`;
+};
+AdComment.prototype.hide = function () {
+  this.commentIsHidden = true;
+};
+AdComment.prototype.render = function () {
+return !this.commentIsHidden?`${this.name} написал: ${this.text}; Перейти >> ${this.link}`:'Реклама скрыта';
+};
 
 exports.Comment = Comment;
 exports.UserComment = UserComment;
