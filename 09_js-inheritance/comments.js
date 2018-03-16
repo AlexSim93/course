@@ -36,7 +36,7 @@ UserComment.prototype.dislike = function () {
   this.rate--;
 };
 UserComment.prototype.render = function () {
-  return `${this.name} написал ${this.date.getDate() + "." + (this.date.getMonth() + 1) + "." + (this.date.getFullYear())}: ${this.text}; Рейтинг: ${this.rate}`;
+  return `${this.name} написал ${this.date.getDate()}.${this.date.getMonth() + 1}.${this.date.getFullYear()}: ${this.text}; Рейтинг: ${this.rate}`;
 };
 AdComment.prototype.hide = function () {
   this.commentIsHidden = true;
