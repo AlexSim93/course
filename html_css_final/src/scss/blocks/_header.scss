@@ -14,14 +14,14 @@
     padding: 20px 0;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1199px){
+@include tablet{
   .header {
     &__navbar-container {
       padding: 20px 40px 20px 40px;
     }
   }
 }
-@media only screen and (min-width: 1200px){
+@include desktop{
   .header {
     &__navbar-container {
       width: 1000px;

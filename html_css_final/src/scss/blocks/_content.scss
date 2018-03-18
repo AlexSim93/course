@@ -13,7 +13,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px){
+@include desktop{
   .content{
     &__about-course {
       margin-top: 75px;

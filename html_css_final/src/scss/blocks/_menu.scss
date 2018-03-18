@@ -7,7 +7,7 @@
     @extend %list-reset;
   }
   &__item{
-    border-top: 2px solid white;
+    border-top: 2px solid $menu-item-border-color;
     width: 100%;
   }
   &__link {
@@ -18,7 +18,7 @@
     text-decoration: none;
     font-size: 18px;
     text-align: center;
-    color: white;
+    color: $menu-link-color;
     background: $menu-link-mobile-bg;
     &:hover {
       text-decoration: underline;
@@ -70,7 +70,7 @@
     }
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1199px){
+@include tablet{
   .menu {
     display: flex;
     flex-direction: row;
@@ -107,7 +107,7 @@
     }
   }
 }
-@media only screen and (min-width: 1200px){
+@include desktop{
   .menu {
     display: flex;
     flex-direction: row;

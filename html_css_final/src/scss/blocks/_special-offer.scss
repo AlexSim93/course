@@ -22,7 +22,7 @@
     margin-bottom: 10px;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1199px){
+@include tablet{
   .special-offer {
     &__text {
       margin-left: auto;
@@ -38,19 +38,17 @@
     }
   }
 }
-@media only screen and (min-width: 1200px){
+@include desktop{
   .special-offer {
     padding-top: 40px;
     &__text {
       max-width: 1000px;
       margin: 0 auto 20px auto;
-      // margin-bottom: 20px;
       font-size: 30px;
     }
     &__important-text {
       max-width: 1000px;
       margin: 0 auto 30px auto;
-      // margin-bottom: 30px;
       font-size: 48px;
     }
     &__button {

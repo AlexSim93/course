@@ -1,5 +1,6 @@
 @import 'vendors/normalize';
 @import 'helpers/variables';
+@import 'helpers/mixins';
 @import 'helpers/extends';
 @import 'blocks/button';
 @import 'blocks/header';
@@ -18,4 +19,3 @@
 @import 'blocks/review';
 @import 'blocks/footer';
 @import 'blocks/footer-menu';
-@import 'blocks/icon';

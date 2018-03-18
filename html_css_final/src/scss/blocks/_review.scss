@@ -35,7 +35,7 @@
     border-radius: 50%;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1199px){
+@include tablet{
   .review {
     display: block;
     height: 100%;
@@ -65,7 +65,7 @@
     }
   }
 }
-@media only screen and (min-width: 1200px){
+@include desktop{
   .review {
     display: block;
     height: 100%;

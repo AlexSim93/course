@@ -17,7 +17,7 @@
     justify-content: center;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1199px){
+@include tablet{
   .navbar {
     flex-wrap: wrap;
     align-items: center;
@@ -33,7 +33,7 @@
     }
   }
 }
-@media only screen and (min-width: 1200px){
+@include desktop{
   .navbar {
     flex-wrap: wrap;
     max-width: 1000px;
