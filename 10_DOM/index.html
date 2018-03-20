@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Добавление элементов</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <section id="container">
-    <div class="button-container">
-      <button type="button" name="button" id="add-button">Add</button>
-      <button type="button" name="button" id="add-html-code">HTML Code</button>
-    </div>
-  </section>
-  <section id="html-code">
+  <main class="container" id="container">
+    <div class="content" id="content">
 
-  </section>
+    </div>
+    <div class="container__buttons">
+      <button type="button" name="button" class="btn-add-element" id="add-button">Добавить элемент</button>
+      <button type="button" name="button" class="btn-generate-html-code" id="add-html-code">Генерировать HTML</button>
+    </div>
+  <pre class="html-code" id="html-code"></pre>
+  </main>
   <script src="./index.js"></script>
 </body>
 </html>

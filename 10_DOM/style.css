@@ -1,0 +1,107 @@
+.form-wrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-tag-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 500px;
+  padding: 40px;
+  border: 1px solid black;
+  background: white;
+}
+.btn-submit {
+  width: 220px;
+  height: 30px;
+  margin: 20px 0;
+  background: green;
+  color: white;
+  font-weight: bold;
+  border: 0px solid black;
+  cursor: pointer;
+}
+.input-tag {
+  width: 100%;
+  height: 20px;
+  margin: 5px 0 15px;
+  font-size: 16px;
+  border: 1px solid black;
+}
+.link-close {
+  align-self: flex-end;
+  font-weight: bold;
+  cursor: pointer;
+}
+.text-textarea {
+  width: 100%;
+  min-height: 150px;
+  margin: 5px 0 15px;
+  font-size: 14px;
+  border: 1px solid black;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+.container__buttons {
+  margin: 10px;
+}
+.container__buttons_hidden {
+  display: none;
+}
+.content {
+  min-height: 100px;
+  padding: 15px;
+  border: 1px solid grey;
+}
+.link-remove-element {
+  display: block;
+  margin: 10px 0 30px;
+  color: blue;
+  cursor: pointer;
+}
+.new-element{
+  margin: 0px;
+  padding: 5px 0;
+}
+.btn-add-element {
+  width: 220px;
+  height: 30px;
+  margin: 20px 0;
+  background: green;
+  color: white;
+  font-weight: bold;
+  border: 0px solid black;
+  cursor: pointer;
+}
+.btn-generate-html-code {
+  width: 220px;
+  height: 30px;
+  margin: 20px 0;
+  background: blue;
+  color: white;
+  font-weight: bold;
+  border: 0px solid black;
+  cursor: pointer;
+}
+.html-code {
+  min-height: 200px;
+  max-width: 100%;
+  padding: 15px;
+  background: silver;
+  font-size: 18px;
+  border: 1px solid black;
+  white-space: pre-wrap;
+}
