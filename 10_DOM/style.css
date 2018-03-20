@@ -58,9 +58,6 @@
 .container__buttons {
   margin: 10px;
 }
-.container__buttons_hidden {
-  display: none;
-}
 .content {
   min-height: 100px;
   padding: 15px;
