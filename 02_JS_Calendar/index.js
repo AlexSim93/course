@@ -6,28 +6,26 @@
   let dayOfWeek = requiredDate.getDay()||7; //день недели для первого числа месяца, если вск, то присвоить 7
   let dayOfMonth = requiredDate.getDate();
   function getWeekHTML(startDay=1){
-    let html = "<tr>";
+    let trWeek = document.createElement('tr');
     for(let i = 1; i <= 7; i++){
-      html += `<td ${requiredDate.getDate() === today?'class="day today"':'class="day"'}>${requiredDate.getMonth() === month&&i >= startDay?requiredDate.getDate():""}</td>`;
+      let tdDay = document.createElement('td');
+      tdDay.className = requiredDate.getDate() === today?"day today":"day";
+      tdDay.textContent = requiredDate.getMonth() === month&&i >= startDay?requiredDate.getDate():"";
+      trWeek.appendChild(tdDay);
       if(i >= startDay&&requiredDate.getMonth() === month){
         requiredDate.setDate(++dayOfMonth);
       }
     }
-    return html + "</tr>";
+    return trWeek;
   }
-  function getMonthHTML(weekFunction, startDay){
-    let htmlMonth = '';
+  function renderCalendar(weekFunction, startDay){
+    let tbodyCalendar = document.getElementById('calendar-body');
     for(let i = 0; requiredDate.getMonth()===month; i++){
       if(i===0){
-        htmlMonth += weekFunction(startDay);
+        tbodyCalendar.appendChild(weekFunction(startDay));
       }
-       htmlMonth += weekFunction();
+       tbodyCalendar.appendChild(weekFunction());
     }
-    return htmlMonth;
   }
-  function renderCalendar(htmlCode){
-    let element = document.querySelector('#calendar-body');
-    element.innerHTML = htmlCode;
-  }
-  renderCalendar(getMonthHTML(getWeekHTML, dayOfWeek));
-})(2018, 2);
+  renderCalendar(getWeekHTML, dayOfWeek);
+})(2017, 12);
