@@ -526,11 +526,10 @@ let {users: users, projects: projects} = response;
 	Все геттеры должны быть стрелочными функциями
   Более предпочитаемы однострочные функции
 */
-const getActiveUsers = () => users.filter(user => user.isActive === true);
-const getActiveProjects = () => projects.filter(project => project.isActive === true);
+const getActiveUsers = () => users.filter(user => user.isActive);
+const getActiveProjects = () => projects.filter(project => project.isActive);
 const getProjectsByTechnology = (technology) => projects.filter(project => project.technology === technology);
 const getExperiencedWorkers = (project, jobPosition) => projects.find(element=>element.id === project).workers.filter(worker => worker.jobPosition === jobPosition);
-
 
 function printUserData(userIndex) {
   let user = users.find((element)=>element.index === userIndex);
@@ -538,7 +537,7 @@ function printUserData(userIndex) {
     Full Name: ${user.name} ${user.surname}
     Position: ${user.jobPosition}
     Division: ${user.division}
-    English level|: ${user.englishLevel}
+    English level: ${user.englishLevel}
   `);
 	/*
   	Вывести информацию о юзере в консоль в несколько строчек по следующему шаблону:
