@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "main": "comments.js",
+  "scripts": {
+    "test": "jasmine *spec.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^3.1.0"
+  }
+}
