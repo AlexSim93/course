@@ -15,23 +15,26 @@
   let idGenerator = generateId();
   class Element {
     constructor(tag, text, id){
+      this.elementContainer = document.createElement('div');
+      this.elementContainer.classList.add('new-element');
       this.element = document.createElement(tag);
       this.element.textContent = text;
-      this.element.classList.add('new-element');
+      this.element.classList.add('new-element__content');
       this.elementRemoveLink = document.createElement('a');
       this.elementRemoveLink.textContent = "Удалить элемент";
-      this.elementRemoveLink.classList.add('link-remove-element');
+      this.elementRemoveLink.classList.add('new-element__link-remove-element');
       this.id = id;
       this.elementRemoveLink.addEventListener('click', this.removeElement.bind(this));
       this.renderElement('content');
     }
     renderElement(containerId){
       let container = document.getElementById(containerId);
-      container.appendChild(this.element);
-      container.appendChild(this.elementRemoveLink);
+      this.elementContainer.appendChild(this.element);
+      this.elementContainer.appendChild(this.elementRemoveLink);
+      container.appendChild(this.elementContainer);
     }
     getHTMLCode(){
-      return this.element.outerHTML;
+      return `<${this.element.tagName.toLowerCase()}> \n${this.element.innerHTML} \n</${this.element.tagName.toLowerCase()}>`;
     }
     getId(){
       return this.id;
@@ -39,8 +42,7 @@
     removeElement(evt){
       evt.preventDefault();
       let index = elements.findIndex((element)=>element.getId() === this.getId());
-      this.element.remove();
-      this.elementRemoveLink.remove();
+      this.elementContainer.remove();
       elements.splice(index, 1);
     }
   }
@@ -69,26 +71,31 @@
     return element;
   }
   function renderForm(){
-    let buttonSubmit = createDOMElement('button', [['type', 'submit']], ['Добавить Элемент'], ['btn-submit']);
-    let textareaText = createDOMElement('textarea', [['id', 'text-textarea'], ['name', 'content']], null ,['text-textarea']);
-    let labelText = createDOMElement('label', [['for', 'text-textarea']], ['Текст'], ['label-text']);
-    let inputTag = createDOMElement('input', [['id', 'tag-input'], ['name', 'tag']], null ,['input-tag']);
-    let labelTag = createDOMElement('label', [['for', 'tag-input']], ['Тег'], ['label-tag']);
-    let close = createDOMElement('a', [], ['X'], ['link-close'], 'click', closeForm);
-    let title = createDOMElement('h1', [], ['Добавление элемента'], ['title']);
-    let form = createDOMElement('form',[],[close, title, labelTag, inputTag, labelText, textareaText, buttonSubmit], ['add-tag-form'], 'submit', submitForm);
+    let closeWindowIcon = createDOMElement('a', [], [
+      createDOMElement('div', [], [""], ["form__close-line-1"]),
+      createDOMElement('div', [], [""], ["form__close-line-2"])
+    ], ['form__close'], 'click', closeForm);
+    let form = createDOMElement('form', [], [
+      closeWindowIcon,
+      createDOMElement('h1', [], ['Добавление элемента'], ['form__title']),
+      createDOMElement('label', [['for', 'tag-input']], ['Тег'], ['form__tag-label']),
+      createDOMElement('input', [['id', 'tag-input'], ['name', 'tag'], ['required', 'required']], null ,['form__tag-input']),
+      createDOMElement('label', [['for', 'text-textarea']], ['Текст'], ['form__text-label']),
+      createDOMElement('textarea', [['id', 'text-textarea'], ['name', 'content'], ['required', 'required']], null ,['form__text-textarea']),
+      createDOMElement('button', [['type', 'submit']], ['Добавить Элемент'], ['form__button','button','button_color_green']),
+    ], ['form'], 'submit', submitForm);
+    let formWrapper = createDOMElement('div', [], [form], ['container__modal', 'modal']);
     let fragment = document.createDocumentFragment();
-    let wrapper = createDOMElement('div', [], [form], ['form-wrapper']);
-    fragment.appendChild(wrapper);
+    fragment.appendChild(formWrapper);
     container.appendChild(fragment);
     function closeForm(evt){
       evt.preventDefault();
-      wrapper.remove();
+      formWrapper.remove();
     }
     function submitForm(evt){
       evt.preventDefault();
-      elements.push(new Element(inputTag.value, textareaText.value, idGenerator()));
-      wrapper.remove();
+      elements.push(new Element(document.getElementById('tag-input').value, document.getElementById('text-textarea').value, idGenerator()));
+      formWrapper.remove();
     }
   }
   function generateHTMLCode(){

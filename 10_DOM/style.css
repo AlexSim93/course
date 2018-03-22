@@ -1,4 +1,4 @@
-.form-wrapper {
+.container__modal {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -10,39 +10,63 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.add-tag-form {
+.form {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   width: 500px;
-  padding: 40px;
+  padding: 10px;
   border: 1px solid black;
   background: white;
 }
-.btn-submit {
-  width: 220px;
-  height: 30px;
+.form__button {
   margin: 20px 0;
-  background: green;
-  color: white;
-  font-weight: bold;
-  border: 0px solid black;
-  cursor: pointer;
 }
-.input-tag {
+.form__tag-input {
+  box-sizing: border-box;
   width: 100%;
   height: 20px;
   margin: 5px 0 15px;
   font-size: 16px;
   border: 1px solid black;
 }
-.link-close {
+.form__close {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
   align-self: flex-end;
   font-weight: bold;
   cursor: pointer;
 }
-.text-textarea {
+.form__close-line-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 15px;
+  background: grey;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.form__close-line-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 15px;
+  background: grey;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.form__close:hover .form__close-line-1 {
+  background: silver;
+}
+.form__close:hover .form__close-line-2 {
+  background: silver;
+}
+.form__text-textarea {
+  box-sizing: border-box;
   width: 100%;
   max-width: 100%;
   min-height: 150px;
@@ -50,56 +74,73 @@
   font-size: 14px;
   border: 1px solid black;
 }
+.page__container{
+  margin: 5px auto;
+}
 .container {
   display: flex;
   flex-direction: column;
   max-width: 1000px;
-  margin: 20px auto;
 }
 .container__buttons {
   margin: 10px;
 }
 .content {
+  box-sizing: border-box;
   min-height: 100px;
-  padding: 15px;
-  border: 1px solid grey;
+  padding: 15px 0;
 }
-.link-remove-element {
+.new-element {
+  max-width: 100%;
+  padding: 15px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+.new-element__link-remove-element {
   display: block;
-  margin: 10px 0 30px;
+  margin: 10px 0;
   color: blue;
   cursor: pointer;
 }
-.new-element{
-  margin: 0px;
-  padding: 5px 0;
+.new-element__link-remove-element:hover {
+  color: RoyalBlue;
 }
-.btn-add-element {
-  width: 220px;
-  height: 30px;
-  margin: 20px 0;
+.new-element__content{
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.button-container__button {
+  margin: 20px 10px 20px 0;
+}
+.button {
+  width: 200px;
+  height: 40px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0px solid black;
+  cursor: pointer;
+}
+.button_color_green {
   background: green;
-  color: white;
-  font-weight: bold;
-  border: 0px solid black;
-  cursor: pointer;
 }
-.btn-generate-html-code {
-  width: 220px;
-  height: 30px;
-  margin: 20px 0;
+.button_color_green:hover {
+  background: MediumSeaGreen;
+}
+.button_color_blue {
   background: blue;
-  color: white;
-  font-weight: bold;
-  border: 0px solid black;
-  cursor: pointer;
 }
-.html-code {
+.button_color_blue:hover {
+  background: RoyalBlue;
+}
+.code-area {
   min-height: 200px;
   max-width: 100%;
   padding: 15px;
-  background: silver;
+  background: LightGray;
   font-size: 18px;
-  border: 1px solid black;
+  border: 1px solid silver;
   white-space: pre-wrap;
 }
