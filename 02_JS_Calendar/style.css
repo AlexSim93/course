@@ -1,0 +1,15 @@
+.calendar {
+  border-collapse: collapse;
+}
+.day-head {
+  border: 1px solid black;
+  background: silver;
+}
+.day {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid black;
+}
+.today {
+  background: red;
+}
