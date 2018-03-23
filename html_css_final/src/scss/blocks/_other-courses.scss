@@ -1,0 +1,51 @@
+.other-courses {
+  box-sizing: border-box;
+  font-family: $page-font-family;
+  &__title {
+    margin: 0 0 30px;
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__course-card {
+    margin-bottom: 20px;
+  }
+}
+@include tablet{
+  .other-courses {
+    &__container {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+    &__course-card {
+      margin: 10px;
+    }
+  }
+}
+@include desktop{
+  .other-courses {
+    &__container {
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+    &__course-card {
+      margin: 10px;
+    }
+    &__title {
+      margin-bottom: 35px;
+      font-size: 48px;
+    }
+  }
+}

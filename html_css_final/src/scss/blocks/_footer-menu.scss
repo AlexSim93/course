@@ -1,0 +1,52 @@
+.footer-menu {
+  box-sizing: border-box;
+  color: $footer-color;
+  font-family: $page-font-family;
+  &__container {
+    box-sizing: border-box;
+  }
+  &__title {
+    margin: 15px 0;
+    color: $footer-menu-title-color;
+    font-size: 14px;
+  }
+  &__item {
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
+  &__list {
+    @extend %list-reset;
+  }
+  &__link {
+    color: $footer-menu-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+@include desktop{
+  .footer-menu {
+    &__container {
+      height: 100%;
+    }
+    &__list {
+      height: 200px;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      align-content: flex-start;
+    }
+    &__item {
+      width: 235px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    &__title {
+      margin: 5px 0 20px;
+      font-size: 18px;
+    }
+  }
+}

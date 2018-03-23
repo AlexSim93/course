@@ -1,0 +1,65 @@
+.footer {
+  display: flex;
+  min-width: 100%;
+  flex-wrap: wrap-reverse;
+  background: $footer-bg;
+  color: $footer-color;
+  font-family: $page-font-family;
+  &__col-1 {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 25px 10px 25px;
+  }
+  &__col-2 {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 25px 10px 25px;
+  }
+  &__copyright {
+    font-size: 10px;
+  }
+  &__text {
+    font-size: 10px;
+  }
+}
+@include tablet{
+  .footer {
+    width: 100%;
+    &__col-1 {
+      padding: 20px 10px 20px 25px;
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+    &__col-2 {
+      padding: 20px 25px 20px 10px;
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+}
+@include desktop {
+  .footer {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    &__col-1 {
+      min-height: 300px;
+      padding: 40px 10px 15px 0;
+      flex-basis: 500px;
+      max-width: 500px;
+    }
+    &__col-2 {
+      min-height: 300px;
+      padding: 40px 0 15px 10px;
+      flex-basis: 500px;
+      max-width: 500px;
+    }
+    &__copyright {
+      font-size: 12px;
+    }
+    &__text {
+      font-size: 12px;
+    }
+  }
+}

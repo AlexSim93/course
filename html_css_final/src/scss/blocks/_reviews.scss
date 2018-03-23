@@ -1,0 +1,46 @@
+.reviews {
+  box-sizing: border-box;
+  padding: 20px 40px;
+  &__title {
+    margin: 0 0 30px;
+    font-family: $page-font-family;
+    font-weight: 300;
+    font-size: 32px;
+    text-align: center;
+  }
+  &__button-container {
+    @extend %flex-center;
+    padding: 10px;
+  }
+  &__review {
+    margin-bottom: 20px;
+  }
+}
+
+@include tablet{
+  .reviews {
+    &__review {
+      margin: 0 10px 30px 10px;
+    }
+  }
+}
+@include desktop{
+  .reviews {
+    padding-top: 0;
+    padding-bottom: 0;
+    &__title {
+      font-size: 48px;
+    }
+    &__review {
+      margin: 0 10px 50px 10px;
+    }
+    &__container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}

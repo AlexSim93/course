@@ -1,0 +1,146 @@
+.menu {
+  font-family: $page-font-family;
+  box-sizing: border-box;
+  min-width: 100%;
+  text-align: right;
+  &__list {
+    @extend %list-reset;
+  }
+  &__item{
+    border-top: 2px solid $menu-item-border-color;
+    width: 100%;
+  }
+  &__link {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    color: $menu-link-color;
+    background: $menu-link-mobile-bg;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__sign-in {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background: $menu-sign-in-mobile-bg;
+  }
+  &__list-sign-in-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-sizing: border-box;
+    min-width: 100%;
+    transition: top 0.7s;
+    &_hidden {
+      top: -100%;
+      transition: top 0.7s;
+    }
+  }
+  &__toggle {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    vertical-align: bottom;
+    background: $toggle-menu-bg;
+    font-size: 34px;
+    &::before {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: $toggle-menu-bg;
+      content: "";
+    }
+    &::after {
+      position: absolute;
+      top: -10px;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: $toggle-menu-bg;
+      content: "";
+    }
+  }
+}
+@include tablet{
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &__toggle {
+      display: none;
+    }
+    &__list-sign-in-container {
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: row;
+    }
+    &__list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &__item {
+      width: auto;
+      margin: 5px;
+      border: 0 solid black;
+    }
+    &__link {
+      background-color: transparent;
+      font-size: 14px;
+      font-weight: normal;
+    }
+    &__sign-in {
+      margin-left: 25px;
+      min-width: 100px;
+      background-color: transparent;
+    }
+  }
+}
+@include desktop{
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &__toggle {
+      display: none;
+    }
+    &__list-sign-in-container {
+      position: static;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    &__list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &__item {
+      width: auto;
+      margin: 10px 5px;
+      border: 0 solid black;
+    }
+    &__link {
+      background-color: transparent;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    &__sign-in {
+      margin-left: 110px;
+      min-width: 120px;
+      background-color: transparent;
+    }
+  }
+}

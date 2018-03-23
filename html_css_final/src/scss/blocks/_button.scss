@@ -1,0 +1,113 @@
+.button {
+  box-sizing: border-box;
+  @extend %flex-center;
+  height: 40px;
+  width: 180px;
+  padding: 10px 20px;
+  color: $btn-color;
+  font-family: $page-font-family;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid $btn-border-color;
+  border-radius: 10px;
+  text-decoration: none;
+  &:hover {
+    background: $btn-bg-hover;
+    color: $btn-color-hover;
+  }
+  &_size_m {
+    height: 40px;
+    width: 175px;
+    font-size: 16px;
+  }
+  &_outline_dark {
+    color: $review-btn-color;
+    border-color: $review-btn-border-color;
+    &:hover {
+      background-color: $review-btn-bg-hover;
+      color: $review-btn-color-hover;
+    }
+  }
+  &_size_l {
+    width: 240px;
+  }
+  &_text-color_important {
+    &:hover {
+      color: $special-offer-btn-color-hover;
+    }
+  }
+  &_type_sign-in {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 18px;
+    font-weight: normal;
+    border: 0px solid black;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+    text-align: center;
+    text-transform: none;
+    vertical-align: middle;
+    align-items: center;
+    background-repeat: no-repeat;
+    &:hover {
+      background-color: $sign-in-btn-mobile-bg-hover;
+      text-decoration: underline;
+    }
+  }
+}
+@include tablet{
+  .button {
+    &_type_sign-in{
+      box-sizing: border-box;
+      font-weight: normal;
+      border-radius: 5px;
+      border: 1px solid $sign-in-btn-border-color;
+      height: 30px;
+      width: 90px;
+      font-size: 14px;
+      &:hover {
+        background: $sign-in-btn-tablet-bg-hover;
+        color: $sign-in-btn-color-hover;
+        text-decoration: none;
+      }
+    }
+  }
+}
+@include desktop{
+  .button {
+    height: 50px;
+    width: 218px;
+    font-size: 16px;
+    &_size_l{
+      width: 300px;
+    }
+    &_size_m {
+      height: 40px;
+      width: 175px;
+    }
+    &_type_sign-in{
+      height: 36px;
+      width: 120px;
+      box-sizing: border-box;
+      background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='iso-8859-1'?%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 416 416' style='enable-background:new 0 0 416 416;' xml:space='preserve' width='14px' height='14px'%3E%3Ccircle cx='208' cy='96' r='96' fill='%23FFFFFF'/%3E%3Cpath d='M394.4,291.872c-108-90.656-264.832-90.656-372.832,0C18.048,294.848,16,299.2,16,303.84c0,15.456,0,52.832,0,80.192 C16,401.696,30.336,416,48,416h320c17.664,0,32-14.304,32-31.968v-73.92C400,299.2,397.952,294.848,394.4,291.872z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+      background-position: 15px center;
+      background-repeat: no-repeat;
+      font-size: 16px;
+      font-weight: normal;
+      text-indent: 10px;
+      border-radius: 5px;
+      border: 1px solid $sign-in-btn-border-color;
+      &:hover {
+        background: $sign-in-btn-desktop-bg-hover;
+        background-position: 15px center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='iso-8859-1'?%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 416 416' style='enable-background:new 0 0 416 416;' xml:space='preserve' width='14px' height='14px'%3E%3Ccircle cx='208' cy='96' r='96' fill='%23254fad'/%3E%3Cpath d='M394.4,291.872c-108-90.656-264.832-90.656-372.832,0C18.048,294.848,16,299.2,16,303.84c0,15.456,0,52.832,0,80.192 C16,401.696,30.336,416,48,416h320c17.664,0,32-14.304,32-31.968v-73.92C400,299.2,397.952,294.848,394.4,291.872z' fill='%23254fad'/%3E%3C/svg%3E");
+        color: $sign-in-btn-desktop-color-hover;
+        text-decoration: none;
+      }
+    }
+  }
+}

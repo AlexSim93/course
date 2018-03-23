@@ -1,0 +1,30 @@
+.content {
+  min-height: calc(100vh -300px - 492px);
+  &__about-course {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  &__other-courses {
+    margin-bottom: 30px;
+  }
+  &__reviews {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@include desktop{
+  .content{
+    &__about-course {
+      margin-top: 75px;
+      margin-bottom: 100px;
+    }
+    &__other-courses {
+      margin-bottom: 70px;
+    }
+    &__reviews {
+      margin-top: 50px;
+      margin-bottom: 70px;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.review {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: $page-font-family;
+  &__author {
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0;
+    flex-basis: 170px;
+  }
+  &__author-link {
+    color: $review-author-color;
+    font-size: 13px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__text {
+    box-sizing: border-box;
+    margin-top: 10px;
+    flex-basis: 100%;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.72;
+  }
+  &__avatar-link {
+    flex-basis: 45px;
+    max-width: 45px;
+  }
+  &__avatar {
+    box-sizing: border-box;
+    max-width: 100%;
+    border-radius: 50%;
+  }
+}
+@include tablet{
+  .review {
+    display: block;
+    height: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    &__avatar-link {
+      float: left;
+      margin-right: 20px;
+      max-width: 128px;
+    }
+    &__author-link{
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 150px;
+    }
+    &__text {
+      margin-left: 150px;
+    }
+    &__author{
+      padding: 0;
+    }
+  }
+}
+@include desktop{
+  .review {
+    display: block;
+    height: 100%;
+    flex-basis: 490px;
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    &__avatar-link {
+      float: left;
+      margin-right: 20px;
+      max-width: 128px;
+    }
+    &__author-link{
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 150px;
+      font-size: 14px;
+    }
+    &__text {
+      margin-left: 150px;
+      font-size: 13px;
+    }
+    &__author{
+      padding: 0;
+    }
+  }
+}

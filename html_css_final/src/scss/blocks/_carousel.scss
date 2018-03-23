@@ -1,0 +1,99 @@
+.carousel {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &::before {
+    content: "";
+    box-sizing: border-box;
+    margin-left: 5px;
+    padding: 5px;
+    flex-basis: 40px;
+    width: 40px;
+    height: 58px;
+    flex-shrink: 0;
+    background-image: url(../assets/icon-arrow-left.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  &::after {
+    content: "";
+    box-sizing: border-box;
+    margin-right: 5px;
+    padding: 5px;
+    flex-basis: 40px;
+    width: 40px;
+    height: 58px;
+    flex-shrink: 0;
+    background-image: url(../assets/icon-arrow-right.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  &__main-part-container {
+    box-sizing: border-box;
+    width: calc(100vw - 40px - 40px - 10px);
+  }
+  &__dots {
+    box-sizing: border-box;
+    display: flex;
+    margin: 20px 0 10px;
+    justify-content: center;
+    align-items: center;
+    @extend %list-reset;
+  }
+  &__dot {
+    background: $dot-color;
+    margin: 10px 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    &_active {
+      height: 15px;
+      width: 15px;
+      background: $dot-color-active;
+    }
+  }
+}
+@include tablet{
+  .carousel {
+    justify-content: space-between;
+    &__main-part-container{
+      flex-basis: 500px;
+      flex-grow: 1;
+      max-width: 900px;
+    }
+    &::before {
+      flex-basis: 50px;
+      height: 80px;
+    }
+    &::after {
+      flex-basis: 50px;
+      height: 80px;
+    }
+  }
+}
+@include desktop{
+  .carousel {
+    justify-content: space-between;
+    &__main-part-container{
+      flex-basis: 1000px;
+      flex-grow: 0;
+    }
+    &::before {
+      margin-left: 25px;
+      height: 80px;
+      flex-basis: 60px;
+    }
+    &::after {
+      margin-right: 25px;
+      height: 80px;
+      flex-basis: 60px;
+    }
+  }
+}

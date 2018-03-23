@@ -1,0 +1,32 @@
+.header {
+  box-sizing: border-box;
+  background-image: url(../assets/hero-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  &__title_hidden {
+    display: none;
+  }
+  &__navbar-container {
+    padding: 20px 25px 20px 25px;
+  }
+  &__carousel-container {
+    padding: 20px 0;
+  }
+}
+@include tablet{
+  .header {
+    &__navbar-container {
+      padding: 20px 40px 20px 40px;
+    }
+  }
+}
+@include desktop{
+  .header {
+    &__navbar-container {
+      width: 1000px;
+      margin: 0 auto 80px;
+      padding: 20px 100px 20px 100px;
+    }
+  }
+}

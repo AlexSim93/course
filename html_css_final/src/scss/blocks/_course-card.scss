@@ -1,0 +1,53 @@
+.course-card {
+  box-sizing: border-box;
+  background-size: cover;
+  font-family: $page-font-family;
+  transform: scale(1);
+  transition: transform $other-courses-transition-time;
+  &:hover .course-card__text {
+    color: $course-color-hover;
+    background-color: $course-text-bg-hover;
+    transition: color $other-courses-transition-time, background-color $other-courses-transition-time;
+  }
+  &:hover {
+    transform: scale(1.1);
+    transition: transform $other-courses-transition-time;
+  }
+  &__link {
+    box-sizing: border-box;
+    @extend %flex-center;
+    width: 235px;
+    height: 135px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color $other-courses-transition-time;
+    text-decoration: none;
+  }
+  &:hover .course-card__link {
+    background-color: transparent;
+    transition: background-color $other-courses-transition-time;
+  }
+  &__text-container {
+    text-align: center;
+  }
+  &__text {
+    color: $course-color;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color $other-courses-transition-time;
+  }
+  &_mobile-dev {
+    background-image: url(../assets/img-1.jpg);
+  }
+  &_web-dev {
+    background-image: url(../assets/img-2.jpg);
+  }
+  &_front-end-advanced {
+    background-image: url(../assets/img-3.jpg);
+  }
+  &_machine-basics {
+    background-image: url(../assets/img-4.jpg);
+  }
+}
