@@ -1,0 +1,29 @@
+.welcome-text {
+    font-size: 20px;
+    text-align: center;
+}
+.form-add-message {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+.textarea-content {
+    height: 150px;
+    margin-bottom: 15px;
+}
+.message-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.message-item {
+    margin: 0;
+    padding: 0;
+}
+.message-title {
+    max-width: 500px;
+}
+.message-content {
+    max-width: 500px;
+    border: 1px solid grey;
+}

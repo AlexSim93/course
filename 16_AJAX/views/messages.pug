@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Mail
+        link(href='style.css' rel='stylesheet')
+    body
+        div
+            h2 Создание нового сообщения
+            form(method='POST' action='/messages' class='form-add-message')
+                label(for='input-title') Тема:
+                input(type='text' name='title' id='input-title' required)
+                label(for='textarea-content') Сообщение:
+                textarea(name='content' id='textarea-content' class='textarea-content' required)
+                button(type='submit') Отправить
+        section
+            section
+                h2 Список ваших сообщений
+                ul(class='message-list' id='message-list')
+                    each element in arrayOfMessages
+                        li(class='message-item')
+                            a(href='/messages/' + element.id)=element.title
+            section
+                h3(id='title')
+                p
+        script(src='client.js')
