@@ -1,5 +1,5 @@
 interface IComment {
-  id: number,
+  id: number;
   author: string;
   text: string;
   render(): string;
@@ -13,7 +13,7 @@ class Comment implements IComment {
     this.author = author;
     this.text = text;
   }
-  quote(userName): string {
+  quote(userName: string): string {
     return `${userName}: "${this.author} написал: ${this.text}"`;
   }
   render(): string {
