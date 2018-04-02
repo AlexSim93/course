@@ -21,13 +21,13 @@ app.route('/messages')
         res.render('messages', {arrayOfMessages: data});
     })
     .post((req, res)=>{
-        let newMessageData = { id: createId(), title: req.body.title, content: req.body.content };
+        const newMessageData = { id: createId(), title: req.body.title, content: req.body.content };
         data.push(newMessageData);
         res.send(newMessageData);
     });
 
 app.get('/messages/:id', (req, res)=>{
-    let message = data.find((el)=>el.id === +req.params.id);
+    const message = data.find((el)=>el.id === +req.params.id);
     res.send(message);
 });
 
