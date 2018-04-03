@@ -1,0 +1,21 @@
+include base.pug
+body
+    div
+        h2 Создание нового сообщения
+        form(method='POST' name='message' action='/messages' class='form-add-message' id='form-add-message')
+            label(for='input-title') Тема:
+            input(type='text' name='title' id='input-title' required)
+            label(for='textarea-content') Сообщение:
+            textarea(name='content' id='textarea-content' class='textarea-content' required)
+            button(type='submit' id='button-submit') Отправить
+    section(class='message-block')
+        section(class='messages')
+            h2 Список ваших сообщений
+            ul(class='message-list' id='message-list')
+                each element in arrayOfMessages
+                    li(class='message-item')
+                        a(class='message-link' href='/messages/' + element.id)=element.title
+        section(class='opened-message')
+            h3(id='message-title')
+            p(id='message-content')
+    script(src='client.js')
