@@ -1,1 +1,0 @@
-webpackJsonp([1],{27:function(t,e,n){"use strict";n(28),function(){var t=document.getElementById("test-form");t.addEventListener("submit",function(e){e.preventDefault(),t.reset()})}()},28:function(t,e){}},[27]);
