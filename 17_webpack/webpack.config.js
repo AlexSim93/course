@@ -48,6 +48,7 @@ const common = merge([{
 },
 babel(APP_DIR),
 htmlLoader(),
+extractCSS(APP_DIR),
 image()
 ]);
 
@@ -55,7 +56,6 @@ module.exports = (env) => {
   if (env === 'production'){
         return merge([
             common,
-            extractCSS(),
             uglifyJS()
         ]);
     }
@@ -63,7 +63,6 @@ module.exports = (env) => {
         return merge([
             common,
             devServer(),
-            extractCSS(),
             {
               devtool: 'inline-source-map'
             }
