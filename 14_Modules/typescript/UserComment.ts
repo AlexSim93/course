@@ -21,4 +21,4 @@ class UserComment extends Comment implements IComment{
     this.rate--;
   }
 }
-export {UserComment};
+export default UserComment;

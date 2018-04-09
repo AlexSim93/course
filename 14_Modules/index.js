@@ -1,17 +1,17 @@
-let express = require('express');
-let bodyParser = require('body-parser');
-let {Comment} = require('./src/Comment');
-let {AdComment} = require('./src/AdComment');
-let {UserComment} = require('./src/UserComment');
+import express from 'express';
+import bodyParser from 'body-parser';
+import {Comment} from './src/Comment';
+import AdComment from './src/AdComment';
+import UserComment from './src/UserComment';
 
-let app = express();
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-let comment = new Comment(0, 'Автор', 'Текст комментария');
-let adComment = new AdComment(1, 'Компания', 'Контент', 'Ссылка');
-let userComment = new UserComment(2, 'Пользователь', 'Текст пользователя', new Date());
+const comment = new Comment(0, 'Автор', 'Текст комментария');
+const adComment = new AdComment(1, 'Компания', 'Контент', 'Ссылка');
+const userComment = new UserComment(2, 'Пользователь', 'Текст пользователя', new Date());
 
 app.get('/', (req, res)=>{
     res.send(`<p>

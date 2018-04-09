@@ -19,4 +19,4 @@ class AdComment extends Comment implements IComment {
     this.isHidden = true;
   }
 }
-export {AdComment};
+export default AdComment;
