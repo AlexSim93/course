@@ -12,7 +12,7 @@ const MovieInfo = ({movie}) => (
             <div>Overview: <span>{movie.overview}</span></div>
             <div>Budget: <span>{movie.budget}</span></div>
             <div>Revenue: <span>{movie.revenue}</span></div>
-            <div>Genres: {movie.genres.map((element, index )=> <span key={index}> {element} </span>)}</div>
+            {/* <div>Genres: {movie.genres.map((element, index )=> <span key={index}> {element} </span>)}</div> */}
         </section>
     </div>
     );
