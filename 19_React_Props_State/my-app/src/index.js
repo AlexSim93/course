@@ -9,10 +9,11 @@ class App extends React.Component {
         movies: [],
         isFormOpened: false,
         formData: {
-            id: 0,
+            id: null,
             title: '',
             tagline: '',
             poster_path: '',
+            overview: '',
             isNewMovie: true
         }
     }
@@ -22,14 +23,16 @@ class App extends React.Component {
         .then(response=>response.json())
         .then(arr=> this.setState({movies: arr.data}))
     }
-/*
-    Here is 2 handlers. onEdit and onAdd. Both of them should open the same form.
-    It can be done with isFormOpened to true. I can create new state property(formData).
-    If it is onEdit, then we pass data to that object. If it is onAdd then we set data to ''.
-
-*/ 
-    onAddMovie = () => {
-        
+ 
+    onAdd = () => {
+        this.setState({
+            id:  null,
+            title: '',
+            tagline: '',
+            poster_path: '',
+            overview: '',
+            isNewMovie: true
+        });
     }
 
     onSubmitForm = (formData) => {    
@@ -39,14 +42,19 @@ class App extends React.Component {
         });
     }
 
+    onCancelForm = () => {
+        this.setState({isFormOpened: false});
+    }
+
     onEdit = (movie) => {
-        const {id, title, tagline, poster_path} = movie;
+        const {id, title, tagline, poster_path, overview} = movie;
         this.setState({
             formData: {
                 id,
                 title,
                 tagline,
                 poster_path,
+                overview,
                 isNewMovie: false
             },
             isFormOpened: true
@@ -61,7 +69,7 @@ class App extends React.Component {
         return (
         <div>
             <AddMovie onAdd={this.onAdd}/>
-            {this.state.isFormOpened ? <MovieForm formData={this.state.formData} onSubmitForm={this.onSubmitForm}/> : null}
+            {this.state.isFormOpened ? <MovieForm formData={this.state.formData} onSubmitForm={this.onSubmitForm} onCancelForm={this.onCancelForm}/> : null}
             <MovieList movies={this.state.movies} onEdit={this.onEdit} onDelete={this.onDelete}/>
         </div>
         );
