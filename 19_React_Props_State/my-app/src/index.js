@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import MovieList from './Components/MovieList';
 import AddMovie from './Components/AddMovie';
 import MovieForm from './Containers/MovieForm';
+import uniqid from 'uniqid';
 
-class App extends React.Component {
+class App extends Component {
     state = {
         movies: [],
         isFormOpened: false,
@@ -26,20 +27,41 @@ class App extends React.Component {
  
     onAdd = () => {
         this.setState({
-            id:  null,
-            title: '',
-            tagline: '',
-            poster_path: '',
-            overview: '',
-            isNewMovie: true
+            formData: {
+                id:  null,
+                title: '',
+                tagline: '',
+                poster_path: '',
+                overview: '',
+                isNewMovie: true
+            },
+            isFormOpened: true
         });
     }
 
-    onSubmitForm = (formData) => {    
-        this.setState({
-            movies: this.state.movies.map(element => element.id === formData.id ? formData : element),
-            isFormOpened: false
-        });
+    onSubmitForm = (formData) => {
+        const {title, tagline, poster_path, overview} = formData;
+        if(this.state.formData.isNewMovie){
+            this.setState({
+                movies: [
+                    ...this.state.movies,
+                    {
+                        id: uniqid(),
+                        title,
+                        tagline,
+                        poster_path,
+                        overview
+                    }
+                ],
+                isFormOpened: false
+            });  
+        } else {
+            this.setState({
+                movies: this.state.movies.map(element => element.id === formData.id ? formData : element),
+                isFormOpened: false
+            });
+        }
+        
     }
 
     onCancelForm = () => {
@@ -61,7 +83,7 @@ class App extends React.Component {
         });
     }
 
-    onDelete= (movie) =>{
+    onDelete = (movie) =>{
         this.setState({movies: this.state.movies.filter(element => element !== movie)});
     }
 
