@@ -1,5 +1,9 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import classNames from 'classnames';
+import Button from '../Button/Button.jsx';
+
+import './MovieForm.scss';
 
 const MovieForm = ({formData, onSubmitForm, onCancelForm, title}) => {
     let titleInput = React.createRef(); 
@@ -7,8 +11,7 @@ const MovieForm = ({formData, onSubmitForm, onCancelForm, title}) => {
     let posterPathInput = React.createRef();
     let overviewInput = React.createRef();
     return (
-        <div>
-            <h2>{title}</h2>
+        <div className={classNames('app__form-container')}>
             <form onSubmit={(evt) => {
                 evt.preventDefault();
                 onSubmitForm({
@@ -18,26 +21,29 @@ const MovieForm = ({formData, onSubmitForm, onCancelForm, title}) => {
                     poster_path: posterPathInput.current.value,
                     overview: overviewInput.current.value
                 });
-            }}>
-                <div>
-                    <label htmlFor='title-input'>Title: </label>
-                    <input type='text' ref={titleInput} name='title' id='title-input' defaultValue={formData.title}  required />
+            }}
+            className={classNames('movie-form')}
+            >
+                <h2 className={classNames('movie-form__title')}>{title}</h2>
+                <div className={classNames('movie-form__input-container')}>
+                    <label className={classNames('movie-form__label')} htmlFor='title-input'>Title: </label>
+                    <input className={classNames('movie-form__input')} type='text' ref={titleInput} name='title' id='title-input' defaultValue={formData.title}  required />
                 </div>
-                <div>
-                    <label htmlFor='tagline-input'>Tagline: </label>
-                    <input type='text' ref={taglineInput} name='tagline' id='tagline-input' defaultValue={formData.tagline} required />
+                <div className={classNames('movie-form__input-container')}>
+                    <label className={classNames('movie-form__label')} htmlFor='tagline-input'>Tagline: </label>
+                    <input className={classNames('movie-form__input')} type='text' ref={taglineInput} name='tagline' id='tagline-input' defaultValue={formData.tagline} required />
                 </div>
-                <div>
-                    <label htmlFor='poster_path-input'>Poster path: </label>
-                    <input type='url' ref={posterPathInput} name='poster_path' id='poster_path-input' defaultValue={formData.poster_path} required/>
+                <div className={classNames('movie-form__input-container')}>
+                    <label className={classNames('movie-form__label')} htmlFor='poster_path-input'>Poster path: </label>
+                    <input className={classNames('movie-form__input')} type='url' ref={posterPathInput} name='poster_path' id='poster_path-input' defaultValue={formData.poster_path} required/>
                 </div>
-                <div>
-                    <label htmlFor='overview-input'>Overview: </label>
-                    <input type='text' ref={overviewInput} name='overview' id='overview-input' defaultValue={formData.overview} required/>
+                <div className={classNames('movie-form__input-container')}>
+                    <label className={classNames('movie-form__label')} htmlFor='overview-input'>Overview: </label>
+                    <input className={classNames('movie-form__input')} type='text' ref={overviewInput} name='overview' id='overview-input' defaultValue={formData.overview} required/>
                 </div>
-                <div>
-                    <button type='submit'>Submit</button>
-                    <button type='button' onClick={onCancelForm}>Cancel</button>
+                <div className={classNames('movie-form__button-container')}>
+                    <Button modifiers={['button_theme_success']} mix='movie-form__button' type='submit'>Submit</Button>
+                    <Button onClick={onCancelForm} mix='movie-form__button'>Cancel</Button>
                 </div>
             </form>
         </div>

@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import Header from '../../Components/Header/Header.jsx'
-import MovieList from '../../Components/MovieList/MovieList.jsx';
+import classNames from 'classnames';
+import Header from '../../Components/Header/Header.jsx';
+import Movies from '../../Components/Movies/Movies.jsx';
 import AddMovie from '../../Components/AddMovie/AddMovie.jsx';
 import MovieForm from '../../Components/MovieForm/MovieForm.jsx';
 import uniqid from 'uniqid';
+
+import './App.scss';
 
 export default class App extends Component {
 
@@ -90,11 +93,11 @@ export default class App extends Component {
 
     render(){
         return (
-        <div>
+        <div className={classNames('app')}>
             <Header />
             <AddMovie onAdd={this.onAdd}/>
             {this.state.isFormOpened ? <MovieForm title={this.state.isAddNewMovie ? 'Adding movie' : 'Editing movie'} formData={this.state.formData} onSubmitForm={this.onSubmitForm} onCancelForm={this.onCancelForm}/> : null}
-            <MovieList movies={this.state.movies} onEdit={this.onEdit} onDelete={this.onDelete}/>
+            <Movies movies={this.state.movies} onEdit={this.onEdit} onDelete={this.onDelete}/>
         </div>
         );
     }

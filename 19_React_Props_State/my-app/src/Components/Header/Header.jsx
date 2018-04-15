@@ -1,9 +1,11 @@
 import React from 'react';
+import classNames from 'classnames';
+
+import './Header.scss';
 
 const Header = () => (
-    <header>
-        <h1>Movie</h1>
-        <h2>List of movies</h2>
+    <header className={classNames('header')}>
+        <h1 className={classNames('header__title')}>Movies</h1>
     </header>
 );
 

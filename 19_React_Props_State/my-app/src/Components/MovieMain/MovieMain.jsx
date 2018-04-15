@@ -1,13 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import classNames from 'classnames';
 import MoviePoster from '../MoviePoster/MoviePoster.jsx';
 import MovieInfo from '../MovieInfo/MovieInfo.jsx';
 
-
-import './MovieMain.scss';
-
 const MovieMain = ({movie}) => (
-    <div>
+    <div className={classNames('movie__main')}>
         <MoviePoster movie={movie} />
         <MovieInfo movie={movie} />
     </div>
