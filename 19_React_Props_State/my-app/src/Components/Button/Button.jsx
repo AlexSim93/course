@@ -13,7 +13,7 @@ Button.defaultProps = {
 Button.propTypes = {
     type: propTypes.oneOf(['submit', 'button', 'reset']),
     onClick: propTypes.func,
-    modifiers: propTypes.arrayOf(propTypes.string),
+    modifiers: propTypes.oneOfType([propTypes.arrayOf(propTypes.string), propTypes.string]),
     mix: propTypes.string
 };
 

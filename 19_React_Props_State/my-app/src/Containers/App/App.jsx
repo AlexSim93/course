@@ -96,7 +96,11 @@ export default class App extends Component {
         <div className={classNames('app')}>
             <Header />
             <AddMovie onAdd={this.onAdd}/>
-            {this.state.isFormOpened ? <MovieForm title={this.state.isAddNewMovie ? 'Adding movie' : 'Editing movie'} formData={this.state.formData} onSubmitForm={this.onSubmitForm} onCancelForm={this.onCancelForm}/> : null}
+            {this.state.isFormOpened ? <MovieForm 
+                title={this.state.isAddNewMovie ? 'Adding movie' : 'Editing movie'} 
+                formData={this.state.formData} 
+                onSubmitForm={this.onSubmitForm} 
+                onCancelForm={this.onCancelForm}/> : null}
             <Movies movies={this.state.movies} onEdit={this.onEdit} onDelete={this.onDelete}/>
         </div>
         );

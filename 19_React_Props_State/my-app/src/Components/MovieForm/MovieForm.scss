@@ -24,8 +24,19 @@
         border-radius: 5px;
         border: 1px solid grey;
     }
+    &__textarea {
+        box-sizing: border-box;
+        display: block;
+        height: 150px;
+        width: 100%;
+        resize: vertical;
+        font-size: 18px;
+        border-radius: 5px;
+        border: 1px solid grey; 
+    }
     &__button-container {
-        text-align: end;
+        display: flex;
+        justify-content: flex-end;
         padding: 10px 15px;
     }
     &__button {

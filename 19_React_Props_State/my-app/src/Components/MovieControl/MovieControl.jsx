@@ -5,8 +5,8 @@ import Button from '../Button/Button.jsx';
 
 const MovieControl = ({onEdit, onDelete}) => (
     <div className={classNames('movie__control')}>
-        <Button onClick={onEdit} mix={'movie__button'}>Edit</Button>
-        <Button onClick={onDelete} modifiers={['button_theme_danger']} mix={'movie__button'}>Delete</Button>
+        <Button onClick={onEdit} mix='movie__button'>Edit</Button>
+        <Button onClick={onDelete} modifiers='button_theme_danger' mix='movie__button'>Delete</Button>
     </div>
 );
 
