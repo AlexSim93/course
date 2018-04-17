@@ -25,6 +25,12 @@ export default class App extends Component {
         }
     }
 
+    componentDidMount(){
+        fetch('https://react-cdp-api.herokuapp.com/movies')
+        .then(response=>response.json())
+        .then(arr=> this.setState({movies: arr.data}))
+    }
+
     getNumberInsteadOfArray = () => {
         this.setState({
             movies: 1231
@@ -56,12 +62,6 @@ export default class App extends Component {
                 }
             ],
         });
-    }
-    
-    componentDidMount(){
-        fetch('https://react-cdp-api.herokuapp.com/movies')
-        .then(response=>response.json())
-        .then(arr=> this.setState({movies: arr.data}))
     }
  
     onAdd = () => {
@@ -132,13 +132,11 @@ export default class App extends Component {
             <Header />
             <ErrorControl getNumberInsteadOfArray={this.getNumberInsteadOfArray} getIncorrectData={this.getIncorrectData} getDataWithoutTitle={this.getDataWithoutTitle}/>
             <AddMovie onAdd={this.onAdd}/>
-            <ErrorBoundary>
             {this.state.isFormOpened ? <MovieForm 
                 title={this.state.isAddNewMovie ? 'Adding movie' : 'Editing movie'} 
                 formData={this.state.formData} 
                 onSubmitForm={this.onSubmitForm} 
                 onCancelForm={this.onCancelForm}/> : null}
-            </ErrorBoundary>
             <ErrorBoundary>
               <Movies movies={this.state.movies} onEdit={this.onEdit} onDelete={this.onDelete}/>
             </ErrorBoundary>
