@@ -60,7 +60,9 @@ class AppBodyUI extends Component {
 
 const AppBody = log(AppBodyUI);
 
-const mapUrlsToProps = {ip: {url: 'https://httpbin.org/ip', path: 'origin'}};
+const mapUrlsToProps = {
+  ip: { url:'https://httpbin.org/ip', path: 'origin' },
+};
 
 const AppBodyWithData = withData(mapUrlsToProps)(AppBody);
 

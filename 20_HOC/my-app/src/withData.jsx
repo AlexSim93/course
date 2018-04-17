@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { map } from 'lodash';
+import { map, get } from 'lodash';
 
 export const withData = (mapUrlsToProps) => (WrappedComponent) =>(
     class extends Component {
         state = {};
         static displayName = 'AppWithData';
         componentDidMount() {
-            map(mapUrlsToProps, (url, key) => {
-                fetch(url)
-                    .then(response => response.json())
-                    .then((data) => this.setState({ [key]: data }))
+            map(mapUrlsToProps, (propDef, key) => {
+                fetch(propDef.url)
+                    .then(response =>  response.json())
+                    .then((data) => this.setState({ [key]: get(data, propDef.path , {origin: 'something'})}))
             });
         }
         render() {
