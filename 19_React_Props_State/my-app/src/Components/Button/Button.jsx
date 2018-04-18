@@ -4,7 +4,12 @@ import classNames from 'classnames';
 
 import './Button.scss';
 
-const Button = ({type, onClick, children, modifiers, mix}) => (<button className={classNames('button', modifiers, mix)} type={type} onClick={onClick}>{children}</button>);
+const Button = ({type, onClick, children, modifiers, mix}) => (
+    <button className={classNames('button', modifiers, mix)} 
+        type={type} 
+        onClick={onClick}>
+        {children}
+    </button>);
 
 Button.defaultProps = {
     type: 'button'
