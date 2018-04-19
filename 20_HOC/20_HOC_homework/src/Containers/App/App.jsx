@@ -27,8 +27,14 @@ export default class App extends Component {
 
     componentDidMount(){
         fetch('https://react-cdp-api.herokuapp.com/movies')
-        .then(response=>response.json())
+        .then(response=>{
+            if(response.ok){
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        })
         .then(arr=> this.setState({movies: arr.data}))
+        .catch(err => console.log('Error in AJAX-Request', err))
     }
 
     getNumberInsteadOfArray = () => {
