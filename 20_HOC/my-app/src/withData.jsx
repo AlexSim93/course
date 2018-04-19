@@ -3,17 +3,26 @@ import { map, get } from 'lodash';
 
 export const withData = (mapUrlsToProps) => (WrappedComponent) =>(
     class extends Component {
-        state = {};
+        state = {}
         static displayName = 'AppWithData';
-        componentDidMount() {
+        fetchData = () => {
             map(mapUrlsToProps, (propDef, key) => {
                 fetch(propDef.url)
                     .then(response =>  response.json())
-                    .then((data) => this.setState({ [key]: get(data, propDef.path , {origin: 'something'})}))
+                    .then((data) => this.setState({ 
+                        [key]: get(data, propDef.path , {currently: {data: 'no data'}}),
+                        time: new Date(get(data, 'currently.time', 0) * 1000)
+                    }))
             });
         }
+        updateData = () => {
+            this.fetchData();
+        }
+        componentDidMount() {
+            this.fetchData();
+        }
         render() {
-            return (<WrappedComponent {...this.state} {...this.props}>{this.props.children}</WrappedComponent>);
+            return (<WrappedComponent  updateData={this.updateData} {...this.state} {...this.props}>{this.props.children}</WrappedComponent>);
         }
     }
 );

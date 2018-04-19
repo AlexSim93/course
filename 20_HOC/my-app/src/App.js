@@ -19,39 +19,50 @@ const AppHeaderUI = () => (
 const AppHeader = log(AppHeaderUI);
 
 class AppBodyUI extends Component {
+
   static propTypes = {
-    ip: PropTypes.shape({
-      origin: PropTypes.string
+    weather: PropTypes.shape({
+      time: PropTypes.number.isRequired,
+      temperature: PropTypes.number.isRequired,
+      pressure: PropTypes.number.isRequired,
+      windSpeed: PropTypes.number.isRequired
     }),
-    uuid: PropTypes.shape({
-      uuid: PropTypes.string
-    })
+    time: PropTypes.instanceOf(Date)
   }
   static defaultProps = {
-    ip: {
-      origin: 'id something'
+    weather: {
+      time: 0,
+      temperature: -273,
+      pressure: 0,
+      windSpeed: 0
     },
-    uuid: {
-      uuid: 'uuid'
-    }
+    time: new Date()
   }
-  state = {
-    hasError: false
-  }
+  static displayName = 'AppBodyUI';
 
-  onClick = () => {
-    this.setState({hasError: true});
-  }
+  getDateOptions = () => (['en', {timeZone: 'Europe/London'}]);
+
   render(){
-    // if(this.state.hasError){
-    //   const {x} = this.state.y;
-    // }
     return (
-    <p className="App-intro">
-      <span>{get(this.props, 'ip.origin', 'something...')}</span>
-      To get started, edit <code>src/App.js</code> and save to reload.
-      <button onClick={this.onClick}>error</button>
-    </p>
+    <div className="App-intro">
+      <h2>Weather in London</h2>
+      <div>
+        <p>Date: <span>{get(this.props, 'time', new Date()).toLocaleDateString(...this.getDateOptions())}</span></p>
+      </div>
+      <div>
+        <p>Time: <span>{get(this.props, 'time', new Date()).toLocaleTimeString(...this.getDateOptions())}</span></p>
+      </div>
+      <div>
+        <p>Temperature: <span>{get(this.props, 'weather.temperature', 'no data received')}</span> &deg;F</p>
+      </div>
+      <div>
+        <p>Pressure: <span>{get(this.props, 'weather.pressure', 'no data received')}</span> mbar</p>
+      </div>
+      <div>
+        <p>Wind speed: <span>{get(this.props, 'weather.windSpeed', 'no data received')}</span> m/s</p>
+      </div>
+      <button onClick={this.props.updateData}>Update data</button>
+    </div>
     );
   }
 }
@@ -61,7 +72,10 @@ class AppBodyUI extends Component {
 const AppBody = log(AppBodyUI);
 
 const mapUrlsToProps = {
-  ip: { url:'https://httpbin.org/ip', path: 'origin' },
+  weather: { 
+    url:'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/2e55f8a910029d968e0414c68e71d5e4/51,0', 
+    path: 'currently' 
+  },
 };
 
 const AppBodyWithData = withData(mapUrlsToProps)(AppBody);
