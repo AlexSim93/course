@@ -5,6 +5,7 @@ export const withData = (mapUrlsToProps) => (WrappedComponent) =>(
     class extends Component {
         state = {}
         static displayName = 'AppWithData';
+
         fetchData = () => {
             map(mapUrlsToProps, (propDef, key) => {
                 fetch(propDef.url)
@@ -27,8 +28,15 @@ export const withData = (mapUrlsToProps) => (WrappedComponent) =>(
         componentDidMount() {
             this.fetchData();
         }
-        render() {
-            return (<WrappedComponent  updateData={this.updateData} {...this.state} {...this.props}>{this.props.children}</WrappedComponent>);
+        render() {     
+            return (
+                <WrappedComponent  
+                    updateData={this.updateData} 
+                    {...this.state} 
+                    {...this.props}>
+                        {this.props.children}
+                </WrappedComponent>
+            );
         }
     }
 );
