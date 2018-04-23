@@ -1,0 +1,12 @@
+@import '../../scss/helpers/variables';
+.header {
+    padding: 5px 0;
+    background: $header-bg;
+    &__title {
+        margin: 5px 0;
+        color: $header-title-color;        
+        font-size: 38px;
+        font-style: italic;
+        text-align: center;
+    }
+}

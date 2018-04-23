@@ -1,0 +1,40 @@
+@import '../../scss/helpers/variables';
+.button {
+    height: 30px;
+    width: 120px;
+    background: $btn-bg;
+    color: $btn-color;
+    font-size: 18px;
+    font-weight: bold;
+    border: 0px solid white;
+    border-radius: 5px;
+    &:hover {
+        background: lighten($btn-bg, 5%);
+    }
+    &:active {
+        background: darken($btn-bg, 5%);
+    }
+    &_theme_success {
+        background: $btn-submit-bg;
+        &:hover {
+            background: lighten($btn-submit-bg, 5%);
+        }
+        &:active {
+            background: darken($btn-submit-bg, 5%);
+        }
+    }
+    &_theme_danger {
+        background: $btn-reset-bg;
+        &:hover {
+            background: lighten($btn-reset-bg, 5%);
+        }
+        &:active {
+            background: darken($btn-reset-bg, 5%);
+        }
+    }
+    &_size_lg {
+        height: 40px;
+        width: 180px;
+        font-size: 21px;
+    }
+}
