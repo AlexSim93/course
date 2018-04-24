@@ -14,14 +14,7 @@ export default class App extends Component {
     state = {
         movies: [],
         isFormOpened: false,
-        isAddNewMovie: false,
-        formData: {
-            id: null,
-            title: '',
-            tagline: '',
-            poster_path: '',
-            overview: ''
-        }
+        currentMovie: {}
     }
 
     componentDidMount() {
@@ -32,21 +25,21 @@ export default class App extends Component {
 
     onAdd = () => {
         this.setState({
-            formData: {
-                id: null,
-                title: '',
-                tagline: '',
-                poster_path: '',
-                overview: ''
-            },
-            isAddNewMovie: true,
+            currentMovie: {},
             isFormOpened: true
         });
     }
 
     onSubmitForm = (formData) => {
         const { title, tagline, poster_path, overview } = formData;
-        if (this.state.isAddNewMovie) {
+        if (this.state.movies.some(movie => movie === this.state.currentMovie)) {
+            this.setState({
+                movies: this.state.movies.map(
+                    element => element === this.state.currentMovie ?  
+                    Object.assign(element, formData) : element),
+                isFormOpened: false
+            });
+        } else {
             this.setState({
                 movies: [
                     ...this.state.movies,
@@ -60,11 +53,6 @@ export default class App extends Component {
                 ],
                 isFormOpened: false
             });
-        } else {
-            this.setState({
-                movies: this.state.movies.map(element => element.id === formData.id ? formData : element),
-                isFormOpened: false
-            });
         }
 
     }
@@ -74,16 +62,8 @@ export default class App extends Component {
     }
 
     onEdit = (movie) => {
-        const { id, title, tagline, poster_path, overview } = movie;
         this.setState({
-            formData: {
-                id,
-                title,
-                tagline,
-                poster_path,
-                overview,
-            },
-            isAddNewMovie: false,
+            currentMovie: movie,
             isFormOpened: true
         });
     }
@@ -101,11 +81,11 @@ export default class App extends Component {
             <div className={classNames('app')}>
                 <Header />
                 <AddMovie onAdd={this.onAdd} />
-                {this.state.isFormOpened ? <MovieForm
-                    title={this.state.isAddNewMovie ? 'Adding movie' : 'Editing movie'}
-                    formData={this.state.formData}
+                {this.state.isFormOpened && <MovieForm
+                    formTitle={this.state.currentMovie.id ? 'Editing movie' : 'Adding movie'}
+                    currentMovie={this.state.currentMovie}
                     onSubmitForm={this.onSubmitForm}
-                    onCancelForm={this.onCancelForm} /> : null}
+                    onCancelForm={this.onCancelForm} />}
                 <Movies movies={this.state.movies}
                     onErrorPoster={this.onErrorPoster}
                     onEdit={this.onEdit}
