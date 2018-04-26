@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 const propTypes = {
-  text: PropTypes.string
+  text: PropTypes.number
 };
 
 const Display = ({text}) => {

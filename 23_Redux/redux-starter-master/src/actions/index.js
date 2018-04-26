@@ -1,29 +1,23 @@
-const INCREMENT_FIRST = 'INCREMENT_FIRST';
-const DECREMENT_FIRST = 'DECREMENT_FIRST';
-const INCREMENT_SECOND = 'INCREMENT_SECOND';
-const DECREMENT_SECOND = 'DECREMENT_SECOND';
+
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
 const SUM = 'SUM';
+const FIRST_NUMBER = 'FIRST_NUMBER';
+const SECOND_NUMBER = 'SECOND_NUMBER';
 
-const incrementFirst = () => ({
-    type: INCREMENT_FIRST
+const increment = (number) => ({
+    type: INCREMENT,
+    number
 });
-
-const decrementFirst = () => ({
-    type: DECREMENT_FIRST
+const decrement = (number) => ({
+    type: DECREMENT,
+    number
 });
-
-const incrementSecond = () => ({
-    type: INCREMENT_SECOND
-});
-
-const decrementSecond = () => ({
-    type: DECREMENT_SECOND
-});
-
 const sum = (firstValue, secondValue) => ({
     type: SUM,
     firstValue,
     secondValue
 });
 
-export {incrementFirst, decrementFirst, incrementSecond, decrementSecond, INCREMENT_FIRST, DECREMENT_FIRST, INCREMENT_SECOND, DECREMENT_SECOND, SUM, sum};
+
+export {INCREMENT, DECREMENT, SUM, increment, decrement, sum, FIRST_NUMBER, SECOND_NUMBER};

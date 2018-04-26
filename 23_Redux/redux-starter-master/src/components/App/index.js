@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import store from '../../store/index';
 import Display from '../Display/index';
 import Button from '../Button/index';
-import {incrementFirst, decrementFirst, incrementSecond, decrementSecond, sum} from '../../actions/index';
+import {increment, decrement, sum, FIRST_NUMBER, SECOND_NUMBER} from '../../actions/index';
 import './style.css';
 
 class App extends Component {
@@ -20,28 +20,27 @@ class App extends Component {
     this.unsubscribe();
   }
   handleChange = () => {
-    
-    this.setState({firstNumber: store.getState().firstValue, secondNumber: store.getState().secondValue, sum: store.getState().sum});
+    this.setState({firstNumber: store.getState().values[FIRST_NUMBER], secondNumber: store.getState().values[SECOND_NUMBER], sum: store.getState().sum});
   }
 
-  handleIncrement = () => {
-    store.dispatch(incrementFirst());
-    store.dispatch(sum(store.getState().firstValue, store.getState().secondValue));
+  handleFirstIncrement = () => {
+    store.dispatch(increment(FIRST_NUMBER));
+    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
   }
 
-  handleDecrement = () => {
-    store.dispatch(decrementFirst());
-    store.dispatch(sum(store.getState().firstValue, store.getState().secondValue));
+  handleFirstDecrement = () => {
+    store.dispatch(decrement(FIRST_NUMBER));
+    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
   }
 
   handleSecondIncrement = () => {
-    store.dispatch(incrementSecond());
-    store.dispatch(sum(store.getState().firstValue, store.getState().secondValue));
+    store.dispatch(increment(SECOND_NUMBER));
+    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
   }
 
   handleSecondDecrement = () => {
-    store.dispatch(decrementSecond());
-    store.dispatch(sum(store.getState().firstValue, store.getState().secondValue));
+    store.dispatch(decrement(SECOND_NUMBER));
+    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
   }
 
   render() {
@@ -49,8 +48,8 @@ class App extends Component {
       <div className="app">
         <Display text={this.state.firstNumber} />
         <div>
-          <Button text="-" onClick={this.handleDecrement}/>
-          <Button text="+" onClick={this.handleIncrement}/>
+          <Button text="-" onClick={this.handleFirstDecrement}/>
+          <Button text="+" onClick={this.handleFirstIncrement}/>
         </div>
         <Display text={this.state.secondNumber} />
         <div>

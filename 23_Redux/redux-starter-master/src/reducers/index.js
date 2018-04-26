@@ -1,30 +1,25 @@
-import {INCREMENT_FIRST, DECREMENT_FIRST, INCREMENT_SECOND, DECREMENT_SECOND, SUM} from '../actions/index';
-import {combineReducers} from 'redux';
+import { INCREMENT, DECREMENT, SUM, FIRST_NUMBER, SECOND_NUMBER } from '../actions/index';
+import { combineReducers } from 'redux';
 
-const firstNumberHandler = (state = 0, action) => {
+const changeNumberReducer = (state = {[FIRST_NUMBER]: 0, [SECOND_NUMBER]: 0}, action) => {
     switch(action.type){
-        case INCREMENT_FIRST:
-            return state + 1;
-        case DECREMENT_FIRST:
-            return state - 1;
+        case INCREMENT:
+            return {
+                ...state,
+                [action.number]: state[action.number] + 1
+            };
+        case DECREMENT:
+            return {
+                ...state,
+                [action.number]: state[action.number] - 1
+            };
         default:
             return state;
     }
-};
+}
 
-const secondNumberHandler = (state = 0, action) => {
-    switch(action.type){
-        case INCREMENT_SECOND:
-            return state + 1;
-        case DECREMENT_SECOND:
-            return state - 1;
-        default:
-            return state;
-    }
-};
-
-const handleSum = (state = 0, action) => {
-    switch(action.type){
+const sumReducer = (state = 0, action) => {
+    switch (action.type){
         case SUM:
             return action.firstValue + action.secondValue;
         default:
@@ -32,6 +27,6 @@ const handleSum = (state = 0, action) => {
     }
 }
 
-const reducers = combineReducers({firstValue: firstNumberHandler, secondValue: secondNumberHandler, sum: handleSum});
+const reducers = combineReducers({values: changeNumberReducer, sum: sumReducer});
 
 export default reducers;
