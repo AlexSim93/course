@@ -1,23 +1,17 @@
 
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
-const SUM = 'SUM';
+const INCREASE = 'INCREASE';
+const DECREASE = 'DECREASE';
 const FIRST_NUMBER = 'FIRST_NUMBER';
 const SECOND_NUMBER = 'SECOND_NUMBER';
 
-const increment = (number) => ({
-    type: INCREMENT,
+const increase = (number) => ({
+    type: INCREASE,
     number
 });
-const decrement = (number) => ({
-    type: DECREMENT,
+const decrease = (number) => ({
+    type: DECREASE,
     number
-});
-const sum = (firstValue, secondValue) => ({
-    type: SUM,
-    firstValue,
-    secondValue
 });
 
 
-export {INCREMENT, DECREMENT, SUM, increment, decrement, sum, FIRST_NUMBER, SECOND_NUMBER};
+export {INCREASE, DECREASE, increase, decrease, FIRST_NUMBER, SECOND_NUMBER};

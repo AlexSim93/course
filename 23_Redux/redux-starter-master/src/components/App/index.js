@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import store from '../../store/index';
 import Display from '../Display/index';
 import Button from '../Button/index';
-import {increment, decrement, sum, FIRST_NUMBER, SECOND_NUMBER} from '../../actions/index';
+import {increase, decrease, FIRST_NUMBER, SECOND_NUMBER} from '../../actions/index';
 import './style.css';
 
 class App extends Component {
@@ -20,27 +20,26 @@ class App extends Component {
     this.unsubscribe();
   }
 
+  handleChange = () => {
+    this.setState({firstNumber: store.getState()[FIRST_NUMBER], secondNumber: store.getState()[SECOND_NUMBER], sum: store.getState().sum});
+  }
+
   changeNumberHandler = (number, action) => (()=>{
     store.dispatch(action(number));
-    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
   })
-
-  handleChange = () => {
-    this.setState({firstNumber: store.getState().values[FIRST_NUMBER], secondNumber: store.getState().values[SECOND_NUMBER], sum: store.getState().sum});
-  }
 
   render() {
     return (
       <div className="app">
         <Display text={this.state.firstNumber} />
         <div>
-          <Button text="-" onClick={this.changeNumberHandler(FIRST_NUMBER, decrement)}/>
-          <Button text="+" onClick={this.changeNumberHandler(FIRST_NUMBER, increment)}/>
+          <Button text="-" onClick={this.changeNumberHandler(FIRST_NUMBER, decrease)}/>
+          <Button text="+" onClick={this.changeNumberHandler(FIRST_NUMBER, increase)}/>
         </div>
         <Display text={this.state.secondNumber} />
         <div>
-          <Button text="-" onClick={this.changeNumberHandler(SECOND_NUMBER, decrement)}/>
-          <Button text="+" onClick={this.changeNumberHandler(SECOND_NUMBER, increment)}/>
+          <Button text="-" onClick={this.changeNumberHandler(SECOND_NUMBER, decrease)}/>
+          <Button text="+" onClick={this.changeNumberHandler(SECOND_NUMBER, increase)}/>
         </div>
         <Display text={this.state.sum} />
       </div>
