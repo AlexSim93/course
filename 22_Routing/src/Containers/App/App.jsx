@@ -4,7 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from '../../Components/Header/Header.jsx';
 import Movies from '../../Components/Movies/Movies.jsx';
 import AddMovie from '../../Components/AddMovie/AddMovie.jsx';
-import MovieForm from '../../Components/MovieForm/MovieForm.jsx';
+import MovieForm from '../MovieForm/MovieForm.jsx';
 import uniqid from 'uniqid';
 
 import default_poster from '../../images/default_poster.jpg';
@@ -58,9 +58,7 @@ export default class App extends Component {
                 <Header />
                 <AddMovie />
                 <Switch>
-                    <Route exact path='/'>
-                        <Redirect to='/list/' />
-                    </Route>
+                    <Redirect exact from='/' to='/list' />
                     <Route exact path='/list' render={()=>(
                         <Movies 
                             movies={this.state.movies}
