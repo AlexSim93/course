@@ -19,28 +19,14 @@ class App extends Component {
   componentWillUnmount(){
     this.unsubscribe();
   }
+
+  changeNumberHandler = (number, action) => (()=>{
+    store.dispatch(action(number));
+    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
+  })
+
   handleChange = () => {
     this.setState({firstNumber: store.getState().values[FIRST_NUMBER], secondNumber: store.getState().values[SECOND_NUMBER], sum: store.getState().sum});
-  }
-
-  handleFirstIncrement = () => {
-    store.dispatch(increment(FIRST_NUMBER));
-    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
-  }
-
-  handleFirstDecrement = () => {
-    store.dispatch(decrement(FIRST_NUMBER));
-    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
-  }
-
-  handleSecondIncrement = () => {
-    store.dispatch(increment(SECOND_NUMBER));
-    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
-  }
-
-  handleSecondDecrement = () => {
-    store.dispatch(decrement(SECOND_NUMBER));
-    store.dispatch(sum(store.getState().values[FIRST_NUMBER], store.getState().values[SECOND_NUMBER]));
   }
 
   render() {
@@ -48,13 +34,13 @@ class App extends Component {
       <div className="app">
         <Display text={this.state.firstNumber} />
         <div>
-          <Button text="-" onClick={this.handleFirstDecrement}/>
-          <Button text="+" onClick={this.handleFirstIncrement}/>
+          <Button text="-" onClick={this.changeNumberHandler(FIRST_NUMBER, decrement)}/>
+          <Button text="+" onClick={this.changeNumberHandler(FIRST_NUMBER, increment)}/>
         </div>
         <Display text={this.state.secondNumber} />
         <div>
-          <Button text="-" onClick={this.handleSecondDecrement}/>
-          <Button text="+" onClick={this.handleSecondIncrement}/>
+          <Button text="-" onClick={this.changeNumberHandler(SECOND_NUMBER, decrement)}/>
+          <Button text="+" onClick={this.changeNumberHandler(SECOND_NUMBER, increment)}/>
         </div>
         <Display text={this.state.sum} />
       </div>
