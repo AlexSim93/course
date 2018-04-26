@@ -5,7 +5,7 @@ import Movie from '../Movie/Movie.jsx';
 
 import './Movies.scss';
 
-const Movies = ({ movies, onEdit, onDelete, onErrorPoster }) => (
+const Movies = ({ movies, onDelete, onErrorPoster }) => (
     <section className={classNames('movies')}>
         <h2 className={classNames('movies__title')}>List of movies</h2>
         <ul className={classNames('movies__list')}>
@@ -13,7 +13,6 @@ const Movies = ({ movies, onEdit, onDelete, onErrorPoster }) => (
                 <li key={movie.id} className={classNames('movies__list-item')}>
                     <Movie movie={movie}
                         onDelete={onDelete}
-                        onEdit={onEdit}
                         onErrorPoster={onErrorPoster} />
                 </li>)}
         </ul>
@@ -22,7 +21,6 @@ const Movies = ({ movies, onEdit, onDelete, onErrorPoster }) => (
 
 Movies.propTypes = {
     movies: propTypes.arrayOf(propTypes.object),
-    onEdit: propTypes.func.isRequired,
     onDelete: propTypes.func.isRequired,
     onErrorPoster: propTypes.func.isRequired
 };

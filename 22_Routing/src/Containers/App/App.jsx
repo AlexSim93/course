@@ -13,32 +13,14 @@ import './App.scss';
 export default class App extends Component {
 
     state = {
-        movies: [],
-        formData: {
-            id: null,
-            title: '',
-            tagline: '',
-            poster_path: '',
-            overview: ''
-        }
+        movies: []
     }
 
     componentDidMount() {
         fetch('https://react-cdp-api.herokuapp.com/movies')
             .then(response => response.json())
             .then(arr => this.setState({ movies: arr.data }))
-    }
 
-    onAdd = () => {
-        this.setState({
-            formData: {
-                id: null,
-                title: '',
-                tagline: '',
-                poster_path: '',
-                overview: ''
-            }
-        });
     }
 
     onSubmitNewMovie = (formData) => {
@@ -56,23 +38,9 @@ export default class App extends Component {
             ]
         });
     }
-    onSubmitEditMovie = (formData) => {
-        // const { title, tagline, poster_path, overview } = formData;
+    onSubmitEditMovie = (formData, id) => {
         this.setState({
-            movies: this.state.movies.map(element => element.id === formData.id ? formData : element)
-        });
-    }
-
-    onEdit = (movie) => {
-        const { id, title, tagline, poster_path, overview } = movie;
-        this.setState({
-            formData: {
-                id,
-                title,
-                tagline,
-                poster_path,
-                overview,
-            }
+            movies: this.state.movies.map(element => element.id.toString() === id.toString() ? Object.assign(element, formData) : element)
         });
     }
 
@@ -88,7 +56,7 @@ export default class App extends Component {
         return (
             <div className={classNames('app')}>
                 <Header />
-                <AddMovie onAdd={this.onAdd} />
+                <AddMovie />
                 <Switch>
                     <Route exact path='/'>
                         <Redirect to='/list/' />
@@ -97,19 +65,20 @@ export default class App extends Component {
                         <Movies 
                             movies={this.state.movies}
                             onErrorPoster={this.onErrorPoster}
-                            onEdit={this.onEdit}
                             onDelete={this.onDelete}
                         />)}/>
                     <Route exact path='/add'
-                        render={({history})=>(<MovieForm history={history}
-                            title='Adding movie'
-                            formData={this.state.formData}
+                        render={({history, match})=>(<MovieForm history={history}
+                            match={match}
+                            formTitle='Adding movie'
+                            movies={this.state.movies}
                             onSubmitForm={this.onSubmitNewMovie}
                         />)}/>
                     <Route exact path='/edit/:id'
-                        render={({history})=>(<MovieForm history={history}
-                            title='Editing movie'
-                            formData={this.state.formData}
+                        render={({history, match})=>(<MovieForm history={history}
+                            match={match}
+                            formTitle='Editing movie'
+                            movies={this.state.movies}
                             onSubmitForm={this.onSubmitEditMovie}
                         />)}
 

@@ -6,16 +6,15 @@ import MovieControl from '../MovieControl/MovieControl.jsx';
 
 import './Movie.scss';
 
-const Movie = ({movie, onEdit, onDelete, onErrorPoster}) => (
+const Movie = ({movie, onDelete, onErrorPoster}) => (
     <div className={classNames('movie', 'movies__movie')}>
         <MovieMain movie={movie} onErrorPoster={onErrorPoster}/>
-        <MovieControl onEdit={()=>onEdit(movie)} onDelete={()=>onDelete(movie)}  id={movie.id}/>
+        <MovieControl onDelete={()=>onDelete(movie)}  id={movie.id}/>
     </div>
 );
 
 Movie.propTypes = {
     movie: propTypes.object.isRequired,
-    onEdit: propTypes.func.isRequired,
     onDelete: propTypes.func.isRequired,
     onErrorPoster: propTypes.func.isRequired
 };

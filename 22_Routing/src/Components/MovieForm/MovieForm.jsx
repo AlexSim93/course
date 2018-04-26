@@ -6,31 +6,32 @@ import Button from '../Button/Button.jsx';
 
 import './MovieForm.scss';
 
-const MovieForm = ({ formData, onSubmitForm, title, history }) => {
+const MovieForm = ({ movies, onSubmitForm, formTitle, history, match }) => {
     let titleInput, taglineInput, posterPathInput, overviewInput;
+    let currentMovie = movies.find(el => el.id.toString() === match.params.id);
+    let {title, tagline, poster_path, overview} = Object.assign({}, currentMovie);
     return (
         <div className={classNames('app__form-container')}>
             <form onSubmit={(evt) => {
                 evt.preventDefault();
                 onSubmitForm({
-                    id: formData.id,
                     title: titleInput.value,
                     tagline: taglineInput.value,
                     poster_path: posterPathInput.value,
                     overview: overviewInput.value
-                });
+                }, match.params.id);
                 history.push('/list')
             }}
                 className={classNames('movie-form')}
             >
-                <h2 className={classNames('movie-form__title')}>{title}</h2>
+                <h2 className={classNames('movie-form__title')}>{formTitle}</h2>
                 <div className={classNames('movie-form__input-container')}>
                     <label className={classNames('movie-form__label')} htmlFor='title-input'>Title: </label>
                     <input className={classNames('movie-form__input')} 
                         type='text' 
                         ref={input => titleInput = input} 
                         name='title' id='title-input' 
-                        defaultValue={formData.title} 
+                        defaultValue={title} 
                         required />
                 </div>
                 <div className={classNames('movie-form__input-container')}>
@@ -40,7 +41,7 @@ const MovieForm = ({ formData, onSubmitForm, title, history }) => {
                         ref={input => taglineInput = input} 
                         name='tagline' 
                         id='tagline-input' 
-                        defaultValue={formData.tagline} 
+                        defaultValue={tagline} 
                         required />
                 </div>
                 <div className={classNames('movie-form__input-container')}>
@@ -50,7 +51,7 @@ const MovieForm = ({ formData, onSubmitForm, title, history }) => {
                         ref={input => posterPathInput = input} 
                         name='poster_path' 
                         id='poster_path-input' 
-                        defaultValue={formData.poster_path} 
+                        defaultValue={poster_path} 
                         required />
                 </div>
                 <div className={classNames('movie-form__input-container')}>
@@ -60,7 +61,7 @@ const MovieForm = ({ formData, onSubmitForm, title, history }) => {
                         ref={input => overviewInput = input} 
                         name='overview' 
                         id='overview-input' 
-                        defaultValue={formData.overview} 
+                        defaultValue={overview} 
                         required />
                 </div>
                 <div className={classNames('movie-form__button-container')}>
@@ -72,12 +73,12 @@ const MovieForm = ({ formData, onSubmitForm, title, history }) => {
             </form>
         </div>
     );
+    
 };
 
 MovieForm.propTypes = {
-    formData: propTypes.object.isRequired,
     onSubmitForm: propTypes.func.isRequired,
-    title: propTypes.string.isRequired
+    formTitle: propTypes.string.isRequired
 };
 
 export default MovieForm;
