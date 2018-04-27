@@ -55,16 +55,18 @@ export default class App extends Component {
     render() {
         return (
             <div className={classNames('app')}>
-                <Header />
-                <AddMovie />
                 <Switch>
                     <Redirect exact from='/' to='/list' />
                     <Route exact path='/list' render={()=>(
-                        <Movies 
-                            movies={this.state.movies}
-                            onErrorPoster={this.onErrorPoster}
-                            onDelete={this.onDelete}
-                        />)}/>
+                        <div>
+                            <Header />
+                            <AddMovie />
+                            <Movies 
+                                movies={this.state.movies}
+                                onErrorPoster={this.onErrorPoster}
+                                onDelete={this.onDelete}
+                            />
+                        </div>)}/>
                     <Route exact path='/add'
                         render={({history, match})=>(<MovieForm history={history}
                             match={match}
@@ -73,7 +75,7 @@ export default class App extends Component {
                             onSubmitForm={this.onSubmitNewMovie}
                         />)}/>
                     <Route exact path='/edit/:id'
-                        render={({history, match})=>(<MovieForm history={history}
+                        render={({history, match})=>(this.state.movies.some(el => el.id.toString() === match.params.id)&&<MovieForm history={history}
                             match={match}
                             formTitle='Editing movie'
                             movies={this.state.movies}

@@ -12,36 +12,19 @@ class MovieForm extends Component {
         onSubmitForm: PropTypes.func.isRequired,
         movies: PropTypes.array.isRequired
     }
-    state = {
-        title: '',
-        tagline: '',
-        poster_path: '',
-        overview: ''
+    constructor(props){
+        super(props);
+        let {title='', tagline='', poster_path='', overview=''} = this.props.movies.find(el => el.id.toString() === this.props.match.params.id)||{};
+        this.state = {
+            title,
+            tagline,
+            poster_path,
+            overview
+        }
     }
 
     onChange = (evt) => {
         this.setState({[evt.target.name]: evt.target.value});
-    }
-
-    componentDidMount(){
-        let promise = new Promise((resolve, reject)=>{
-            const checkMovie = () => {
-                let currentMovie = this.props.movies.find(element => element.id.toString() === this.props.match.params.id);
-                if(currentMovie){
-                    resolve(currentMovie);
-                }
-            }
-            checkMovie();
-            setTimeout(checkMovie, 1000);
-        });
-        promise.then((movie)=>{
-            this.setState({
-                title: movie.title,
-                tagline: movie.tagline,
-                poster_path: movie.poster_path,
-                overview: movie.overview
-            });
-        });
     }
 
     render(){
