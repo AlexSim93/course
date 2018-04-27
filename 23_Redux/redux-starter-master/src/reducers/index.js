@@ -1,23 +1,31 @@
 import { INCREASE, DECREASE, FIRST_NUMBER, SECOND_NUMBER } from '../actions/index';
 
-const increaseNumber = (initialState, action) => {
-    const newState = Object.assign({}, initialState, {[action.number]: initialState[action.number] + 1});
-    newState.sum = newState[FIRST_NUMBER] + newState[SECOND_NUMBER];
-    return newState;
-};
+const increase = (state, action) => {
+    if(state.hasOwnProperty(FIRST_NUMBER)){
+        return {
+            ...state,
+            [action.number]: state[action.number] + 1 
+        }
+    }
+    return state;
+}
 
-const decreaseNumber = (initialState, action) => {
-    const newState = Object.assign({}, initialState, {[action.number]: initialState[action.number] - 1});
-    newState.sum = newState[FIRST_NUMBER] + newState[SECOND_NUMBER];
-    return newState;
-};
+const decrease = (state, action) => {
+    if(state.hasOwnProperty(FIRST_NUMBER)){
+        return {
+            ...state,
+            [action.number]: state[action.number] - 1 
+        }
+    }
+    return state;
+}
 
-const changeNumberReducer = (state = {[FIRST_NUMBER]: 0, [SECOND_NUMBER]: 0, sum: 0}, action) => {
+const changeNumberReducer = (state = {[FIRST_NUMBER]: 0, [SECOND_NUMBER]: 0}, action) => {
     switch(action.type){
         case INCREASE:
-            return increaseNumber(state, action);
+            return increase(state, action);
         case DECREASE:
-            return decreaseNumber(state, action);
+            return decrease(state, action);
         default:
             return state;
     }
