@@ -5,6 +5,7 @@ import Header from '../../Components/Header/Header.jsx';
 import Movies from '../../Components/Movies/Movies.jsx';
 import AddMovie from '../../Components/AddMovie/AddMovie.jsx';
 import MovieForm from '../MovieForm/MovieForm.jsx';
+import Loader from '../../Components/Loader/Loader.jsx';
 import uniqid from 'uniqid';
 
 import default_poster from '../../images/default_poster.jpg';
@@ -75,12 +76,14 @@ export default class App extends Component {
                             onSubmitForm={this.onSubmitNewMovie}
                         />)}/>
                     <Route exact path='/edit/:id'
-                        render={({history, match})=>(this.state.movies.some(el => el.id.toString() === match.params.id)&&<MovieForm history={history}
+                        render={({history, match})=>
+                            (this.state.movies.some(el => el.id.toString() === match.params.id) ? <MovieForm 
+                            history={history}
                             match={match}
                             formTitle='Editing movie'
                             movies={this.state.movies}
                             onSubmitForm={this.onSubmitEditMovie}
-                        />)}
+                        /> : <Loader />)}
 
                     />
                 </ Switch>

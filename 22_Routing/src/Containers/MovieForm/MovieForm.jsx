@@ -14,7 +14,8 @@ class MovieForm extends Component {
     }
     constructor(props){
         super(props);
-        let {title='', tagline='', poster_path='', overview=''} = this.props.movies.find(el => el.id.toString() === this.props.match.params.id)||{};
+        let currentMovie = this.props.movies.find(el => el.id.toString() === this.props.match.params.id);
+        let {title='', tagline='', poster_path='', overview=''} = currentMovie;
         this.state = {
             title,
             tagline,
@@ -61,7 +62,7 @@ class MovieForm extends Component {
                         id='tagline-input'
                         onChange={this.onChange}  
                         value={this.state.tagline} 
-                        required />
+                         />
                 </div>
                 <div className={classNames('movie-form__input-container')}>
                     <label className={classNames('movie-form__label')} htmlFor='poster_path-input'>Poster path: </label>
@@ -71,7 +72,7 @@ class MovieForm extends Component {
                         id='poster_path-input'
                         onChange={this.onChange} 
                         value={this.state.poster_path} 
-                        required />
+                         />
                 </div>
                 <div className={classNames('movie-form__input-container')}>
                     <label className={classNames('movie-form__label')} htmlFor='overview-input'>Overview: </label>
@@ -81,7 +82,7 @@ class MovieForm extends Component {
                         id='overview-input'
                         onChange={this.onChange} 
                         value={this.state.overview} 
-                        required />
+                         />
                 </div>
                 <div className={classNames('movie-form__button-container')}>
                     <Button modifiers='button_theme_success' 
