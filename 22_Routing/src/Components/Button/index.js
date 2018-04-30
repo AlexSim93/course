@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './Button.scss';
+import './style.scss';
 
 const Button = ({type, onClick, children, modifiers, mix}) => (
     <button className={classNames('button', modifiers, mix)} 

@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Header from '../../Components/Header/Header.jsx';
-import Movies from '../../Components/Movies/Movies.jsx';
-import AddMovie from '../../Components/AddMovie/AddMovie.jsx';
-import MovieForm from '../MovieForm/MovieForm.jsx';
-import Loader from '../../Components/Loader/Loader.jsx';
+import Header from '../../Components/Header/index';
+import Movies from '../../Components/Movies/index';
+import AddMovie from '../../Components/AddMovie/index';
+import MovieForm from '../MovieForm/index';
+import Loader from '../../Components/Loader/index';
+import ErrorBoundary from '../ErrorBoundary/index';
 import uniqid from 'uniqid';
 
 import default_poster from '../../images/default_poster.jpg';
-import './App.scss';
+import './style.scss';
 
 export default class App extends Component {
 
     state = {
-        movies: []
+        movies: [],
+        isFetched: false
     }
 
     componentDidMount() {
         fetch('https://react-cdp-api.herokuapp.com/movies')
             .then(response => response.json())
-            .then(arr => this.setState({ movies: arr.data }))
+            .then(arr => this.setState({ movies: arr.data, isFetched: true }))
 
     }
 
@@ -71,19 +73,24 @@ export default class App extends Component {
                     <Route exact path='/add'
                         render={({history, match})=>(<MovieForm history={history}
                             match={match}
+                            isEdit={false}
                             formTitle='Adding movie'
                             movies={this.state.movies}
                             onSubmitForm={this.onSubmitNewMovie}
                         />)}/>
                     <Route exact path='/edit/:id'
                         render={({history, match})=>
-                            (this.state.movies.some(el => el.id.toString() === match.params.id) ? <MovieForm 
-                            history={history}
-                            match={match}
-                            formTitle='Editing movie'
-                            movies={this.state.movies}
-                            onSubmitForm={this.onSubmitEditMovie}
-                        /> : <Loader />)}
+                            (this.state.isFetched ? 
+                            <ErrorBoundary>
+                                <MovieForm 
+                                    history={history}
+                                    match={match}
+                                    isEdit={true}
+                                    formTitle='Editing movie'
+                                    movies={this.state.movies}
+                                    onSubmitForm={this.onSubmitEditMovie}
+                                />
+                            </ErrorBoundary> : <Loader />)}
 
                     />
                 </ Switch>

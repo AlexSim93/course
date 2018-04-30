@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import './Header.scss';
+import './style.scss';
 
 const Header = () => (
     <header className={classNames('header')}>

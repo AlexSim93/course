@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import Button from '../Button/Button.jsx';
+import Button from '../Button/index';
 
-import './AddMovie.scss';
+import './style.scss';
 
 const AddMovie = () => (
     <div className={classNames('add-movie')}>

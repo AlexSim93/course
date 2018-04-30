@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Button from '../../Components/Button/Button.jsx';
+import Button from '../../Components/Button/index';
 
-import './MovieForm.scss';
+import './style.scss';
 
 class MovieForm extends Component {
     static propTypes = {
@@ -12,9 +12,13 @@ class MovieForm extends Component {
         onSubmitForm: PropTypes.func.isRequired,
         movies: PropTypes.array.isRequired
     }
+
     constructor(props){
         super(props);
-        let currentMovie = this.props.movies.find(el => el.id.toString() === this.props.match.params.id);
+        let currentMovie = this.props.movies.find(el => el.id.toString() === this.props.match.params.id)||{};
+        if(!currentMovie.id&&this.props.isEdit){
+            throw new Error('Cannot find movie by id');
+        }
         let {title='', tagline='', poster_path='', overview=''} = currentMovie;
         this.state = {
             title,

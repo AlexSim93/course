@@ -1,10 +1,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import classNames from 'classnames';
-import MovieMain from '../MovieMain/MovieMain.jsx';
-import MovieControl from '../MovieControl/MovieControl.jsx';
+import MovieMain from '../MovieMain/index';
+import MovieControl from '../MovieControl/index';
 
-import './Movie.scss';
+import './style.scss';
 
 const Movie = ({movie, onDelete, onErrorPoster}) => (
     <div className={classNames('movie', 'movies__movie')}>
