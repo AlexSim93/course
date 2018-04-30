@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import classNames from 'classnames';
-import Button from '../Button/Button.jsx';
+import Button from '../Button/index';
 
 const MovieControl = ({onEdit, onDelete}) => (
     <div className={classNames('movie__control')}>

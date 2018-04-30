@@ -1,9 +1,9 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import classNames from 'classnames';
-import Button from '../Button/Button.jsx';
+import Button from '../Button/index';
 
-import './MovieForm.scss';
+import './style.scss';
 
 const MovieForm = ({currentMovie ,onSubmitForm, onCancelForm, formTitle }) => {
     let titleInput, taglineInput, posterPathInput, overviewInput;
@@ -39,7 +39,7 @@ const MovieForm = ({currentMovie ,onSubmitForm, onCancelForm, formTitle }) => {
                         name='tagline' 
                         id='tagline-input' 
                         defaultValue={tagline} 
-                        required />
+                        />
                 </div>
                 <div className={classNames('movie-form__input-container')}>
                     <label className={classNames('movie-form__label')} htmlFor='poster_path-input'>Poster path: </label>
@@ -49,7 +49,7 @@ const MovieForm = ({currentMovie ,onSubmitForm, onCancelForm, formTitle }) => {
                         name='poster_path' 
                         id='poster_path-input' 
                         defaultValue={poster_path} 
-                        required />
+                        />
                 </div>
                 <div className={classNames('movie-form__input-container')}>
                     <label className={classNames('movie-form__label')} htmlFor='overview-input'>Overview: </label>
@@ -59,7 +59,7 @@ const MovieForm = ({currentMovie ,onSubmitForm, onCancelForm, formTitle }) => {
                         name='overview' 
                         id='overview-input' 
                         defaultValue={overview} 
-                        required />
+                        />
                 </div>
                 <div className={classNames('movie-form__button-container')}>
                     <Button modifiers='button_theme_success' 

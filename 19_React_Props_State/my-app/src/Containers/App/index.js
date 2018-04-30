@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import Header from '../../Components/Header/Header.jsx';
-import Movies from '../../Components/Movies/Movies.jsx';
-import AddMovie from '../../Components/AddMovie/AddMovie.jsx';
-import MovieForm from '../../Components/MovieForm/MovieForm.jsx';
+import Header from '../../Components/Header/index';
+import Movies from '../../Components/Movies/index';
+import AddMovie from '../../Components/AddMovie/index';
+import MovieForm from '../../Components/MovieForm/index';
 import uniqid from 'uniqid';
 
 import default_poster from '../../images/default_poster.jpg';
-import './App.scss';
+import './style.scss';
 
 export default class App extends Component {
 

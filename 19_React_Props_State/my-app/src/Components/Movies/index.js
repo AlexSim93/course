@@ -1,9 +1,9 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import classNames from 'classnames';
-import Movie from '../Movie/Movie.jsx';
+import Movie from '../Movie/index';
 
-import './Movies.scss';
+import './style.scss';
 
 const Movies = ({ movies, onEdit, onDelete, onErrorPoster }) => (
     <section className={classNames('movies')}>
