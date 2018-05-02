@@ -1,24 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Display from '../Display/index';
-import Button from '../Button/index';
-import { FIRST_NUMBER, SECOND_NUMBER } from '../../actions/index';
+import Counter from '../Counter/index';
 import './style.css';
+
+const propTypes = {
+  firstNumber: PropTypes.number.isRequired,
+  secondNumber: PropTypes.number.isRequired,
+  onDecrement: PropTypes.func.isRequired,
+  onIncrement: PropTypes.func.isRequired,
+};
 
 const App = ({firstNumber, secondNumber, onIncrement, onDecrement}) => (
   <div className="app">
-    <Display text={firstNumber} />
-    <div>
-      <Button text="-" onClick={() => onDecrement(FIRST_NUMBER)} />
-      <Button text="+" onClick={() => onIncrement(FIRST_NUMBER)} />
-    </div>
-    <Display text={secondNumber} />
-    <div>
-      <Button text="-" onClick={() => onDecrement(SECOND_NUMBER)} />
-      <Button text="+" onClick={() => onIncrement(SECOND_NUMBER)} />
-    </div>
+    <Counter 
+      displayText={firstNumber} 
+      onIncrement={()=>onIncrement('firstNumber')} 
+      onDecrement={()=>onDecrement('firstNumber')}
+    />
+    <Counter 
+      displayText={secondNumber} 
+      onIncrement={()=>onIncrement('secondNumber')} 
+      onDecrement={()=>onDecrement('secondNumber')}
+    />
     <Display text={firstNumber + secondNumber} />
   </div>
 );
+
+App.propTypes = propTypes;
 
 export default App;
 

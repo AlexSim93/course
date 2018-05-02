@@ -1,8 +1,5 @@
-
 const INCREASE = 'INCREASE';
 const DECREASE = 'DECREASE';
-const FIRST_NUMBER = 'FIRST_NUMBER';
-const SECOND_NUMBER = 'SECOND_NUMBER';
 
 const increase = (number) => ({
     type: INCREASE,
@@ -14,4 +11,4 @@ const decrease = (number) => ({
 });
 
 
-export {INCREASE, DECREASE, increase, decrease, FIRST_NUMBER, SECOND_NUMBER};
+export {INCREASE, DECREASE, increase, decrease};

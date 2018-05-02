@@ -1,7 +1,7 @@
-import { INCREASE, DECREASE, FIRST_NUMBER, SECOND_NUMBER } from '../actions/index';
+import { INCREASE, DECREASE } from '../actions/index';
 
 const increase = (state, action) => {
-    if(state.hasOwnProperty(FIRST_NUMBER)){
+    if(state.hasOwnProperty(action.number)){
         return {
             ...state,
             [action.number]: state[action.number] + 1 
@@ -11,7 +11,7 @@ const increase = (state, action) => {
 }
 
 const decrease = (state, action) => {
-    if(state.hasOwnProperty(FIRST_NUMBER)){
+    if(state.hasOwnProperty(action.number)){
         return {
             ...state,
             [action.number]: state[action.number] - 1 
@@ -20,7 +20,7 @@ const decrease = (state, action) => {
     return state;
 }
 
-const changeNumberReducer = (state = {[FIRST_NUMBER]: 0, [SECOND_NUMBER]: 0}, action) => {
+const changeNumberReducer = (state = {firstNumber: 0, secondNumber: 0}, action) => {
     switch(action.type){
         case INCREASE:
             return increase(state, action);
