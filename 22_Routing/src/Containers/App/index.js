@@ -73,7 +73,6 @@ export default class App extends Component {
                     <Route exact path='/add'
                         render={({history, match})=>(<MovieForm history={history}
                             match={match}
-                            isEdit={false}
                             formTitle='Adding movie'
                             movies={this.state.movies}
                             onSubmitForm={this.onSubmitNewMovie}
@@ -85,7 +84,7 @@ export default class App extends Component {
                                 <MovieForm 
                                     history={history}
                                     match={match}
-                                    isEdit={true}
+                                    isEdit
                                     formTitle='Editing movie'
                                     movies={this.state.movies}
                                     onSubmitForm={this.onSubmitEditMovie}

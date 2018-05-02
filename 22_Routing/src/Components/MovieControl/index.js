@@ -12,7 +12,8 @@ const MovieControl = ({onDelete, id}) => (
 );
 
 MovieControl.propTypes = {
-    onDelete: propTypes.func.isRequired
-}
+    onDelete: propTypes.func.isRequired,
+    id: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired
+};
 
 export default MovieControl;
