@@ -6,7 +6,7 @@ import Button from './index';
 test(
     'Rendering Button',
     () => {
-        const button = shallow(<Button type='button' className='button' text='+'/>);
+        const button = shallow(<Button text='+'/>);
         expect(button.text()).toEqual('+');
     }
 );

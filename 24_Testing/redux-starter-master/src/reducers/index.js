@@ -32,5 +32,8 @@ const changeNumberReducer = (state = {firstNumber: 0, secondNumber: 0}, action) 
 }
 
 export default changeNumberReducer;
-exports.changeNumberReducer = changeNumberReducer;
-exports.INCREASE = INCREASE;
+module.exports = {
+    changeNumberReducer,
+    INCREASE,
+    DECREASE
+};

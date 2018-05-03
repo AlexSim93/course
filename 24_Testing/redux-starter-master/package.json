@@ -16,7 +16,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test-redux": "jest",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

@@ -9,10 +9,12 @@ const decrease = (number) => ({
     type: DECREASE,
     number
 });
+module.exports = {
+    increase,
+    decrease,
+    INCREASE,
+    DECREASE
+};
 
-exports.increase = increase;
-exports.decrease = decrease;
-exports.INCREASE = INCREASE;
-exports.DECREASE = DECREASE;
 export {INCREASE, DECREASE, increase, decrease};
 
