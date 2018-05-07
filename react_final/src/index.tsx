@@ -2,14 +2,15 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import App from './components/App/index';
+import AppContainer from './containers/AppContainer/index';
+import store from './store/index';
 
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <AppContainer />
     </ BrowserRouter>
   </Provider>,
   document.getElementById('root') as HTMLElement
