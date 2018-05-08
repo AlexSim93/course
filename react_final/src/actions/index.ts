@@ -1,18 +1,18 @@
+import { takeLatest, call, put } from 'redux-saga/effects';
+import axios from 'axios';
+
 export const MOVIES_HAVE_ERROR = 'MOVIES_HAVE_ERROR';
 export const MOVIES_ARE_LOADING = 'MOVIES_ARE_LOADING';
 export const MOVIES_FETCH_DATA_SUCCESS = 'MOVIES_FETCH_DATA_SUCCESS';
 
-export const moviesHaveError = (bool: boolean) => (
+export const moviesAreLoading = (url: any) => ({
+    type: MOVIES_ARE_LOADING,
+    url
+});
+
+export const moviesHaveError = () => (
     {
         type: MOVIES_HAVE_ERROR,
-        hasError: bool,
-    }
-);
-
-export const moviesAreLoading = (bool: boolean) => (
-    {
-        type: MOVIES_ARE_LOADING,
-        isLoading: bool,
     }
 );
 
@@ -23,19 +23,26 @@ export const moviesFetchDataSuccess = (movies: any[]) => (
     }
 );
 
-export const fetchData = (url: string) => (dispatch: any) => {
-    fetch(url)
-        .then((response) => {
-            if (response.status !== 200) {
-                throw Error(response.statusText);
-            }
+export function* watcherSaga() {
+    yield takeLatest(MOVIES_ARE_LOADING, workerSaga);
+}
 
-            dispatch(moviesAreLoading(false));
+// function that makes the api request and returns a Promise for response
+function fetchMovies(url: any) {
+    return axios({
+        method: 'get',
+        url
+    });
+}
 
-            return response.json();
-        })
-        .then(
-            (response) => dispatch(moviesFetchDataSuccess(response)),
-        )
-        .catch(() => dispatch(moviesHaveError(true)));
-};
+function* workerSaga(action: any) {
+    try {
+      const response = yield call(fetchMovies, action.url);
+      const movies = response.data;
+  
+      yield put(moviesFetchDataSuccess(movies));
+    
+    } catch (error) {
+      yield put(moviesHaveError());
+    }
+}

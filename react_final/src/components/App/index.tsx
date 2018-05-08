@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class App extends React.Component<any, any, any> {
     public componentDidMount() {
@@ -6,9 +7,13 @@ class App extends React.Component<any, any, any> {
     }
     public render() {
         return (
-            <ul>
-                {this.props.movies.map((element: {id: any, title: any}) => <li key={element.id}>{element.title}</li>)}
-            </ul>
+            <Switch>
+                <Redirect exact from='/' to='/movies' />
+                <Route exact path='/movies'/>
+                <Route exact path='/favourites' />
+                <Route exact path='/search/:searchQuery' />
+                <Route exact path='/film/:film-title' />
+            </Switch>
         );
     }
 }

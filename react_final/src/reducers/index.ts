@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import {movies, moviesAreLoading, moviesHaveError } from './fetch';
+import reducer from './fetch';
 
 const reducers = combineReducers({
-    moviesHaveError,
-    moviesAreLoading,
-    movies,
+    reducer
 });
 
 export default reducers;
