@@ -1,6 +1,6 @@
-export const MOVIES_HAVE_ERROR = "MOVIES_HAVE_ERROR";
-export const MOVIES_ARE_LOADING = "MOVIES_ARE_LOADING";
-export const MOVIES_FETCH_DATA_SUCCESS = "MOVIES_FETCH_DATA_SUCCESS";
+export const MOVIES_HAVE_ERROR = 'MOVIES_HAVE_ERROR';
+export const MOVIES_ARE_LOADING = 'MOVIES_ARE_LOADING';
+export const MOVIES_FETCH_DATA_SUCCESS = 'MOVIES_FETCH_DATA_SUCCESS';
 
 export const moviesHaveError = (bool: boolean) => (
     {

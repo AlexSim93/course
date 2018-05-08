@@ -1,4 +1,4 @@
-import {MOVIES_ARE_LOADING, MOVIES_FETCH_DATA_SUCCESS, MOVIES_HAVE_ERROR } from "../actions/index";
+import {MOVIES_ARE_LOADING, MOVIES_HAVE_ERROR, MOVIES_FETCH_DATA_SUCCESS } from '../actions/index';
 
 export const moviesHaveError = (state = false, action: any) => {
     switch (action.type) {

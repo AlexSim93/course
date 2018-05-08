@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:latest", "tslint-react"],
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
@@ -7,6 +7,8 @@
     ]
   },
   "rules":{
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "quotemark": [true, "single", "avoid-escape", "avoid-template"],
+    "ordered-imports": false
   } 
 }

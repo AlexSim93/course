@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
 class App extends React.Component<any, any, any> {
     public componentDidMount() {
-        this.props.fetchData("http://localhost:3000/movies");
+        this.props.fetchData('http://localhost:3000/movies');
     }
     public render() {
         return (

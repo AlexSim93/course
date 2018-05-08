@@ -1,5 +1,5 @@
-import { combineReducers } from "redux";
-import {movies, moviesAreLoading, moviesHaveError } from "./fetch";
+import { combineReducers } from 'redux';
+import {movies, moviesAreLoading, moviesHaveError } from './fetch';
 
 const reducers = combineReducers({
     moviesHaveError,
