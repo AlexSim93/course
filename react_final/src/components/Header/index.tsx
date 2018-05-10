@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Form from '../Form/index';
 import Navbar from '../Navbar/index';
 import SortbarContainer from '../../containers/SortbarContainer/index';
-import ChosenMovie from '../ChosenMovie/index';
+import ChosenMovieContainer from '../../containers/ChosenMovieContainer/index';
 
 const Header = () => (
     <header>
@@ -11,7 +11,7 @@ const Header = () => (
         <Switch>
             <Route exact path='/' component={Form}/>
             <Route exact path='/search/:search' component={Form}/>
-            <Route exact path='/film/:film' component={ChosenMovie}/>
+            <Route exact path='/film/:film' component={ChosenMovieContainer}/>
         </Switch>
         <SortbarContainer />
     </header>

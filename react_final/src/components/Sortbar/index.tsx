@@ -6,10 +6,12 @@ import SortbarInfo from '../SortbarInfo/index';
 import SortbarFavouritesInfo from '../SortbarFavouritesInfo/index';
 
 interface ISortbar {
-    result: number
+    result: number,
+    onSortByDate(): void,
+    onSortByRating(): void 
 };
 
-const Sortbar = ({result}: ISortbar) => (
+const Sortbar = ({result, onSortByDate, onSortByRating}: ISortbar) => (
     <div>
         <Switch>
             <Route exact
@@ -17,7 +19,7 @@ const Sortbar = ({result}: ISortbar) => (
                 render={() => 
                     <div> 
                         <SearchResult result={result}/>
-                        <SwitchField label='sort by' buttons={['release date', 'rating']}/>
+                        <SwitchField label='sort by' buttons={[{text: 'release date', onClick: onSortByDate}, {text: 'rating', onClick: onSortByRating}]}/>
                     </div>}
             />
             <Route exact

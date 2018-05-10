@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import MoviesListContainer from '../../containers/MovieListContainer/index';
+import MovieListContainer from '../../containers/MovieListContainer/index';
 import NoMovieFound from '../NoMovieFound/index';
 
 const Main = () => (
     <main>
         <Switch>
-            <Route exact path='/' render={() => <NoMovieFound/>}/>
-            <Route exact path='/search/:search' render={()=> <MoviesListContainer />}/>
-            <Route exact path='/film/:film' render={()=> <MoviesListContainer />}/>
-            <Route exact path='/favourites' render={()=> <MoviesListContainer />}/>
+            <Route exact path='/' render={() => <NoMovieFound />}/>
+            <Route exact path='/search/:search' render={() => <MovieListContainer/>}/>
+            <Route exact path='/film/:film' render={() => <MovieListContainer url={'http://localhost:3000/movies?title=jaws'}/>}/>
+            <Route exact path='/favourites' render={() => <MovieListContainer url='http://localhost:3000/favourites'/>}/>
         </Switch>
     </main>
 );

@@ -16,7 +16,7 @@ const Form = () => {
     return (
         <form onSubmit={handle}>
             <TextField id='search' variable={refHandler}/>
-            <SwitchField label='search by' buttons={['title', 'director']}/>
+            <SwitchField label='search by' buttons={[{text: 'title'}, {text: 'director'}]}/>
             <Button type='submit' text='search'/>
         </form>
     );

@@ -10,9 +10,9 @@ class MovieList extends React.Component<any, any, any> {
 
     public render(){
         return (
-            <ul>
+            <div>
                 {this.props.movies.map((movie:any) => <Movie key={movie.id} movie={movie}/>)}
-            </ul>
+            </div>
         );
     }
 };
