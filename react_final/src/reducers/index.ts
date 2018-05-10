@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import reducer from './fetch';
+import entities from './fetch';
 
-const reducers = combineReducers({
-    reducer
+const rootReducer = combineReducers({
+    entities
 });
 
-export default reducers;
+export default rootReducer;
