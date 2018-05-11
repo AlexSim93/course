@@ -3,20 +3,33 @@ import TextField from '../TextField/index';
 import SwitchField from '../SwitchField/index';
 import Button from '../Button/index';
 
-const Form = () => {
+interface IFormProps {
+    fetchData: any,
+    history: any
+};
+
+const Form = ({fetchData, history}: IFormProps) => {
     let searchInput: any;
+    let searchType:string = 'title';
     const refHandler = (input: any) => {
         searchInput = input;
     };
-    const handle = (evt: any) => {
-        evt.preventDefault();
-        console.log(searchInput.value);
-        searchInput.value = '';
-    };
+    const searchTypeHandler = (type: string) => () => searchType = type;
     return (
-        <form onSubmit={handle}>
+        <form onSubmit={(evt: any)=>{
+            evt.preventDefault();
+            console.log(searchInput.value);
+            console.log(searchType);
+            history.push(`/search/${searchType}_like=${searchInput.value}`);
+            fetchData(`http://localhost:3000/movies?${searchType}_like=${searchInput.value}`);
+            searchInput.value = '';
+        }}>
             <TextField id='search' variable={refHandler}/>
-            <SwitchField label='search by' buttons={[{text: 'title'}, {text: 'director'}]}/>
+            <SwitchField label='search by' 
+                buttons={[
+                    {text: 'title', onClick: searchTypeHandler('title')}, 
+                    {text: 'director', onClick: searchTypeHandler('director')}
+                ]}/>
             <Button type='submit' text='search'/>
         </form>
     );

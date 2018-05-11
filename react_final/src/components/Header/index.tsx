@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Form from '../Form/index';
+import FormContainer from '../../containers/FormContainer/index';
 import Navbar from '../Navbar/index';
 import SortbarContainer from '../../containers/SortbarContainer/index';
 import ChosenMovieContainer from '../../containers/ChosenMovieContainer/index';
@@ -9,9 +9,13 @@ const Header = () => (
     <header>
         <Navbar />
         <Switch>
-            <Route exact path='/' component={Form}/>
-            <Route exact path='/search/:search' component={Form}/>
-            <Route exact path='/film/:film' component={ChosenMovieContainer}/>
+            <Route exact path='/' component={FormContainer}/>
+            <Route exact 
+                path='/search/:search' 
+                render={({history})=><FormContainer history={history}/>}/>
+            <Route exact 
+                path='/film/:film' 
+                render={({match}) => <ChosenMovieContainer match={match}/>}/>
         </Switch>
         <SortbarContainer />
     </header>

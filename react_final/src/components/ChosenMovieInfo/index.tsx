@@ -5,7 +5,8 @@ const ChosenMovieInfo = ({movie}: any) => (
         <h2>{movie.title}</h2>
         <span>{movie.rating}</span>
         <span>{movie.tagline}</span>
-        <span>{movie.release_date.getFullYear()}</span>
+        <span>{new Date(movie.release_date).getFullYear()}</span>
+        <span>{movie.runtime}</span>
         <span>{movie.overview}</span>
     </div>
 );

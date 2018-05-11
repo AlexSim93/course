@@ -7,8 +7,10 @@ const Main = () => (
     <main>
         <Switch>
             <Route exact path='/' render={() => <NoMovieFound />}/>
-            <Route exact path='/search/:search' render={() => <MovieListContainer/>}/>
-            <Route exact path='/film/:film' render={() => <MovieListContainer url={'http://localhost:3000/movies?title=jaws'}/>}/>
+            <Route exact 
+                path='/search/:search' 
+                render={({match}) => <MovieListContainer url={`http://localhost:3000/movies?${match.params.search}`}/>}/>
+            <Route exact path='/film/:film' render={() => <MovieListContainer />}/>
             <Route exact path='/favourites' render={() => <MovieListContainer url='http://localhost:3000/favourites'/>}/>
         </Switch>
     </main>

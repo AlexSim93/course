@@ -7,7 +7,6 @@ class ChosenMovie extends React.Component<any, any, any>{
         this.props.fetchFilm(this.props.url);
     }
     public render(){
-        console.log(this.props.film);
         return (
             <div>
                 <Poster movie={this.props.film} />
