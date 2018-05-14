@@ -6500,33 +6500,5 @@
         "genres": ["Action", "Comedy", "Horror"],
         "runtime": 86
     }],
-    "favourites": [{
-        "id": 962,
-        "title": "The Gold Rush",
-        "tagline": "The World's Greatest Laughing Picture!",
-        "vote_average": 7.8,
-        "vote_count": 411,
-        "release_date": "1925-06-25",
-        "poster_path": "https://image.tmdb.org/t/p/w500/eQRFo1qwRREYwj47Yoe1PisgOle.jpg",
-        "overview": "A lone prospector ventures into Alaska looking for gold. He gets mixed up with some burly characters and falls in love with the beautiful Georgia. He tries to win her heart with his singular charm.",
-        "budget": 923000,
-        "revenue": 2500000,
-        "genres": ["Adventure", "Comedy", "Drama"],
-        "runtime": 95
-    }, {
-        "id": 11158,
-        "title": "Honey I Blew Up the Kid",
-        "tagline": "The BIG Laughs Start January 6th!",
-        "vote_average": 4.9,
-        "vote_count": 363,
-        "release_date": "1992-07-16",
-        "poster_path": "https://image.tmdb.org/t/p/w500/gwda8CnPAfHGwygclGiKddt60fX.jpg",
-        "overview": "Wayne Szalinski is at it again. But instead of shrinking things, he tries to make a machine that can make things grow. As in the first one, his machine isn't quite accurate. But when he brings Nick & his toddler son Adam to see his invention, the machine unexpectedly starts working. And when Adam comes right up to the machine, he gets zapped along with his stuffed bunny.",
-        "budget": 40000000,
-        "revenue": 58662452,
-        "genres": ["Adventure", "Comedy", "Family", "Science Fiction"],
-        "runtime": 89
-    }
-        
-    ]
+    "favourites": [11158, 962, 10206, 9349]
 }

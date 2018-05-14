@@ -5,7 +5,10 @@ import Movie from '../Movie/index';
 
 class MovieList extends React.Component<any, any, any> {
     public componentDidMount(){
-        this.props.fetchData(this.props.url);
+        if(this.props.url){
+            this.props.fetchData(this.props.url);
+        }
+        this.props.fetchFavourites(this.props.url);
     }
 
     public render(){
