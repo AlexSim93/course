@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 interface ISortbarInfoProps {
-    director: string
+    genre: string
 };
 
-const SortbarInfo = ({director}: ISortbarInfoProps) => (
-    <span>Films by {director}</span>
+const SortbarInfo = ({genre}: ISortbarInfoProps) => (
+    <span>Film genres: {genre}</span>
 );
 
 export default SortbarInfo;

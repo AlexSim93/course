@@ -1,15 +1,20 @@
-import { takeLatest, call, put, all } from 'redux-saga/effects';
+import { takeLatest, takeEvery ,call, put, all } from 'redux-saga/effects';
 import axios from 'axios';
 import {    MOVIES_ARE_LOADING, 
             FILM_ARE_LOADING,
             FAVOURITES_ARE_LOADING,
+            ADD_TO_FAVOURITES_ARE_LOADING,
+            favouritesAreLoading,
             moviesAreLoading, 
             moviesFetchDataSuccess, 
             filmFetchDataSuccess, 
             filmHaveError, 
             moviesHaveError,
             favouritesHaveError,
-            favouritesFetchDataSuccess } from '../actions/index'; 
+            favouritesFetchDataSuccess,
+            addToFavouritesHaveError,
+            addToFavouritesSuccess
+        } from '../actions/index'; 
 
 export function* watcherSaga() {
     yield all(
@@ -17,6 +22,7 @@ export function* watcherSaga() {
             takeLatest(FILM_ARE_LOADING, sagaFetchFilm),
             takeLatest(FAVOURITES_ARE_LOADING, sagaFetchFavourites),
             takeLatest(MOVIES_ARE_LOADING, sagaFetchMovies),
+            takeEvery(ADD_TO_FAVOURITES_ARE_LOADING, sagaAddToFavourites)
         ]
     );
 };
@@ -57,11 +63,30 @@ function* sagaFetchFavourites(action: any) {
     try {
       const response = yield call(fetchData, action.url);
       const favourites = response.data;
-      yield put(moviesAreLoading(`http://localhost:3000/movies?${favourites.map((element: any)=> `id=${element}`).join('&')}`));
 
       yield put(favouritesFetchDataSuccess(favourites));
 
     } catch (error) {
       yield put(favouritesHaveError());
+    }
+};
+
+const addToFavouritesRequest = (id: number) => (
+    axios({
+        method: 'post',
+        url: `http://localhost:3000/favourites?id=${id}`
+    })
+);
+
+function* sagaAddToFavourites(action: any) {
+    try {
+      yield call(addToFavouritesRequest, action.id);
+
+      yield put(addToFavouritesSuccess());
+
+      yield put(favouritesAreLoading('http://localhost:3000/favourites'));
+
+    } catch (error) {
+      yield put(addToFavouritesHaveError());
     }
 };

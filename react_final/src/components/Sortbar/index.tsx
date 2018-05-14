@@ -8,11 +8,12 @@ import Button from '../Button/index';
 
 interface ISortbar {
     result: number,
+    genre: string,
     onSortByDate(): void,
     onSortByRating(): void 
 };
 
-const Sortbar = ({result, onSortByDate, onSortByRating}: ISortbar) => (
+const Sortbar = ({result, genre, onSortByDate, onSortByRating}: ISortbar) => (
     <div>
         <Switch>
             <Route exact
@@ -28,7 +29,7 @@ const Sortbar = ({result, onSortByDate, onSortByRating}: ISortbar) => (
             />
             <Route exact
                 path='/film/:film'
-                render={()=> <SortbarInfo director='Tarantino'/>}
+                render={()=> <SortbarInfo genre={genre}/>}
             />
             <Route exact
                 path='/favourites'

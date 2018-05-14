@@ -14,7 +14,7 @@ const Form = ({fetchData, history}: IFormProps) => {
     const refHandler = (input: any) => {
         searchInput = input;
     };
-    const searchTypeHandler = (type: string) => () => searchType = type;
+    const searchTypeHandler = (type: string) => searchType = type;
     return (
         <form onSubmit={(evt: any)=>{
             evt.preventDefault();

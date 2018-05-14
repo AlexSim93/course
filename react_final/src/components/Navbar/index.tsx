@@ -4,7 +4,7 @@ import Logo from '../Logo/index';
 import Button from '../Button/index';
 
 const getButton = (text: string, path: string) => (
-    <Link to='/'>
+    <Link to={path}>
         <Button text={text}/>
     </Link>
 );
@@ -14,8 +14,8 @@ const Navbar = () => (
         <Logo text='netflixroulette'/>
         <Switch>
             <Route exact path='/search/:searchType?/:searchValue?' render={() => getButton('Favourites', '/favourites')}/>
-            <Route exact path='/film/:film' render={() => getButton('Search', '/')}/>
-            <Route exact path='/favourites' render={() => getButton('Search', '/')}/>       
+            <Route exact path='/film/:film' render={() => getButton('Search', '/search/')}/>
+            <Route exact path='/favourites' render={() => getButton('Search', '/search/')}/>       
         </Switch>
     </div>
 );

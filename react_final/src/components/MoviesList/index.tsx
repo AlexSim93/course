@@ -10,7 +10,11 @@ class MovieList extends React.Component<any, any, any> {
             this.props.fetchData(this.props.url);
         }
     }
-
+    public componentDidUpdate(prevProps: any) {
+        if(this.props.url !== prevProps.url) {
+            this.props.fetchData(this.props.url);
+        }
+    }
     public render(){
         return (
             <section>

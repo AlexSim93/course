@@ -7,6 +7,9 @@ export const FILM_FETCH_DATA_SUCCESS = 'FILM_FETCH_DATA_SUCCESS';
 export const FAVOURITES_HAVE_ERROR = 'FAVOURITES_HAVE_ERROR';
 export const FAVOURITES_ARE_LOADING = 'FAVOURITES_ARE_LOADING';
 export const FAVOURITES_FETCH_DATA_SUCCESS = 'FAVOURITES_FETCH_DATA_SUCCESS';
+export const ADD_TO_FAVOURITES_ARE_LOADING = 'ADD_TO_FAVOURITES_ARE_LOADING';
+export const ADD_TO_FAVOURITES_HAVE_ERROR = 'ADD_TO_FAVOURITES_HAVE_ERROR';
+export const ADD_TO_FAVOURITES_SUCCESS = 'ADD_TO_FAVOURITES_SUCCESS';
 export const SORT_MOVIES = 'SORT_MOVIES';
 export const SortTypes = {
     RELEASE_DATE: 'RELEASE_DATE',
@@ -62,7 +65,7 @@ export const favouritesHaveError = () => (
 
 export const favouritesFetchDataSuccess = (favourites: any) => (
     {
-        type: FILM_FETCH_DATA_SUCCESS,
+        type: FAVOURITES_FETCH_DATA_SUCCESS,
         payload: favourites,
     }
 );
@@ -73,4 +76,19 @@ export const sortMovies = (sortType: string) => (
         sortType
     }
 );
+
+export const addToFavouritesAreLoading = (id: number) => (
+    {
+        type: ADD_TO_FAVOURITES_ARE_LOADING,
+        id
+    }
+);
+
+export const addToFavouritesHaveError = () => ({
+    type: ADD_TO_FAVOURITES_HAVE_ERROR
+});
+
+export const addToFavouritesSuccess = () => ({
+    type: ADD_TO_FAVOURITES_SUCCESS
+});
 

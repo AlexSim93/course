@@ -5,7 +5,7 @@ import Navbar from '../Navbar/index';
 import SortbarContainer from '../../containers/SortbarContainer/index';
 import ChosenMovieContainer from '../../containers/ChosenMovieContainer/index';
 
-const Header = () => (
+const Header = ({favourites}: any) => (
     <header>
         <Navbar />
         <Switch>
@@ -14,7 +14,7 @@ const Header = () => (
                 render={({history})=><FormContainer history={history}/>}/>
             <Route exact 
                 path='/film/:film' 
-                render={({match}) => <ChosenMovieContainer match={match}/>}/>
+                render={({match}) => <ChosenMovieContainer match={match} favourites={favourites}/>}/>
         </Switch>
         <SortbarContainer />
     </header>
