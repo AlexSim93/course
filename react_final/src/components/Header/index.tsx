@@ -9,9 +9,8 @@ const Header = () => (
     <header>
         <Navbar />
         <Switch>
-            <Route exact path='/' component={FormContainer}/>
             <Route exact 
-                path='/search/:search' 
+                path='/search/:searchType?/:searchValue?' 
                 render={({history})=><FormContainer history={history}/>}/>
             <Route exact 
                 path='/film/:film' 

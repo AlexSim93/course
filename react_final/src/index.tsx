@@ -12,11 +12,10 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-          <Route exact path='/' component={App} />
-          <Route exact path='/search/:search' component={App} />
+          <Route exact path='/search/:searchType?/:searchValue?' component={App} />
           <Route exact path='/film/:film' component={App} />
           <Route exact path='/favourites' component={App} />
-          <Redirect to='/'/>
+          <Redirect to='/search/' />
       </Switch>
     </ BrowserRouter>
   </Provider>,
