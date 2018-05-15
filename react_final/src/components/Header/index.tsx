@@ -5,8 +5,10 @@ import Navbar from '../Navbar/index';
 import SortbarContainer from '../../containers/SortbarContainer/index';
 import ChosenMovieContainer from '../../containers/ChosenMovieContainer/index';
 
+import './style.scss'
+
 const Header = ({favourites}: any) => (
-    <header>
+    <header className='header'>
         <Navbar />
         <Switch>
             <Route exact 

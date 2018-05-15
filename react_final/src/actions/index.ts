@@ -17,12 +17,26 @@ export const SortTypes = {
     RATING: 'RATING'
 };
 
-export const moviesAreLoading = (url: string) => ({
+interface IDataAreLoading {
+    type: string;
+    url: string;
+};
+
+interface IDataHaveError {
+    type: string;
+};
+
+interface ISortMovies {
+    type: string;
+    sortType: string;
+};
+
+export const moviesAreLoading = (url: string): IDataAreLoading => ({
     type: MOVIES_ARE_LOADING,
     url
 });
 
-export const moviesHaveError = () => (
+export const moviesHaveError = () : IDataHaveError => (
     {
         type: MOVIES_HAVE_ERROR,
     }
@@ -35,12 +49,12 @@ export const moviesFetchDataSuccess = (movies: any[]) => (
     }
 );
 
-export const filmAreLoading = (url: string) => ({
+export const filmAreLoading = (url: string): IDataAreLoading => ({
     type: FILM_ARE_LOADING,
     url
 });
 
-export const filmHaveError = () => (
+export const filmHaveError = () : IDataHaveError => (
     {
         type: FILM_HAVE_ERROR,
     }
@@ -53,12 +67,12 @@ export const filmFetchDataSuccess = (film: any) => (
     }
 );
 
-export const favouritesAreLoading = (url: string) => ({
+export const favouritesAreLoading = (url: string) : IDataAreLoading => ({
     type: FAVOURITES_ARE_LOADING,
     url
 });
 
-export const favouritesHaveError = () => (
+export const favouritesHaveError = () : IDataHaveError => (
     {
         type: FAVOURITES_HAVE_ERROR,
     }
@@ -71,21 +85,21 @@ export const favouritesFetchDataSuccess = (favourites: any) => (
     }
 );
 
-export const sortMovies = (sortType: string) => (
+export const sortMovies = (sortType: string) : ISortMovies => (
     {
         type: SORT_MOVIES,
         sortType
     }
 );
 
-export const addToFavouritesAreLoading = (id: number) => (
+export const addToFavouritesAreLoading = (id: number | string) => (
     {
         type: ADD_TO_FAVOURITES_ARE_LOADING,
         id
     }
 );
 
-export const removeFromFavouritesAreLoading = (id: number) => (
+export const removeFromFavouritesAreLoading = (id: number | string) => (
     {
         type: REMOVE_FROM_FAVOURITES_ARE_LOADING,
         id

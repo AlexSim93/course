@@ -6,6 +6,8 @@ import SortbarInfo from '../SortbarInfo/index';
 import SortbarFavouritesInfo from '../SortbarFavouritesInfo/index';
 import Button from '../Button/index';
 
+import './style.scss';
+
 interface ISortbar {
     result: number,
     genre: string,
@@ -14,7 +16,7 @@ interface ISortbar {
 };
 
 const Sortbar = ({result, genre, onSortByDate, onSortByRating}: ISortbar) => (
-    <div>
+    <div className='sortbar'>
         <Switch>
             <Route exact
                 path='/search/:searchType?/:searchValue?' 

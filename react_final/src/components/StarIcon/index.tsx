@@ -17,7 +17,7 @@ const StarIcon = ({id ,isFavourite, addToFavourites, removeFromFavourites}: ISta
             addToFavourites(id);
         }
     }}>
-        <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 252 252'>
+        <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 252 252'>
             <g fill='none' strokeMiterlimit='10' fontFamily='none' fontWeight='none'
                 fontSize='none' textAnchor='none' style={{ mixBlendMode: 'normal' }}>
                 <path d='M0,252v-252h252v252z' />

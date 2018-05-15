@@ -1,3 +1,7 @@
+@import '../../scss/helpers/variables';
 .logo {
-    color: red;
+    color: $logo-color;
+    &__text {
+        font-size: 24px;
+    }
 }

@@ -7,7 +7,7 @@ interface ILogoProps {
 
 const Logo = ({text}: ILogoProps) => (
     <div className='logo'>
-        {text}
+        <span className='logo__text'>{text}</span>
     </div>
 );
 
