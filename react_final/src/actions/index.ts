@@ -4,18 +4,39 @@ export const MOVIES_FETCH_DATA_SUCCESS = 'MOVIES_FETCH_DATA_SUCCESS';
 export const FILM_HAVE_ERROR = 'FILM_HAVE_ERROR';
 export const FILM_ARE_LOADING = 'FILM_ARE_LOADING';
 export const FILM_FETCH_DATA_SUCCESS = 'FILM_FETCH_DATA_SUCCESS';
+export const FAVOURITES_HAVE_ERROR = 'FAVOURITES_HAVE_ERROR';
+export const FAVOURITES_ARE_LOADING = 'FAVOURITES_ARE_LOADING';
+export const FAVOURITES_FETCH_DATA_SUCCESS = 'FAVOURITES_FETCH_DATA_SUCCESS';
+export const ADD_TO_FAVOURITES_ARE_LOADING = 'ADD_TO_FAVOURITES_ARE_LOADING';
+export const REMOVE_FROM_FAVOURITES_ARE_LOADING = 'REMOVE_FROM_FAVOURITES_ARE_LOADING';
+export const ADD_REMOVE_FAVOURITES_HAVE_ERROR = 'ADD_REMOVE_FAVOURITES_HAVE_ERROR';
+export const ADD_REMOVE_FAVOURITES_SUCCESS = 'ADD_REMOVE_FAVOURITES_SUCCESS';
 export const SORT_MOVIES = 'SORT_MOVIES';
 export const SortTypes = {
     RELEASE_DATE: 'RELEASE_DATE',
     RATING: 'RATING'
 };
 
-export const moviesAreLoading = (url: string) => ({
+interface IDataAreLoading {
+    type: string;
+    url: string;
+};
+
+interface IDataHaveError {
+    type: string;
+};
+
+interface ISortMovies {
+    type: string;
+    sortType: string;
+};
+
+export const moviesAreLoading = (url: string): IDataAreLoading => ({
     type: MOVIES_ARE_LOADING,
     url
 });
 
-export const moviesHaveError = () => (
+export const moviesHaveError = () : IDataHaveError => (
     {
         type: MOVIES_HAVE_ERROR,
     }
@@ -28,12 +49,12 @@ export const moviesFetchDataSuccess = (movies: any[]) => (
     }
 );
 
-export const filmAreLoading = (url: string) => ({
+export const filmAreLoading = (url: string): IDataAreLoading => ({
     type: FILM_ARE_LOADING,
     url
 });
 
-export const filmHaveError = () => (
+export const filmHaveError = () : IDataHaveError => (
     {
         type: FILM_HAVE_ERROR,
     }
@@ -46,10 +67,50 @@ export const filmFetchDataSuccess = (film: any) => (
     }
 );
 
-export const sortMovies = (sortType: string) => (
+export const favouritesAreLoading = (url: string) : IDataAreLoading => ({
+    type: FAVOURITES_ARE_LOADING,
+    url
+});
+
+export const favouritesHaveError = () : IDataHaveError => (
+    {
+        type: FAVOURITES_HAVE_ERROR,
+    }
+);
+
+export const favouritesFetchDataSuccess = (favourites: any) => (
+    {
+        type: FAVOURITES_FETCH_DATA_SUCCESS,
+        payload: favourites,
+    }
+);
+
+export const sortMovies = (sortType: string) : ISortMovies => (
     {
         type: SORT_MOVIES,
         sortType
     }
 );
+
+export const addToFavouritesAreLoading = (id: number | string) => (
+    {
+        type: ADD_TO_FAVOURITES_ARE_LOADING,
+        id
+    }
+);
+
+export const removeFromFavouritesAreLoading = (id: number | string) => (
+    {
+        type: REMOVE_FROM_FAVOURITES_ARE_LOADING,
+        id
+    }
+);
+
+export const addRemoveFavouritesHaveError = () => ({
+    type: ADD_REMOVE_FAVOURITES_HAVE_ERROR
+});
+
+export const addRemoveFavouritesSuccess = () => ({
+    type: ADD_REMOVE_FAVOURITES_SUCCESS
+});
 

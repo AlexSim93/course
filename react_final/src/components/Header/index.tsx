@@ -5,17 +5,18 @@ import Navbar from '../Navbar/index';
 import SortbarContainer from '../../containers/SortbarContainer/index';
 import ChosenMovieContainer from '../../containers/ChosenMovieContainer/index';
 
-const Header = () => (
-    <header>
+import './style.scss'
+
+const Header = ({favourites}: any) => (
+    <header className='header'>
         <Navbar />
         <Switch>
-            <Route exact path='/' component={FormContainer}/>
             <Route exact 
-                path='/search/:search' 
+                path='/search/:searchType?/:searchValue?' 
                 render={({history})=><FormContainer history={history}/>}/>
             <Route exact 
                 path='/film/:film' 
-                render={({match}) => <ChosenMovieContainer match={match}/>}/>
+                render={({match}) => <ChosenMovieContainer match={match} favourites={favourites}/>}/>
         </Switch>
         <SortbarContainer />
     </header>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Poster from '../Poster/index';
-import MovieInfo from '../MovieInfo/index';
+import MovieInfo from '..//MovieInfo/index';
 
 const Movie = ({movie}: any) => (
     <div>

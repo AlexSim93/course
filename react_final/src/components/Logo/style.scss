@@ -1,0 +1,7 @@
+@import '../../scss/helpers/variables';
+.logo {
+    color: $logo-color;
+    &__text {
+        font-size: 24px;
+    }
+}

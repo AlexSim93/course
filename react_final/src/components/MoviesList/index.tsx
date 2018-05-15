@@ -1,17 +1,24 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import Movie from '../Movie/index';
 
 
 
 class MovieList extends React.Component<any, any, any> {
     public componentDidMount(){
-        this.props.fetchData(this.props.url);
+        if(this.props.url){
+            this.props.fetchData(this.props.url);
+        }
     }
-
+    public componentDidUpdate(prevProps: any) {
+        if(this.props.url !== prevProps.url) {
+            this.props.fetchData(this.props.url);
+        }
+    }
     public render(){
         return (
             <section>
-                {this.props.movies.map((movie:any) => <Movie key={movie.id} movie={movie}/>)}
+                {this.props.movies.map((movie:any) => <Link to={`/film/${movie.title}`} key={movie.id.toString()}><Movie  movie={movie}/></Link>)}
             </section>
         );
     }

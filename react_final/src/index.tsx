@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import App from './components/App/index';
+import AppContainer from './containers/AppContainer/index';
 import store from './store/index';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -12,11 +12,10 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-          <Route exact path='/' component={App} />
-          <Route exact path='/search/:search' component={App} />
-          <Route exact path='/film/:film' component={App} />
-          <Route exact path='/favourites' component={App} />
-          <Redirect to='/'/>
+          <Route exact path='/search/:searchType?/:searchValue?' component={AppContainer} />
+          <Route exact path='/film/:film' component={AppContainer} />
+          <Route exact path='/favourites' component={AppContainer} />
+          <Redirect to='/search/' />
       </Switch>
     </ BrowserRouter>
   </Provider>,
