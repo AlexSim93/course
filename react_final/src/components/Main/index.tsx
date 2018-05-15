@@ -9,7 +9,7 @@ const Main = ({favourites}: any) => (
                 path='/search/:searchType?/:searchValue?' 
                 render={({match}) => <MovieListContainer url={`http://localhost:3000/movies?${match.params.searchType}_like=${match.params.searchValue}`}/>}/>
             <Route exact path='/film/:film' render={() => <MovieListContainer />}/>
-            <Route exact path='/favourites' render={() => <MovieListContainer url={favourites.length > 0 && `http://localhost:3000/movies?${favourites.map((element: any) => `id=${element}`).join('&')}`}/>}/>
+            <Route exact path='/favourites' render={() => <MovieListContainer url={favourites.length > 0 && `http://localhost:3000/movies?${favourites.map((element: any) => `id=${element.id}`).join('&')}`}/>}/>
         </Switch>
     </main>
 );

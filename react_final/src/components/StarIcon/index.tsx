@@ -7,7 +7,9 @@ interface IStarIconProps {
 };
 
 const StarIcon = ({isFavourite, addToFavourites, removeFromFavourites}: IStarIconProps) => (
-    <div onClick={()=>{
+    <div onClick={(evt: any)=>{
+        evt.preventDefault();
+        evt.stopPropagation();
         if(isFavourite){
             removeFromFavourites();
         } else {

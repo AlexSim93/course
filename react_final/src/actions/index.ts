@@ -8,8 +8,9 @@ export const FAVOURITES_HAVE_ERROR = 'FAVOURITES_HAVE_ERROR';
 export const FAVOURITES_ARE_LOADING = 'FAVOURITES_ARE_LOADING';
 export const FAVOURITES_FETCH_DATA_SUCCESS = 'FAVOURITES_FETCH_DATA_SUCCESS';
 export const ADD_TO_FAVOURITES_ARE_LOADING = 'ADD_TO_FAVOURITES_ARE_LOADING';
-export const ADD_TO_FAVOURITES_HAVE_ERROR = 'ADD_TO_FAVOURITES_HAVE_ERROR';
-export const ADD_TO_FAVOURITES_SUCCESS = 'ADD_TO_FAVOURITES_SUCCESS';
+export const REMOVE_FROM_FAVOURITES_ARE_LOADING = 'REMOVE_FROM_FAVOURITES_ARE_LOADING';
+export const ADD_REMOVE_FAVOURITES_HAVE_ERROR = 'ADD_REMOVE_FAVOURITES_HAVE_ERROR';
+export const ADD_REMOVE_FAVOURITES_SUCCESS = 'ADD_REMOVE_FAVOURITES_SUCCESS';
 export const SORT_MOVIES = 'SORT_MOVIES';
 export const SortTypes = {
     RELEASE_DATE: 'RELEASE_DATE',
@@ -84,11 +85,18 @@ export const addToFavouritesAreLoading = (id: number) => (
     }
 );
 
-export const addToFavouritesHaveError = () => ({
-    type: ADD_TO_FAVOURITES_HAVE_ERROR
+export const removeFromFavouritesAreLoading = (id: number) => (
+    {
+        type: REMOVE_FROM_FAVOURITES_ARE_LOADING,
+        id
+    }
+);
+
+export const addRemoveFavouritesHaveError = () => ({
+    type: ADD_REMOVE_FAVOURITES_HAVE_ERROR
 });
 
-export const addToFavouritesSuccess = () => ({
-    type: ADD_TO_FAVOURITES_SUCCESS
+export const addRemoveFavouritesSuccess = () => ({
+    type: ADD_REMOVE_FAVOURITES_SUCCESS
 });
 
