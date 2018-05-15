@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Poster from '../Poster/index';
-import MovieInfoContainer from '../../containers/MovieInfoContainer/index';
+import MovieInfo from '..//MovieInfo/index';
 
 const Movie = ({movie}: any) => (
     <div>
         <Poster movie={movie}/>
-        <MovieInfoContainer movie={movie}/>
+        <MovieInfo movie={movie}/>
     </div>
 );
 

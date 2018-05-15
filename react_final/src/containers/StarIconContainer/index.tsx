@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import MovieInfo from '../../components/MovieInfo/index';
+import StarIcon from '../../components/StarIcon/index';
 import {addToFavouritesAreLoading, removeFromFavouritesAreLoading} from '../../actions/index';
 
 const mapStateToDispatch = (dispatch: any) => ({
@@ -8,7 +8,7 @@ const mapStateToDispatch = (dispatch: any) => ({
 });
 
 const mapStateToProps = (state: any, ownProps: any) => ({
-    favourites: state.favourites.favouritesIds
+    isFavourite: state.favourites.favouritesIds.some((currentValue: any) => currentValue.id === ownProps.id)
 });
 
-export default connect(mapStateToProps, mapStateToDispatch)(MovieInfo);
+export default connect(mapStateToProps, mapStateToDispatch)(StarIcon);

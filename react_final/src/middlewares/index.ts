@@ -20,8 +20,8 @@ import {    MOVIES_ARE_LOADING,
 export function* watcherSaga() {
     yield all(
         [
-            takeLatest(FILM_ARE_LOADING, sagaFetchFilm),
             takeLatest(FAVOURITES_ARE_LOADING, sagaFetchFavourites),
+            takeLatest(FILM_ARE_LOADING, sagaFetchFilm),
             takeLatest(MOVIES_ARE_LOADING, sagaFetchMovies),
             takeEvery(ADD_TO_FAVOURITES_ARE_LOADING, sagaAddToFavourites),
             takeEvery(REMOVE_FROM_FAVOURITES_ARE_LOADING, sagaRemoveFromFavourites)

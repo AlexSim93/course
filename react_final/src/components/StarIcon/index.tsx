@@ -2,18 +2,19 @@ import * as React from 'react';
 
 interface IStarIconProps {
     isFavourite: boolean,
-    addToFavourites: () => void,
-    removeFromFavourites: () => void
+    id: number,
+    addToFavourites: (id: number) => void,
+    removeFromFavourites: (id: number) => void
 };
 
-const StarIcon = ({isFavourite, addToFavourites, removeFromFavourites}: IStarIconProps) => (
+const StarIcon = ({id ,isFavourite, addToFavourites, removeFromFavourites}: IStarIconProps) => (
     <div onClick={(evt: any)=>{
         evt.preventDefault();
         evt.stopPropagation();
         if(isFavourite){
-            removeFromFavourites();
+            removeFromFavourites(id);
         } else {
-            addToFavourites();
+            addToFavourites(id);
         }
     }}>
         <svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 252 252'>
