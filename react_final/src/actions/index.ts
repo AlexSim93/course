@@ -31,6 +31,24 @@ interface ISortMovies {
     sortType: string;
 };
 
+interface IAddToFavouritesAreLoading {
+    type: string;
+    id: number | string;
+};
+
+interface IRemoveFromFavouritesAreLoading {
+    type: string;
+    id: number | string;
+};
+
+interface IAddRemoveFavouritesHaveError {
+    type: string;
+};
+
+interface IAddRemoveFavouritesSuccess {
+    type: string;
+};
+
 export const moviesAreLoading = (url: string): IDataAreLoading => ({
     type: MOVIES_ARE_LOADING,
     url
@@ -92,25 +110,25 @@ export const sortMovies = (sortType: string) : ISortMovies => (
     }
 );
 
-export const addToFavouritesAreLoading = (id: number | string) => (
+export const addToFavouritesAreLoading = (id: number | string) : IAddToFavouritesAreLoading => (
     {
         type: ADD_TO_FAVOURITES_ARE_LOADING,
         id
     }
 );
 
-export const removeFromFavouritesAreLoading = (id: number | string) => (
+export const removeFromFavouritesAreLoading = (id: number | string) : IRemoveFromFavouritesAreLoading => (
     {
         type: REMOVE_FROM_FAVOURITES_ARE_LOADING,
         id
     }
 );
 
-export const addRemoveFavouritesHaveError = () => ({
+export const addRemoveFavouritesHaveError = () : IAddRemoveFavouritesHaveError => ({
     type: ADD_REMOVE_FAVOURITES_HAVE_ERROR
 });
 
-export const addRemoveFavouritesSuccess = () => ({
+export const addRemoveFavouritesSuccess = () : IAddRemoveFavouritesSuccess => ({
     type: ADD_REMOVE_FAVOURITES_SUCCESS
 });
 

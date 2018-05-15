@@ -2,7 +2,13 @@ import * as React from 'react';
 import Poster from '../Poster/index';
 import ChosenMovieInfo from '../ChosenMovieInfo/index';
 
-class ChosenMovie extends React.Component<any, any, any>{
+interface IChosenMovie {
+    url?: string;
+    film: any;
+    fetchFilm(url?: string): void;
+};
+
+class ChosenMovie extends React.Component<IChosenMovie>{
     public componentDidMount(){
         this.props.fetchFilm(this.props.url);
     }

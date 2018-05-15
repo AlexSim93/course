@@ -31,11 +31,11 @@ const Sortbar = ({result, genre, onSortByDate, onSortByRating}: ISortbar) => (
             />
             <Route exact
                 path='/film/:film'
-                render={()=> <SortbarInfo genre={genre}/>}
+                render={() : JSX.Element => <SortbarInfo genre={genre}/>}
             />
             <Route exact
                 path='/favourites'
-                render={()=> <SortbarFavouritesInfo />}
+                render={() : JSX.Element => <SortbarFavouritesInfo />}
             />
         </Switch>
     </div>

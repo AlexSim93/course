@@ -2,16 +2,20 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Movie from '../Movie/index';
 
+interface IMovieList {
+    url?: string;
+    movies: any;
+    fetchData(url: string): void;
+};
 
-
-class MovieList extends React.Component<any, any, any> {
+class MovieList extends React.Component<IMovieList> {
     public componentDidMount(){
         if(this.props.url){
             this.props.fetchData(this.props.url);
         }
     }
-    public componentDidUpdate(prevProps: any) {
-        if(this.props.url !== prevProps.url) {
+    public componentDidUpdate(prevProps: IMovieList) {
+        if(this.props.url && this.props.url !== prevProps.url) {
             this.props.fetchData(this.props.url);
         }
     }

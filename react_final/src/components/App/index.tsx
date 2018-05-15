@@ -3,7 +3,17 @@ import Header from '../Header/index';
 import Main from '../Main/index';
 import Footer from '../Footer/index';
 
-class App extends React.Component<any, any, any> {
+interface IFavourites {
+    id: string | number;
+}
+
+interface IAppProps {
+    url: string;
+    fetchFavourites: (url: string) => void;
+    favourites: IFavourites[]
+};
+
+class App extends React.Component<IAppProps> {
     public componentDidMount(){
         this.props.fetchFavourites(this.props.url);
     }

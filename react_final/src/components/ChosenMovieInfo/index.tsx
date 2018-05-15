@@ -2,7 +2,11 @@ import * as React from 'react';
 import StarIconContainer from '../../containers/StarIconContainer/index';
 import './style.scss';
 
-const ChosenMovieInfo = ({movie}: any) => (
+interface IChosenMovieInfo {
+    movie: any
+};
+
+const ChosenMovieInfo = ({movie}: IChosenMovieInfo) => (
     <div className='chosen-movie'>
         <h2 className='chosen-movie__title'>{movie.title}</h2>
         <StarIconContainer id={movie.id}/>
