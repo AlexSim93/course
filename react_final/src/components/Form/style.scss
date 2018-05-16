@@ -1,0 +1,14 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__text-container {
+        flex-basis: 100%;
+    }
+    &__text-container-input {
+        width: 100%;
+    }
+    &__text-container-label {
+        color: white;
+    }
+}

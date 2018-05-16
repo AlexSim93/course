@@ -1,0 +1,24 @@
+.movie-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100px;
+    align-items: flex-start;
+    justify-content: space-between;
+    &__title {
+        flex-basis: 250px;
+        margin: 0 10px 0 0;
+
+    }
+    &__year {
+        box-sizing: border-box;
+        flex-basis: 40px;
+        text-align: center;
+        align-self: baseline;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+    &__genres {
+        flex-basis: 260px;
+        margin-right: 10px;
+    }
+}

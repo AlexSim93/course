@@ -2,8 +2,10 @@ import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import MovieListContainer from '../../containers/MovieListContainer/index';
 
+import './style.scss';
+
 const Main = ({favourites}: any) => (
-    <main>
+    <main className='main'>
         <Switch>
             <Route exact 
                 path='/search/:searchType?/:searchValue?' 

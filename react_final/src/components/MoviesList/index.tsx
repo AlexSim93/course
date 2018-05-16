@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Movie from '../Movie/index';
 
+import './style.scss';
+
 interface IMovieList {
     url?: string;
     movies: any;
@@ -10,6 +12,7 @@ interface IMovieList {
 
 class MovieList extends React.Component<IMovieList> {
     public componentDidMount(){
+        console.log('Mounting');
         if(this.props.url){
             this.props.fetchData(this.props.url);
         }
@@ -21,8 +24,8 @@ class MovieList extends React.Component<IMovieList> {
     }
     public render(){
         return (
-            <section>
-                {this.props.movies.map((movie:any) => <Link to={`/film/${movie.title}`} key={movie.id.toString()}><Movie  movie={movie}/></Link>)}
+            <section className='movie-list'>
+                {this.props.movies.map((movie:any) => <Link className='movie-list__movie-link' to={`/film/${movie.title}`} key={movie.id.toString()}><Movie  movie={movie}/></Link>)}
             </section>
         );
     }

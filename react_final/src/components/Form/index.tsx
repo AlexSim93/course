@@ -3,6 +3,8 @@ import TextField from '../TextField/index';
 import SwitchField from '../SwitchField/index';
 import Button from '../Button/index';
 
+import './style.scss';
+
 interface IFormProps {
     history: any
 };
@@ -15,7 +17,7 @@ const Form = ({history}: IFormProps) => {
     };
     const searchTypeHandler = (type: string) : void => {searchType = type};
     return (
-        <form onSubmit={(evt: React.SyntheticEvent<HTMLElement>) : void=>{
+        <form className='form' onSubmit={(evt: React.SyntheticEvent<HTMLElement>) : void=>{
             evt.preventDefault();
             history.push(`/search/${searchType}/${searchInput.value}`);
             searchInput.value = '';

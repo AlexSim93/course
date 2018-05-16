@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const SortbarFavouritesInfo = () => (
-    <div>
+    <div className='sortbar__container'>
         <span>Your favourite movies</span>
     </div>
 );

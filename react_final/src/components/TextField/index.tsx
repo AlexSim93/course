@@ -6,9 +6,9 @@ interface ITextFieldProps {
 };
 
 const TextField = ({id, variable}: ITextFieldProps) => (
-    <div>
-        <label htmlFor={id}>Find your movie</label>
-        <input type='search' name='search' id={id} ref={input => variable(input)}/>
+    <div className='form__text-container'>
+        <label className='form__text-container-label' htmlFor={id}>Find your movie</label>
+        <input className='form__text-container-input' type='search' name='search' id={id} ref={input => variable(input)}/>
     </div>
 );
 
