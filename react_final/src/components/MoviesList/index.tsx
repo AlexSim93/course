@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Movie from '../Movie/index';
+import TextDisplay from '../TextDisplay';
 
 import './style.scss';
 
@@ -25,7 +26,7 @@ class MovieList extends React.Component<IMovieList> {
     public render(){
         return (
             <section className='movie-list'>
-                {this.props.movies.map((movie:any) => <Link className='movie-list__movie-link' to={`/film/${movie.title}`} key={movie.id.toString()}><Movie  movie={movie}/></Link>)}
+                {this.props.movies.length > 0 ? this.props.movies.map((movie:any) => <Link className='movie-list__movie-link' to={`/film/${movie.title}`} key={movie.id.toString()}><Movie  movie={movie}/></Link>) : <TextDisplay sizeLg light text='No films found'/>}
             </section>
         );
     }

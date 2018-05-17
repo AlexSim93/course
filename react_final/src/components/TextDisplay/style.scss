@@ -1,0 +1,15 @@
+@import '../../scss/helpers/variables.scss';
+
+.text-display {
+    &__text {
+        color: $text-display-color;
+        font-size: 12px;
+        &_size_lg {
+            font-weight: bold;
+            font-size: 48px;
+        }
+        &_light {
+            color: $text-display-light-color;
+        }
+    }
+}

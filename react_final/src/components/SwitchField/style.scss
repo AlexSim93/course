@@ -1,8 +1,20 @@
+@import '../../scss/helpers/variables.scss';
 .switchfield {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: flex-start;
     &__label {
-        color: white;
+        margin-right: 10px;
+        color: $switchfield-label-color;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    &__button-container {
+        margin-right: 10px;
+    }
+    &__label_theme_dark {
+        color: $switchfield-label-dark-theme-color;
     }
 }

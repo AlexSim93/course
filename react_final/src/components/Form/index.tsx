@@ -1,7 +1,8 @@
 import * as React from 'react';
-import TextField from '../TextField/index';
-import SwitchField from '../SwitchField/index';
-import Button from '../Button/index';
+import * as classNames from 'classnames';
+import TextField from '../TextField';
+import SwitchField from '../SwitchField';
+import Button from '../Button';
 
 import './style.scss';
 
@@ -17,17 +18,17 @@ const Form = ({history}: IFormProps) => {
     };
     const searchTypeHandler = (type: string) : void => {searchType = type};
     return (
-        <form className='form' onSubmit={(evt: React.SyntheticEvent<HTMLElement>) : void=>{
+        <form className={classNames('form')} onSubmit={(evt: React.SyntheticEvent<HTMLElement>) : void=>{
             evt.preventDefault();
             history.push(`/search/${searchType}/${searchInput.value}`);
             searchInput.value = '';
         }}>
             <TextField id='search' variable={refHandler}/>
-            <SwitchField label='search by'>
-                <Button type='button' text='title' onClick={() : void => searchTypeHandler('title')}/>
-                <Button type='button' text='tagline' onClick={() : void => searchTypeHandler('tagline')}/>
+            <SwitchField darkTheme label='search by'>
+                <Button inactive={searchType !== 'title'} sizeSm type='button' text='title' onClick={() : void => searchTypeHandler('title')}/>
+                <Button inactive={searchType !== 'tagline'} sizeSm type='button' text='tagline' onClick={() : void => searchTypeHandler('tagline')}/>
             </SwitchField>
-            <Button type='submit' text='search'/>
+            <Button sizeLg type='submit' text='search'/>
         </form>
     );
 };

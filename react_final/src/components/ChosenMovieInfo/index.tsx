@@ -1,5 +1,6 @@
 import * as React from 'react';
-import StarIconContainer from '../../containers/StarIconContainer/index';
+import * as classNames from 'classnames';
+import StarIconContainer from '../../containers/StarIconContainer';
 import './style.scss';
 
 interface IChosenMovieInfo {
@@ -7,14 +8,14 @@ interface IChosenMovieInfo {
 };
 
 const ChosenMovieInfo = ({movie}: IChosenMovieInfo) => (
-    <div className='chosen-movie'>
-        <h2 className='chosen-movie__title'>{movie.title}</h2>
+    <div className={classNames('chosen-movie-info')}>
+        <h2 className={classNames('chosen-movie-info__title')}>{movie.title}</h2>
         <StarIconContainer id={movie.id}/>
-        <span className='chosen-movie__rating'>{movie.rating}</span>
-        <span className='chosen-movie__tagline'>{movie.tagline}</span>
-        <span className='chosen-movie__year'>{new Date(movie.release_date).getFullYear()}</span>
-        <span className='chosen-movie__runtime'>{movie.runtime}</span>
-        <span className='chosen-movie__overview'>{movie.overview}</span>
+        <span className={classNames('chosen-movie-info__rating')}>{movie.vote_average}</span>
+        <span className={classNames('chosen-movie-info__tagline')}>{movie.tagline}</span>
+        <span className={classNames('chosen-movie-info__year')}>{new Date(movie.release_date).getFullYear()}</span>
+        <span className={classNames('chosen-movie-info__runtime')}>{movie.runtime}</span>
+        <span className={classNames('chosen-movie-info__overview')}>{movie.overview}</span>
     </div>
 );
 

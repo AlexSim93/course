@@ -1,11 +1,12 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 import { Switch, Route } from 'react-router-dom';
-import MovieListContainer from '../../containers/MovieListContainer/index';
+import MovieListContainer from '../../containers/MovieListContainer';
 
 import './style.scss';
 
 const Main = ({favourites}: any) => (
-    <main className='main'>
+    <main className={classNames('main')}>
         <Switch>
             <Route exact 
                 path='/search/:searchType?/:searchValue?' 

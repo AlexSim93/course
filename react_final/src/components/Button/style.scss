@@ -1,12 +1,42 @@
+@import '../../scss/helpers/variables';
 .button {
     padding: 5px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    background: salmon;
+    color: $btn-color;
+    background: $btn-bg;
+    font-size: 16px;
+    font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
     border: 0px solid transparent;
     border-radius: 5px;
+    &:hover {
+        color: $btn-color-hover;
+        background: $btn-bg-hover;
+    }
+    &_theme_light {
+        color: $btn-light-color;
+        background: $btn-light-bg;
+        &:hover {
+            color: $btn-light-color-hover;
+            background: $btn-light-bg-hover;
+        }
+    }
+    &_size_lg {
+        padding: 5px 50px;
+    }
+    &_size_sm {
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 2px;
+    }
+    &_inactive {
+        background: $btn-inactive-bg;
+        color: $btn-inactive-color;
+    }
+    &_without-background {
+        background: $btn-without-bg;
+    }
 }

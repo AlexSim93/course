@@ -1,7 +1,10 @@
 import * as React from 'react';
-import Header from '../Header/index';
-import Main from '../Main/index';
-import Footer from '../Footer/index';
+import * as classNames from 'classnames';
+import Header from '../Header';
+import Main from '../Main';
+import Footer from '../Footer';
+
+import './style.scss';
 
 interface IFavourites {
     id: string | number;
@@ -20,7 +23,7 @@ class App extends React.Component<IAppProps> {
 
     public render() {
         return (
-            <div>
+            <div className={classNames('app')}>
                 <Header favourites={this.props.favourites}/>
                 <Main favourites={this.props.favourites}/>
                 <Footer />

@@ -1,5 +1,28 @@
-.chosen-movie {
+.chosen-movie-info {
     display: flex;
+    flex-basis: calc(100% - 300px);
+    min-width: 500px;
+    flex-shrink: 1;
     flex-direction: column;
     align-items: center;
+    &__title {
+        color: white;
+    }
+    &__rating {
+        border: 1px solid white;
+        border-radius: 50%;
+        color: white;
+    }
+    &__tagline {
+        color: white;
+    }
+    &__year {
+        color: white;
+    }
+    &__runtime {
+        color: white;     
+    }
+    &__overview {
+        color: white;
+    }
 }

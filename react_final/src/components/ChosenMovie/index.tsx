@@ -1,6 +1,9 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 import Poster from '../Poster/index';
 import ChosenMovieInfo from '../ChosenMovieInfo/index';
+
+import './style.scss';
 
 interface IChosenMovie {
     url?: string;
@@ -20,7 +23,7 @@ class ChosenMovie extends React.Component<IChosenMovie>{
     }
     public render(){
         return (
-            <div>
+            <div className={classNames('chosen-movie')}>
                 <Poster movie={this.props.film} />
                 <ChosenMovieInfo movie={this.props.film} />
             </div>
