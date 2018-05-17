@@ -1,4 +1,9 @@
 @import '../../scss/helpers/variables';
 .sortbar {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 45px;
     background: $sortbar-bg;
+    color: $sortbar-color;
+    font-weight: bold;
 }

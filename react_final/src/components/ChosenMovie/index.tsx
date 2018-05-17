@@ -1,8 +1,17 @@
 import * as React from 'react';
-import Poster from '../Poster/index';
-import ChosenMovieInfo from '../ChosenMovieInfo/index';
+import * as classNames from 'classnames';
+import Poster from '../Poster';
+import ChosenMovieInfo from '../ChosenMovieInfo';
 
-class ChosenMovie extends React.Component<any, any, any>{
+import './style.scss';
+
+interface IChosenMovie {
+    url?: string;
+    film: any;
+    fetchFilm(url?: string): void;
+};
+
+class ChosenMovie extends React.Component<IChosenMovie>{
     public componentDidMount(){
         this.props.fetchFilm(this.props.url);
     }
@@ -13,7 +22,7 @@ class ChosenMovie extends React.Component<any, any, any>{
     }
     public render(){
         return (
-            <div>
+            <div className={classNames('chosen-movie')}>
                 <Poster movie={this.props.film} />
                 <ChosenMovieInfo movie={this.props.film} />
             </div>

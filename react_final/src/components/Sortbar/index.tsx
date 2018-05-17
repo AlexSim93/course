@@ -1,41 +1,35 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 import { Switch, Route } from 'react-router-dom';
-import SwitchField from '../SwitchField/index';
-import SearchResult from '../SearchResult/index';
-import SortbarInfo from '../SortbarInfo/index';
-import SortbarFavouritesInfo from '../SortbarFavouritesInfo/index';
-import Button from '../Button/index';
+import TextDisplay from '../TextDisplay';
+import SearchBar from '../SearchBar';
 
 import './style.scss';
 
+
 interface ISortbar {
-    result: number,
-    genre: string,
-    onSortByDate(): void,
-    onSortByRating(): void 
+    result: number;
+    sortType: string;
+    genre: string;
+    onSortByDate(): void;
+    onSortByRating(): void; 
 };
 
-const Sortbar = ({result, genre, onSortByDate, onSortByRating}: ISortbar) => (
-    <div className='sortbar'>
+const Sortbar = ({result, sortType, genre, onSortByDate, onSortByRating}: ISortbar) => (
+    <div className={classNames('sortbar')}>
         <Switch>
             <Route exact
                 path='/search/:searchType?/:searchValue?' 
                 render={() => 
-                    <div> 
-                        <SearchResult result={result}/>
-                        <SwitchField label='sort by' >
-                            <Button text='release_date' onClick={onSortByDate}/>
-                            <Button text='rating' onClick={onSortByRating}/>
-                        </SwitchField>
-                    </div>}
+                    <SearchBar result={result} sortType={sortType} onSortByDate={onSortByDate} onSortByRating={onSortByRating}/>}
             />
             <Route exact
                 path='/film/:film'
-                render={()=> <SortbarInfo genre={genre}/>}
+                render={() : JSX.Element => <TextDisplay text={`genre of films: ${genre}`}/>}
             />
             <Route exact
                 path='/favourites'
-                render={()=> <SortbarFavouritesInfo />}
+                render={() : JSX.Element => <TextDisplay text={'Your favourite films'} />}
             />
         </Switch>
     </div>

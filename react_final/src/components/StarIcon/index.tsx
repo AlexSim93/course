@@ -8,7 +8,7 @@ interface IStarIconProps {
 };
 
 const StarIcon = ({id ,isFavourite, addToFavourites, removeFromFavourites}: IStarIconProps) => (
-    <div onClick={(evt: any)=>{
+    <div onClick={(evt: React.SyntheticEvent<HTMLElement>)=>{
         evt.preventDefault();
         evt.stopPropagation();
         if(isFavourite){

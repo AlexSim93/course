@@ -1,35 +1,50 @@
 import * as React from 'react';
-import TextField from '../TextField/index';
-import SwitchField from '../SwitchField/index';
-import Button from '../Button/index';
+import * as classNames from 'classnames';
+import TextField from '../TextField';
+import SwitchField from '../SwitchField';
+import Button from '../Button';
+
+import './style.scss';
 
 interface IFormProps {
-    fetchData: any,
-    history: any
+    history: any;
+    match: any;
 };
 
-const Form = ({fetchData, history}: IFormProps) => {
-    let searchInput: any;
-    let searchType:string = 'title';
-    const refHandler = (input: any) => {
-        searchInput = input;
+interface IFormState {
+    searchType: string;
+    searchValue: string;
+}
+
+class Form extends React.Component<IFormProps, IFormState> {
+    public state = {
+        searchType: this.props.match.params.searchType,
+        searchValue: this.props.match.params.searchValue
+    }
+
+    public onChange = (evt: any) => {
+        this.setState({searchValue: evt.target.value});
+    }
+
+    public searchTypeHandler = (type: string) => {
+        this.setState({searchType: type});
     };
-    const searchTypeHandler = (type: string) => searchType = type;
-    return (
-        <form onSubmit={(evt: any)=>{
-            evt.preventDefault();
-            history.push(`/search/${searchType}/${searchInput.value}`);
-            fetchData(`http://localhost:3000/movies?${searchType}_like=${searchInput.value}`);
-            searchInput.value = '';
-        }}>
-            <TextField id='search' variable={refHandler}/>
-            <SwitchField label='search by'>
-                <Button type='button' text='title' onClick={() => searchTypeHandler('title')}/>
-                <Button type='button' text='tagline' onClick={() => searchTypeHandler('tagline')}/>
-            </SwitchField>
-            <Button type='submit' text='search'/>
-        </form>
-    );
-};
+
+    public render() {
+        return (
+            <form className={classNames('form')} onSubmit={(evt: React.SyntheticEvent<HTMLElement>): void => {
+                evt.preventDefault();
+                this.props.history.push(`/search/${this.state.searchType}/${this.state.searchValue}`);
+            }}>
+                <TextField value={this.state.searchValue} onChange={this.onChange} id='search'/>
+                <SwitchField darkTheme uppercased label='search by'>
+                    <Button inactive={this.state.searchType !== 'title'} sizeSm type='button' text='title' onClick={(): void => this.searchTypeHandler('title')} />
+                    <Button inactive={this.state.searchType !== 'tagline'} sizeSm type='button' text='tagline' onClick={(): void => this.searchTypeHandler('tagline')} />
+                </SwitchField>
+                <Button sizeLg type='submit' text='search' />
+            </form>
+        );
+    }
+}
 
 export default Form;

@@ -1,16 +1,29 @@
 import * as React from 'react';
-import Header from '../Header/index';
-import Main from '../Main/index';
-import Footer from '../Footer/index';
+import * as classNames from 'classnames';
+import Header from '../Header';
+import Main from '../Main';
+import Footer from '../Footer';
 
-class App extends React.Component<any, any, any> {
+import './style.scss';
+
+interface IFavourites {
+    id: string | number;
+}
+
+interface IAppProps {
+    url: string;
+    fetchFavourites: (url: string) => void;
+    favourites: IFavourites[]
+};
+
+class App extends React.Component<IAppProps> {
     public componentDidMount(){
         this.props.fetchFavourites(this.props.url);
     }
 
     public render() {
         return (
-            <div>
+            <div className={classNames('app')}>
                 <Header favourites={this.props.favourites}/>
                 <Main favourites={this.props.favourites}/>
                 <Footer />

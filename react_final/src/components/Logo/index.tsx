@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 import './style.scss';
 
 interface ILogoProps {
@@ -6,8 +7,8 @@ interface ILogoProps {
 };
 
 const Logo = ({text}: ILogoProps) => (
-    <div className='logo'>
-        <span className='logo__text'>{text}</span>
+    <div className={classNames('logo')}>
+        <span className={classNames('logo__text')}>{text}</span>
     </div>
 );
 

@@ -1,8 +1,11 @@
 import * as React from 'react';
-import Logo from '../Logo/index';
+import * as classNames from 'classnames';
+import Logo from '../Logo';
+
+import './style.scss';
 
 const Footer = () => (
-    <footer>
+    <footer className={classNames('footer')}>
         <Logo text='netflixroulette'/>
     </footer>
 );
