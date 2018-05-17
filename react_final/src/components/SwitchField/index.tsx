@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
+import * as uniqid from 'uniqid';
 
 import './style.scss';
 
@@ -9,12 +10,10 @@ interface ISwitchFieldProps {
     darkTheme?: boolean;
 };
 
-let id = 0;
-
 const SwitchField = ({label, children, darkTheme}: ISwitchFieldProps) => (
     <div className={classNames('switchfield')}>
         <span className={classNames('switchfield__label', {'switchfield__label_theme_dark': darkTheme})}>{label}</span>
-        {children.map((child: JSX.Element) => <div key={id++} className={classNames('switchfield__button-container')}>{child}</div>)}     
+        {children.map((child: JSX.Element) => <div key={uniqid()} className={classNames('switchfield__button-container')}>{child}</div>)}     
     </div>
 );
 

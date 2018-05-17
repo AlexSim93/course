@@ -9,13 +9,17 @@ interface IChosenMovieInfo {
 
 const ChosenMovieInfo = ({movie}: IChosenMovieInfo) => (
     <div className={classNames('chosen-movie-info')}>
-        <h2 className={classNames('chosen-movie-info__title')}>{movie.title}</h2>
-        <StarIconContainer id={movie.id}/>
-        <span className={classNames('chosen-movie-info__rating')}>{movie.vote_average}</span>
+        <div className={classNames('chosen-movie-info__title-container')}>
+            <h2 className={classNames('chosen-movie-info__title')}>{movie.title}</h2>
+            <span className={classNames('chosen-movie-info__rating')}>{movie.vote_average}</span>
+        </div>
         <span className={classNames('chosen-movie-info__tagline')}>{movie.tagline}</span>
-        <span className={classNames('chosen-movie-info__year')}>{new Date(movie.release_date).getFullYear()}</span>
-        <span className={classNames('chosen-movie-info__runtime')}>{movie.runtime}</span>
+        <div className={classNames('chosen-movie-info__year-runtime-container')}>
+            <span className={classNames('chosen-movie-info__year')}>{new Date(movie.release_date).getFullYear()}</span>
+            <span className={classNames('chosen-movie-info__runtime')}>{movie.runtime} min.</span>
+        </div>
         <span className={classNames('chosen-movie-info__overview')}>{movie.overview}</span>
+        <StarIconContainer id={movie.id}/>
     </div>
 );
 
