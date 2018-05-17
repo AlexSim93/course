@@ -12,13 +12,14 @@ interface IFavourites {
 
 interface IAppProps {
     url: string;
-    fetchFavourites: (url: string) => void;
+    fetchFavourites: (item: any) => void;
     favourites: IFavourites[]
 };
 
 class App extends React.Component<IAppProps> {
     public componentDidMount(){
-        this.props.fetchFavourites(this.props.url);
+        const favouritesId = localStorage.getItem('favourites');
+        this.props.fetchFavourites(favouritesId);
     }
 
     public render() {

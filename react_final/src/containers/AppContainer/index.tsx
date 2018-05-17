@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from '../../components/App/index';
-import {favouritesAreLoading} from '../../actions/index';
+import {getFavouritesFromStorage} from '../../actions/index';
 
 const mapStateToProps = (state: any, ownProps: any) => ({
     favourites: state.favourites.favouritesIds,
@@ -8,7 +8,7 @@ const mapStateToProps = (state: any, ownProps: any) => ({
 });
 
 const mapStateToDispatch = (dispatch: any) => ({
-    fetchFavourites: (url: string) => dispatch(favouritesAreLoading(url)),
+    fetchFavourites: (item: any) => dispatch(getFavouritesFromStorage(item)),
 });
 
 export default connect(mapStateToProps, mapStateToDispatch)(App);

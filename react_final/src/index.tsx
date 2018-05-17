@@ -13,7 +13,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-          <Route exact path='/search/:searchType?/:searchValue?' component={AppContainer} />
+          <Route exact path='/search/:searchValue?' component={AppContainer} />
           <Route exact path='/film/:film' component={AppContainer} />
           <Route exact path='/favourites' component={AppContainer} />
           <Redirect to='/search/' />

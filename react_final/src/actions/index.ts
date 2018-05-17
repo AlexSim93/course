@@ -12,10 +12,18 @@ export const ADD_TO_FAVOURITES_ARE_LOADING = 'ADD_TO_FAVOURITES_ARE_LOADING';
 export const REMOVE_FROM_FAVOURITES_ARE_LOADING = 'REMOVE_FROM_FAVOURITES_ARE_LOADING';
 export const ADD_REMOVE_FAVOURITES_HAVE_ERROR = 'ADD_REMOVE_FAVOURITES_HAVE_ERROR';
 export const ADD_REMOVE_FAVOURITES_SUCCESS = 'ADD_REMOVE_FAVOURITES_SUCCESS';
+export const GET_FAVOURITES = 'GET_FAVOURITES';
+export const ADD_TO_FAVOURITES = 'ADD_TO_FAVOURITES';
+export const REMOVE_FROM_FAVOURITES = 'REMOVE_FROM_FAVOURITES';
 export const SORT_MOVIES = 'SORT_MOVIES';
+export const SET_SEARCH_TYPE = 'SET_SEARCH_TYPE';
 export const SortTypes = {
     RELEASE_DATE: 'RELEASE_DATE',
     RATING: 'RATING'
+};
+export const SearchTypes = {
+    TITLE: 'TITLE',
+    TAGLINE: 'TAGLINE'
 };
 
 interface IDataAreLoading {
@@ -117,6 +125,11 @@ export const sortMovies = (sortType: string) : ISortMovies => (
     }
 );
 
+export const setSearchType = (searchType: string) => ({
+    type: SET_SEARCH_TYPE,
+    searchType
+});
+
 export const addToFavouritesAreLoading = (id: number | string) : IAddToFavouritesAreLoading => (
     {
         type: ADD_TO_FAVOURITES_ARE_LOADING,
@@ -137,5 +150,20 @@ export const addRemoveFavouritesHaveError = () : IAddRemoveFavouritesHaveError =
 
 export const addRemoveFavouritesSuccess = () : IAddRemoveFavouritesSuccess => ({
     type: ADD_REMOVE_FAVOURITES_SUCCESS
+});
+
+export const getFavouritesFromStorage = (favouritesIds: any) => ({
+    type: GET_FAVOURITES,
+    payload: favouritesIds
+});
+
+export const addFavouritesToStorage = (movieId: any) => ({
+    type: ADD_TO_FAVOURITES,
+    payload: movieId
+});
+
+export const removeFavouritesFromStorage = (movieId: any) => ({
+    type: REMOVE_FROM_FAVOURITES,
+    payload: movieId
 });
 

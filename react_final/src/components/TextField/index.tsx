@@ -6,11 +6,15 @@ interface ITextFieldProps {
     onChange?(evt: any): void;
 };
 
-const TextField = ({id, onChange, value}: ITextFieldProps) => (
-    <div className='form__text-container'>
-        <label className='form__text-container-label' htmlFor={id}>Find your movie</label>
-        <input className='form__text-container-input' type='search' name='search' value={value} onChange={onChange} id={id}/>
-    </div>
-);
+class TextField extends React.Component<ITextFieldProps> {
+    public render() {
+        return (
+            <div className='form__text-container'>
+                <label className='form__text-container-label' htmlFor={this.props.id}>Find your movie</label>
+                <input className='form__text-container-input' type='search' name='search' value={this.props.value} onChange={this.props.onChange} id={this.props.id} />
+            </div>
+        );
+    }
+}
 
 export default TextField;

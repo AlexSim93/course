@@ -9,7 +9,7 @@ const Main = ({favourites}: any) => (
     <main className={classNames('main')}>
         <Switch>
             <Route exact 
-                path='/search/:searchType?/:searchValue?' 
+                path='/search/:searchValue?' 
                 render={({match}) => <MovieListContainer url={match.params.searchType && match.params.searchValue && `${match.params.searchType}_like=${match.params.searchValue}`}/>}/>
             <Route exact path='/film/:film' render={() => <MovieListContainer />}/>
             <Route exact path='/favourites' render={() => <MovieListContainer url={`${favourites.map((element: any) => `id=${element.id}`).join('&')}`}/>}/>

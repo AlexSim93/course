@@ -1,10 +1,15 @@
 import { connect } from 'react-redux';
 import StarIcon from '../../components/StarIcon/index';
-import {addToFavouritesAreLoading, removeFromFavouritesAreLoading} from '../../actions/index';
+import {addFavouritesToStorage, removeFavouritesFromStorage} from '../../actions/index';
 
 const mapStateToDispatch = (dispatch: any) => ({
-    addToFavourites: (id: number) => dispatch(addToFavouritesAreLoading(id)),
-    removeFromFavourites: (id: number) => dispatch(removeFromFavouritesAreLoading(id))
+    addToFavourites: (id: number) => {
+        localStorage.setItem('favourites', JSON.stringify({id}));
+        return dispatch(addFavouritesToStorage({id}));
+    },
+    removeFromFavourites: (id: number) => {
+        return dispatch(removeFavouritesFromStorage({id}));
+    }
 });
 
 const mapStateToProps = (state: any, ownProps: any) => ({
