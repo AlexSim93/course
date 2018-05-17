@@ -13,7 +13,6 @@ interface IChosenMovie {
 
 class ChosenMovie extends React.Component<IChosenMovie>{
     public componentDidMount(){
-        console.log('Movie mounting');
         this.props.fetchFilm(this.props.url);
     }
     public componentDidUpdate(prevProps: any) {

@@ -7,20 +7,25 @@ import './style.scss';
 
 interface IMovieList {
     url?: string;
+    urlBase: string;
     movies: any;
     fetchData(url: string): void;
+    moviesReset(): void;
 };
 
 class MovieList extends React.Component<IMovieList> {
     public componentDidMount(){
-        console.log('Mounting');
         if(this.props.url){
-            this.props.fetchData(this.props.url);
+            this.props.fetchData(`${this.props.urlBase}${this.props.url}`);
         }
     }
     public componentDidUpdate(prevProps: IMovieList) {
-        if(this.props.url && this.props.url !== prevProps.url) {
-            this.props.fetchData(this.props.url);
+        if(this.props.url !== prevProps.url) {
+            if( this.props.url ){
+                this.props.fetchData(`${this.props.urlBase}${this.props.url}`);
+            } else {
+                this.props.moviesReset();
+            }
         }
     }
     public render(){

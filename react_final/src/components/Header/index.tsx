@@ -14,7 +14,7 @@ const Header = ({favourites}: any) => (
         <Switch>
             <Route exact 
                 path='/search/:searchType?/:searchValue?' 
-                render={({history})=><Form history={history}/>}/>
+                render={({history, match})=><Form history={history} match={match}/>}/>
             <Route exact 
                 path='/film/:film' 
                 render={({match}) => <ChosenMovieContainer match={match} favourites={favourites}/>}/>

@@ -4,6 +4,7 @@ import {sortMovies, SortTypes} from '../../actions/index';
 
 const mapStateToProps = (state: any) => ({
     result: state.entities.movies.length,
+    sortType: state.sortType,
     genre: Array.isArray(state.chosenFilm.film.genres) ? state.chosenFilm.film.genres[0] : state.chosenFilm.film.genres
 });
 

@@ -15,7 +15,7 @@ const ChosenMovieInfo = ({movie}: IChosenMovieInfo) => (
         </div>
         <span className={classNames('chosen-movie-info__tagline')}>{movie.tagline}</span>
         <div className={classNames('chosen-movie-info__year-runtime-container')}>
-            <span className={classNames('chosen-movie-info__year')}>{new Date(movie.release_date).getFullYear()}</span>
+            <span className={classNames('chosen-movie-info__year')}>{movie.release_date}</span>
             <span className={classNames('chosen-movie-info__runtime')}>{movie.runtime} min.</span>
         </div>
         <span className={classNames('chosen-movie-info__overview')}>{movie.overview}</span>

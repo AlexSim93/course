@@ -7,30 +7,44 @@ import Button from '../Button';
 import './style.scss';
 
 interface IFormProps {
-    history: any
+    history: any;
+    match: any;
 };
 
-const Form = ({history}: IFormProps) => {
-    let searchInput: HTMLInputElement;
-    let searchType:string = 'title';
-    const refHandler = (input: any) : void => {
-        searchInput = input;
+interface IFormState {
+    searchType: string;
+    searchValue: string;
+}
+
+class Form extends React.Component<IFormProps, IFormState> {
+    public state = {
+        searchType: this.props.match.params.searchType,
+        searchValue: this.props.match.params.searchValue
+    }
+
+    public onChange = (evt: any) => {
+        this.setState({searchValue: evt.target.value});
+    }
+
+    public searchTypeHandler = (type: string) => {
+        this.setState({searchType: type});
     };
-    const searchTypeHandler = (type: string) : void => {searchType = type};
-    return (
-        <form className={classNames('form')} onSubmit={(evt: React.SyntheticEvent<HTMLElement>) : void=>{
-            evt.preventDefault();
-            history.push(`/search/${searchType}/${searchInput.value}`);
-            searchInput.value = '';
-        }}>
-            <TextField id='search' variable={refHandler}/>
-            <SwitchField darkTheme uppercased label='search by'>
-                <Button inactive={searchType !== 'title'} sizeSm type='button' text='title' onClick={() : void => searchTypeHandler('title')}/>
-                <Button inactive={searchType !== 'tagline'} sizeSm type='button' text='tagline' onClick={() : void => searchTypeHandler('tagline')}/>
-            </SwitchField>
-            <Button sizeLg type='submit' text='search'/>
-        </form>
-    );
-};
+
+    public render() {
+        return (
+            <form className={classNames('form')} onSubmit={(evt: React.SyntheticEvent<HTMLElement>): void => {
+                evt.preventDefault();
+                this.props.history.push(`/search/${this.state.searchType}/${this.state.searchValue}`);
+            }}>
+                <TextField value={this.state.searchValue} onChange={this.onChange} id='search'/>
+                <SwitchField darkTheme uppercased label='search by'>
+                    <Button inactive={this.state.searchType !== 'title'} sizeSm type='button' text='title' onClick={(): void => this.searchTypeHandler('title')} />
+                    <Button inactive={this.state.searchType !== 'tagline'} sizeSm type='button' text='tagline' onClick={(): void => this.searchTypeHandler('tagline')} />
+                </SwitchField>
+                <Button sizeLg type='submit' text='search' />
+            </form>
+        );
+    }
+}
 
 export default Form;

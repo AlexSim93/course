@@ -9,18 +9,19 @@ import './style.scss';
 
 interface ISortbar {
     result: number;
+    sortType: string;
     genre: string;
     onSortByDate(): void;
     onSortByRating(): void; 
 };
 
-const Sortbar = ({result, genre, onSortByDate, onSortByRating}: ISortbar) => (
+const Sortbar = ({result, sortType, genre, onSortByDate, onSortByRating}: ISortbar) => (
     <div className={classNames('sortbar')}>
         <Switch>
             <Route exact
                 path='/search/:searchType?/:searchValue?' 
                 render={() => 
-                    <SearchBar result={result} onSortByDate={onSortByDate} onSortByRating={onSortByRating}/>}
+                    <SearchBar result={result} sortType={sortType} onSortByDate={onSortByDate} onSortByRating={onSortByRating}/>}
             />
             <Route exact
                 path='/film/:film'

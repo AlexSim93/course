@@ -66,7 +66,7 @@ function* sagaFetchFilm(action: any) {
     try {
       const response = yield call(fetchData, action.url);
       const film = response.data[0];
-      yield put(moviesAreLoading(`http://localhost:3000/movies?genres_like=${film.genres[0]}`));
+      yield put(moviesAreLoading(`http://localhost:3000/movies?genres_like=${film.genres[0]}&id_ne=${film.id}`));
 
       yield put(filmFetchDataSuccess(film));
 
