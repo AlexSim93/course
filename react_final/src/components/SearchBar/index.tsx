@@ -15,9 +15,9 @@ interface ISearchBar {
 const SearchBar = ({ result, onSortByDate, onSortByRating }: ISearchBar) => (
     <div className={classNames('searchbar')}>
         <TextDisplay text={`${result} movies found`} />
-        <SwitchField label='sort by' >
-            <Button sizeSm withoutBG text='release_date' onClick={onSortByDate} />
-            <Button sizeSm withoutBG text='rating' onClick={onSortByRating} />
+        <SwitchField label='Sort by' >
+            <Button lowercased sizeSm withoutBG text='release_date' onClick={onSortByDate} />
+            <Button lowercased withoutBGInactive sizeSm withoutBG text='rating' onClick={onSortByRating} />
         </SwitchField>
     </div>
 );

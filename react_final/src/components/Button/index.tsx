@@ -11,17 +11,21 @@ interface IButtonProps {
     sizeLg?: boolean;
     sizeSm?: boolean;
     inactive?: boolean;
+    withoutBGInactive?: boolean;
+    lowercased?: boolean;
     onClick?(): void;
 };
 
-const Button = ({text, type, light, withoutBG, sizeLg, sizeSm, inactive, onClick}: IButtonProps) => (
+const Button = ({text, type, light, lowercased, withoutBG, withoutBGInactive, sizeLg, sizeSm, inactive, onClick}: IButtonProps) => (
     <button className={classNames('button', 
         {
             'button_theme_light': light, 
-            'button_without-background': withoutBG, 
+            'button_without-background': withoutBG,
+            'button_without-background-inactive': withoutBGInactive, 
             'button_size_lg': sizeLg, 
             'button_size_sm': sizeSm,
-            'button_inactive': inactive
+            'button_inactive': inactive,
+            'button_lowercased': lowercased
         })} 
             type={type} 
             onClick={onClick} >

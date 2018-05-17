@@ -24,7 +24,7 @@ const Form = ({history}: IFormProps) => {
             searchInput.value = '';
         }}>
             <TextField id='search' variable={refHandler}/>
-            <SwitchField darkTheme label='search by'>
+            <SwitchField darkTheme uppercased label='search by'>
                 <Button inactive={searchType !== 'title'} sizeSm type='button' text='title' onClick={() : void => searchTypeHandler('title')}/>
                 <Button inactive={searchType !== 'tagline'} sizeSm type='button' text='tagline' onClick={() : void => searchTypeHandler('tagline')}/>
             </SwitchField>

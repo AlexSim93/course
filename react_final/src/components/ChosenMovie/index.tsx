@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import Poster from '../Poster/index';
-import ChosenMovieInfo from '../ChosenMovieInfo/index';
+import Poster from '../Poster';
+import ChosenMovieInfo from '../ChosenMovieInfo';
 
 import './style.scss';
 

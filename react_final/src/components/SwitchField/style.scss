@@ -9,7 +9,9 @@
         color: $switchfield-label-color;
         font-size: 12px;
         font-weight: bold;
-        text-transform: uppercase;
+        &_uppercased {
+            text-transform: uppercase;
+        }   
     }
     &__button-container {
         margin-right: 10px;
