@@ -9,7 +9,7 @@ import './style.scss';
 
 interface IFormProps {
     history: any;
-    match: any;
+    searchValue: any;
     searchType: string;
     setSearchByTitle(): void;
     setSearchByTagline(): void; 
@@ -21,7 +21,7 @@ interface IFormState {
 
 class Form extends React.Component<IFormProps, IFormState> {
     public state = {
-        searchValue: this.props.match.params.searchValue
+        searchValue: this.props.searchValue
     }
 
     public onChange = (evt: any) => {
@@ -32,7 +32,7 @@ class Form extends React.Component<IFormProps, IFormState> {
         return (
             <form className={classNames('form')} onSubmit={(evt: React.SyntheticEvent<HTMLElement>): void => {
                 evt.preventDefault();
-                this.props.history.push(`/search/${this.props.searchType}/${this.state.searchValue}`);
+                this.props.history.push(`/search/${this.state.searchValue}`);
             }}>
                 <TextField value={this.state.searchValue} onChange={this.onChange} id='search'/>
                 <SwitchField darkTheme uppercased label='search by'>

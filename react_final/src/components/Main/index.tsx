@@ -1,18 +1,20 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import { Switch, Route } from 'react-router-dom';
-import MovieListContainer from '../../containers/MovieListContainer';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import MovieListFavouritesContainer from '../../containers/MovieListFavouritesContainer';
+import MovieListSearchResultContainer from '../../containers/MovieListSearchResultContainer';
+import MovieListChosenMovieContainer from '../../containers/MovieListChosenMovieContainer';
 
 import './style.scss';
 
-const Main = ({favourites}: any) => (
+const Main = () => (
     <main className={classNames('main')}>
         <Switch>
             <Route exact 
                 path='/search/:searchValue?' 
-                render={({match}) => <MovieListContainer url={match.params.searchType && match.params.searchValue && `${match.params.searchType}_like=${match.params.searchValue}`}/>}/>
-            <Route exact path='/film/:film' render={() => <MovieListContainer />}/>
-            <Route exact path='/favourites' render={() => <MovieListContainer url={`${favourites.map((element: any) => `id=${element.id}`).join('&')}`}/>}/>
+                component = {withRouter(MovieListSearchResultContainer)}/>
+            <Route exact path='/film/:film' component = {withRouter(MovieListChosenMovieContainer)}/>
+            <Route exact path='/favourites' component = {withRouter(MovieListFavouritesContainer)}/>
         </Switch>
     </main>
 );

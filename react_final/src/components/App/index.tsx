@@ -3,30 +3,24 @@ import * as classNames from 'classnames';
 import Header from '../Header';
 import Main from '../Main';
 import Footer from '../Footer';
+import {loadFavourites} from '../../store';
 
 import './style.scss';
 
-interface IFavourites {
-    id: string | number;
-}
-
 interface IAppProps {
-    url: string;
-    fetchFavourites: (item: any) => void;
-    favourites: IFavourites[]
+    getFavourites(item: any): void;
 };
 
 class App extends React.Component<IAppProps> {
     public componentDidMount(){
-        const favouritesId = localStorage.getItem('favourites');
-        this.props.fetchFavourites(favouritesId);
+        this.props.getFavourites(loadFavourites());
     }
 
     public render() {
         return (
             <div className={classNames('app')}>
-                <Header favourites={this.props.favourites}/>
-                <Main favourites={this.props.favourites}/>
+                <Header />
+                <Main />
                 <Footer />
             </div>
         );

@@ -16,8 +16,7 @@ const getOrderedMovies = (movies:any, sortType:any) => {
 
 const mapStateToProps = (state: any, ownProps: any) => ({
     movies: getOrderedMovies(state.entities.movies, state.sortType),
-    url: ownProps.url,
-    urlBase: 'http://localhost:3000/movies?'
+    url: ownProps.match.params.searchValue && `${state.searchType}_like=${ownProps.match.params.searchValue}`,
 }); 
 
 const mapStateToDispatch = (dispatch: any) => ({

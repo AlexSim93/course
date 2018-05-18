@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
-import Sortbar from '../../components/Sortbar';
+import { isArray } from 'lodash';
+import Searchbar from '../../components/Searchbar';
 import {sortMovies, SortTypes} from '../../actions/index';
 
 const mapStateToProps = (state: any) => ({
     result: state.entities.movies.length,
     sortType: state.sortType,
-    genre: Array.isArray(state.chosenFilm.film.genres) ? state.chosenFilm.film.genres[0] : state.chosenFilm.film.genres
+    genre: isArray(state.chosenFilm.film.genres) ? state.chosenFilm.film.genres[0] : state.chosenFilm.film.genres
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
@@ -13,4 +14,4 @@ const mapDispatchToProps = (dispatch: any) => ({
     onSortByRating: () => dispatch(sortMovies(SortTypes.RATING))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sortbar);
+export default connect(mapStateToProps, mapDispatchToProps)(Searchbar);

@@ -1,37 +1,26 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import { Switch, Route } from 'react-router-dom';
+import SwitchField from '../SwitchField';
 import TextDisplay from '../TextDisplay';
-import SearchBar from '../SearchBar';
+import Button from '../Button';
+import { SortTypes } from '../../actions';
 
 import './style.scss';
-
 
 interface ISortbar {
     result: number;
     sortType: string;
-    genre: string;
     onSortByDate(): void;
-    onSortByRating(): void; 
+    onSortByRating(): void;
 };
 
-const Sortbar = ({result, sortType, genre, onSortByDate, onSortByRating}: ISortbar) => (
+const Sortbar = ({ result, sortType, onSortByDate, onSortByRating }: ISortbar) => (
     <div className={classNames('sortbar')}>
-        <Switch>
-            <Route exact
-                path='/search/:searchType?/:searchValue?' 
-                render={() => 
-                    <SearchBar result={result} sortType={sortType} onSortByDate={onSortByDate} onSortByRating={onSortByRating}/>}
-            />
-            <Route exact
-                path='/film/:film'
-                render={() : JSX.Element => <TextDisplay text={`genre of films: ${genre}`}/>}
-            />
-            <Route exact
-                path='/favourites'
-                render={() : JSX.Element => <TextDisplay text={'Your favourite films'} />}
-            />
-        </Switch>
+        <TextDisplay text={`${result} movies found`} />
+        <SwitchField label='Sort by' >
+            <Button lowercased withoutBGInactive={sortType !== SortTypes.RELEASE_DATE} sizeSm withoutBG text='release_date' onClick={onSortByDate} />
+            <Button lowercased withoutBGInactive={sortType !== SortTypes.RATING} sizeSm withoutBG text='rating' onClick={onSortByRating} />
+        </SwitchField>
     </div>
 );
 

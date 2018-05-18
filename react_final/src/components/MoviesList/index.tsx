@@ -7,7 +7,6 @@ import './style.scss';
 
 interface IMovieList {
     url?: string;
-    urlBase: string;
     movies: any;
     fetchData(url: string): void;
     moviesReset(): void;
@@ -16,13 +15,13 @@ interface IMovieList {
 class MovieList extends React.Component<IMovieList> {
     public componentDidMount(){
         if(this.props.url){
-            this.props.fetchData(`${this.props.urlBase}${this.props.url}`);
+            this.props.fetchData(`http://localhost:3000/movies?${this.props.url}`);
         }
     }
     public componentDidUpdate(prevProps: IMovieList) {
         if(this.props.url !== prevProps.url) {
             if( this.props.url ){
-                this.props.fetchData(`${this.props.urlBase}${this.props.url}`);
+                this.props.fetchData(`http://localhost:3000/movies?${this.props.url}`);
             } else {
                 this.props.moviesReset();
             }

@@ -1,7 +1,9 @@
+@import '../../scss/helpers/variables';
 .searchbar {
-    padding: 0px 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    flex-grow: 1;
+    padding: 15px 45px;
+    background: $sortbar-bg;
+    color: $sortbar-color;
+    font-weight: bold;
 }

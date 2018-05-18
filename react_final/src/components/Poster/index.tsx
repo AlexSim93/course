@@ -1,9 +1,11 @@
 import * as React from 'react';
+import {get} from 'lodash';
 import './style.scss';
+import default_poster from '../../images/poster_none.png';
 
 const Poster = ({movie}: any) => (
     <div className='poster'>
-        <img className='poster__img' src={movie.poster_path} alt={movie.title}/>
+        <img className='poster__img' src={get(movie, 'poster_path', default_poster)} alt={movie.title} onError={(evt: any)=> evt.target.src = default_poster}/>
     </div>
 );
 

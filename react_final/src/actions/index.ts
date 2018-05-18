@@ -5,13 +5,6 @@ export const MOVIES_FETCH_DATA_SUCCESS = 'MOVIES_FETCH_DATA_SUCCESS';
 export const FILM_HAVE_ERROR = 'FILM_HAVE_ERROR';
 export const FILM_ARE_LOADING = 'FILM_ARE_LOADING';
 export const FILM_FETCH_DATA_SUCCESS = 'FILM_FETCH_DATA_SUCCESS';
-export const FAVOURITES_HAVE_ERROR = 'FAVOURITES_HAVE_ERROR';
-export const FAVOURITES_ARE_LOADING = 'FAVOURITES_ARE_LOADING';
-export const FAVOURITES_FETCH_DATA_SUCCESS = 'FAVOURITES_FETCH_DATA_SUCCESS';
-export const ADD_TO_FAVOURITES_ARE_LOADING = 'ADD_TO_FAVOURITES_ARE_LOADING';
-export const REMOVE_FROM_FAVOURITES_ARE_LOADING = 'REMOVE_FROM_FAVOURITES_ARE_LOADING';
-export const ADD_REMOVE_FAVOURITES_HAVE_ERROR = 'ADD_REMOVE_FAVOURITES_HAVE_ERROR';
-export const ADD_REMOVE_FAVOURITES_SUCCESS = 'ADD_REMOVE_FAVOURITES_SUCCESS';
 export const GET_FAVOURITES = 'GET_FAVOURITES';
 export const ADD_TO_FAVOURITES = 'ADD_TO_FAVOURITES';
 export const REMOVE_FROM_FAVOURITES = 'REMOVE_FROM_FAVOURITES';
@@ -22,8 +15,8 @@ export const SortTypes = {
     RATING: 'RATING'
 };
 export const SearchTypes = {
-    TITLE: 'TITLE',
-    TAGLINE: 'TAGLINE'
+    TITLE: 'title',
+    TAGLINE: 'tagline'
 };
 
 interface IDataAreLoading {
@@ -38,24 +31,6 @@ interface IDataHaveError {
 interface ISortMovies {
     type: string;
     sortType: string;
-};
-
-interface IAddToFavouritesAreLoading {
-    type: string;
-    id: number | string;
-};
-
-interface IRemoveFromFavouritesAreLoading {
-    type: string;
-    id: number | string;
-};
-
-interface IAddRemoveFavouritesHaveError {
-    type: string;
-};
-
-interface IAddRemoveFavouritesSuccess {
-    type: string;
 };
 
 export const moviesAreLoading = (url: string): IDataAreLoading => ({
@@ -100,24 +75,6 @@ export const filmFetchDataSuccess = (film: any) => (
     }
 );
 
-export const favouritesAreLoading = (url: string) : IDataAreLoading => ({
-    type: FAVOURITES_ARE_LOADING,
-    url
-});
-
-export const favouritesHaveError = () : IDataHaveError => (
-    {
-        type: FAVOURITES_HAVE_ERROR,
-    }
-);
-
-export const favouritesFetchDataSuccess = (favourites: any) => (
-    {
-        type: FAVOURITES_FETCH_DATA_SUCCESS,
-        payload: favourites,
-    }
-);
-
 export const sortMovies = (sortType: string) : ISortMovies => (
     {
         type: SORT_MOVIES,
@@ -128,28 +85,6 @@ export const sortMovies = (sortType: string) : ISortMovies => (
 export const setSearchType = (searchType: string) => ({
     type: SET_SEARCH_TYPE,
     searchType
-});
-
-export const addToFavouritesAreLoading = (id: number | string) : IAddToFavouritesAreLoading => (
-    {
-        type: ADD_TO_FAVOURITES_ARE_LOADING,
-        id
-    }
-);
-
-export const removeFromFavouritesAreLoading = (id: number | string) : IRemoveFromFavouritesAreLoading => (
-    {
-        type: REMOVE_FROM_FAVOURITES_ARE_LOADING,
-        id
-    }
-);
-
-export const addRemoveFavouritesHaveError = () : IAddRemoveFavouritesHaveError => ({
-    type: ADD_REMOVE_FAVOURITES_HAVE_ERROR
-});
-
-export const addRemoveFavouritesSuccess = () : IAddRemoveFavouritesSuccess => ({
-    type: ADD_REMOVE_FAVOURITES_SUCCESS
 });
 
 export const getFavouritesFromStorage = (favouritesIds: any) => ({

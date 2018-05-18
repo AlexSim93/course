@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
-import StarIcon from '../../components/StarIcon/index';
-import {addFavouritesToStorage, removeFavouritesFromStorage} from '../../actions/index';
+import { some, filter } from 'lodash';
+import StarIcon from '../../components/StarIcon';
+import {addFavouritesToStorage, removeFavouritesFromStorage} from '../../actions';
+import {loadFavourites} from '../../store';
 
 const mapStateToDispatch = (dispatch: any) => ({
     addToFavourites: (id: number) => {
@@ -8,12 +10,17 @@ const mapStateToDispatch = (dispatch: any) => ({
         return dispatch(addFavouritesToStorage({id}));
     },
     removeFromFavourites: (id: number) => {
+        const favourites = loadFavourites();
+        if(favourites){
+            const favouritesWithoutRemovedItem = filter(favourites, !id);
+            localStorage.setItem('favourites', JSON.stringify(favouritesWithoutRemovedItem));
+        }
         return dispatch(removeFavouritesFromStorage({id}));
     }
 });
 
 const mapStateToProps = (state: any, ownProps: any) => ({
-    isFavourite: state.favourites.favouritesIds.some((currentValue: any) => currentValue.id === ownProps.id)
+    isFavourite: some(state.favourites, {id: ownProps.id})
 });
 
 export default connect(mapStateToProps, mapStateToDispatch)(StarIcon);

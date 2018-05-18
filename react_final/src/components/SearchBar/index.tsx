@@ -1,27 +1,38 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import SwitchField from '../SwitchField';
+import { Switch, Route } from 'react-router-dom';
 import TextDisplay from '../TextDisplay';
-import Button from '../Button';
-import { SortTypes } from '../../actions';
+import Sortbar from '../Sortbar';
 
 import './style.scss';
 
-interface ISearchBar {
+
+interface ISearchbar {
     result: number;
     sortType: string;
+    genre: string;
     onSortByDate(): void;
-    onSortByRating(): void;
+    onSortByRating(): void; 
 };
 
-const SearchBar = ({ result, sortType, onSortByDate, onSortByRating }: ISearchBar) => (
+const Searchbar = ({result, sortType, genre, onSortByDate, onSortByRating}: ISearchbar) => (
     <div className={classNames('searchbar')}>
-        <TextDisplay text={`${result} movies found`} />
-        <SwitchField label='Sort by' >
-            <Button lowercased withoutBGInactive={sortType !== SortTypes.RELEASE_DATE} sizeSm withoutBG text='release_date' onClick={onSortByDate} />
-            <Button lowercased withoutBGInactive={sortType !== SortTypes.RATING} sizeSm withoutBG text='rating' onClick={onSortByRating} />
-        </SwitchField>
+        <Switch>
+            <Route exact
+                path='/search/:searchValue?' 
+                render={() => 
+                    <Sortbar result={result} sortType={sortType} onSortByDate={onSortByDate} onSortByRating={onSortByRating}/>}
+            />
+            <Route exact
+                path='/film/:film'
+                render={() : JSX.Element => <TextDisplay text={`genre of movies: ${genre}`}/>}
+            />
+            <Route exact
+                path='/favourites'
+                render={() : JSX.Element => <TextDisplay text={'Your favourite movies'} />}
+            />
+        </Switch>
     </div>
 );
 
-export default SearchBar;
+export default Searchbar;

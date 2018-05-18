@@ -7,24 +7,24 @@ import './style.scss';
 
 interface IChosenMovie {
     url?: string;
-    film: any;
-    fetchFilm(url?: string): void;
+    movie: any;
+    fetchMovie(url?: string): void;
 };
 
 class ChosenMovie extends React.Component<IChosenMovie>{
     public componentDidMount(){
-        this.props.fetchFilm(this.props.url);
+        this.props.fetchMovie(this.props.url);
     }
     public componentDidUpdate(prevProps: any) {
         if(this.props.url !== prevProps.url) {
-            this.props.fetchFilm(this.props.url);
+            this.props.fetchMovie(this.props.url);
         }
     }
     public render(){
         return (
             <div className={classNames('chosen-movie')}>
-                <Poster movie={this.props.film} />
-                <ChosenMovieInfo movie={this.props.film} />
+                <Poster movie={this.props.movie} />
+                <ChosenMovieInfo movie={this.props.movie} />
             </div>
         );
     }
