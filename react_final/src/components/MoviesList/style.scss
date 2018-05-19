@@ -8,6 +8,11 @@
         margin: 15px 10px;
         text-decoration: none;
     }
+    &__no-movie-container {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @include tablet {
