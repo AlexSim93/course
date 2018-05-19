@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import * as classNames from 'classnames';
 import Logo from '../Logo';
 import Button from '../Button';
@@ -7,13 +7,13 @@ import Button from '../Button';
 import './style.scss';
 
 
-const Navbar = ({ history, favourites, fetchMovies }: any) => (
+const Navbar = ({favourites, fetchMovies }: any) => (
     <nav className={classNames('navbar')}>
         <Logo text='netflixroulette' />
         <Switch>
-            <Route exact path='/search/:searchValue?' render={() => <Button light text='Favourites' onClick={() => history.push('/favourites/')} />} />
-            <Route exact path='/film/:film' render={(): JSX.Element => <Button light text='Search' onClick={() => history.push('/search/')} />} />
-            <Route exact path='/favourites' render={(): JSX.Element => <Button light text='Search' onClick={() => history.push('/search/')} />} />
+            <Route exact path='/search/:searchValue?' render={() => <Link to='/favourites/'><Button light text='Favourites'/></Link>} />
+            <Route exact path='/film/:film' render={(): JSX.Element => <Link to='/search/'><Button light text='Search'/></Link>} />
+            <Route exact path='/favourites' render={(): JSX.Element => <Link to='/search/'><Button light text='Search'/></Link>} />
         </Switch>
     </nav>
 );

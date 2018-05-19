@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { moviesAreLoading, SortTypes } from '../../actions/index';
-import MovieList from '../../components/MoviesList/index';
+import MovieList from '../../components/MovieList/index';
 
 const getOrderedMovies = (movies:any, sortType:any) => {
     switch(sortType){
