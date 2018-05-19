@@ -36,10 +36,12 @@ class Form extends React.Component<IFormProps, IFormState> {
                 this.props.history.push(`/search/${this.state.searchValue}`);
             }}>
                 <TextField value={this.state.searchValue} onChange={this.onChange} id='search'/>
-                <SwitchField darkTheme uppercased label='search by'>
-                    <Button inactive={this.props.searchType !== SearchTypes.TITLE} sizeSm type='button' text='title' onClick={(): void => this.props.setSearchByTitle()} />
-                    <Button inactive={this.props.searchType !== SearchTypes.TAGLINE} sizeSm type='button' text='tagline' onClick={(): void => this.props.setSearchByTagline()} />
-                </SwitchField>
+                <div className={classNames('form__switchfield-container')}>
+                    <SwitchField darkTheme uppercased label='search by'>
+                        <Button inactive={this.props.searchType !== SearchTypes.TITLE} sizeSm type='button' text='title' onClick={(): void => this.props.setSearchByTitle()} />
+                        <Button inactive={this.props.searchType !== SearchTypes.TAGLINE} sizeSm type='button' text='tagline' onClick={(): void => this.props.setSearchByTagline()} />
+                    </SwitchField>
+                </div>
                 <Button sizeLg type='submit' text='search' />
             </form>
         );

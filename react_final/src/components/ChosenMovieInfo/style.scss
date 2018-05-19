@@ -3,13 +3,14 @@
     box-sizing: border-box;
     padding: 10px 50px 10px 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-basis: calc(100% - 300px);
     min-width: 400px;
     flex-shrink: 1;
     flex-grow: 1;
     flex-direction: column;
     align-items: stretch;
+    font-family: $app-font-family;
     &__title-container {
         margin-bottom: 10px;
         display: flex;
@@ -17,7 +18,7 @@
         justify-content: flex-start;
     }
     &__title {
-        margin: 0 10px 0 0;
+        margin: 0 20px 0 0;
         color: $chosen-movie-info-title-color;
         font-size: 32px;
     }
@@ -25,7 +26,6 @@
         padding: 6px;
         color: $chosen-movie-info-rating-color;
         font-size: 20px;
-        font-weight: bold;
         border: 2px solid $chosen-movie-info-rating-border-color;
         border-radius: 50%;
     }
@@ -39,7 +39,7 @@
         display: flex;
     }
     &__year {
-        margin-right: 20px;
+        margin-right: 40px;
         color: $chosen-movie-info-year-color;
         font-weight: bold;
         font-size: 20px;
@@ -48,6 +48,9 @@
         color: $chosen-movie-info-runtime-color;
         font-weight: bold;
         font-size: 20px;  
+    }
+    &__icons-container {
+        margin-bottom: 15px;
     }
     &__overview {
         color: $chosen-movie-info-overview-color;

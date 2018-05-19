@@ -1,22 +1,25 @@
 @import '../../scss/helpers/variables.scss';
 .form {
-    padding: 30px 100px;
+    padding: 30px 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: baseline;
+    font-family: $app-font-family;
     &__text-container {
+        margin-bottom: 20px;
         flex-basis: 100%;
     }
     &__text-container-input {
         display: block;
         width: 100%;
-        padding: 5px 15px;
-        margin-bottom: 20px;
+        padding: 13px 15px;
         background: $form-text-input-bg;
         color: $form-text-input-color;
-        font-size: 18px;
+        font-size: 20px;
+        line-height: normal;
         border: 0px solid transparent;
-        border-bottom: 1px solid $form-text-input-border-color;
+        border-bottom: 2px solid $form-text-input-border-color;
     }
     &__text-container-label {
         display: block;
@@ -24,5 +27,8 @@
         color: $form-text-container-color;
         font-size: 20px;
         text-transform: uppercase;
+    }
+    &__switchfield-container {
+        margin-bottom: 20px;
     }
 }

@@ -7,7 +7,8 @@
     &__label {
         margin-right: 10px;
         color: $switchfield-label-color;
-        font-size: 12px;
+        font-size: 14px;
+        font-family: $app-font-family;
         font-weight: bold;
         &_uppercased {
             text-transform: uppercase;

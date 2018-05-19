@@ -1,8 +1,9 @@
 @import '../../scss/helpers/variables';
 .button {
-    padding: 5px 10px;
+    padding: 5px 15px;
     color: $btn-color;
     background: $btn-bg;
+    font-family: $app-font-family;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -23,10 +24,10 @@
         }
     }
     &_size_lg {
-        padding: 5px 50px;
+        padding: 5px 70px;
     }
     &_size_sm {
-        padding: 5px 10px;
+        padding: 5px 15px;
         font-size: 14px;
         border-radius: 2px;
     }
@@ -41,6 +42,7 @@
         background: $btn-without-bg;
         color: $btn-without-bg-color;
         outline: none;
+        padding: 5px 5px;
         &:hover {
             background: $btn-without-bg-hover;
         }

@@ -15,12 +15,14 @@ const ChosenMovieInfo = ({movie}: IChosenMovieInfo) => (
             <span className={classNames('chosen-movie-info__rating')}>{get(movie, 'vote_average', '-')}</span>
         </div>
         <span className={classNames('chosen-movie-info__tagline')}>{get(movie, 'tagline', 'Unknown')}</span>
+        <div className={classNames('chosen-movie-info__icons-container')}>
+            <StarIconContainer id={movie.id}/>
+        </div>
         <div className={classNames('chosen-movie-info__year-runtime-container')}>
             <span className={classNames('chosen-movie-info__year')}>{get(movie, 'release_date', 'Unknown')}</span>
             <span className={classNames('chosen-movie-info__runtime')}>{get(movie, 'runtime', 'Unknown')} min.</span>
         </div>
         <span className={classNames('chosen-movie-info__overview')}>{get(movie, 'overview', 'Unknown')}</span>
-        <StarIconContainer id={movie.id}/>
     </div>
 );
 

@@ -2,8 +2,9 @@
 .searchbar {
     display: flex;
     flex-wrap: wrap;
-    padding: 15px 45px;
+    padding: 10px 45px;
     background: $sortbar-bg;
     color: $sortbar-color;
     font-weight: bold;
+    font-family: $app-font-family;
 }

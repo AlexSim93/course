@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+$app-font-family: 'Open Sans', sans-serif;
 $pink-theme: Salmon;
-$dark-gray-theme: DarkSlateGray;
-$light-gray-theme: LightGray;
+$dark-gray-theme: rgb(64, 64, 64);
+$light-gray-theme: Silver;
 $white-theme: white;
 $logo-color: $pink-theme;
 $sortbar-bg: $light-gray-theme;
@@ -36,6 +38,6 @@ $chosen-movie-info-year-color: $white-theme;
 $chosen-movie-info-runtime-color: $white-theme;
 $chosen-movie-info-overview-color: $white-theme;
 $movie-title-color: $dark-gray-theme;
-$movie-year-color: $light-gray-theme;
+$movie-year-color: $dark-gray-theme;
 $movie-year-border-color: $light-gray-theme;
 $movie-genres-color: $light-gray-theme;
