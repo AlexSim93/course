@@ -1,4 +1,4 @@
 import {withRouter} from 'react-router-dom';
-import Navbar from '../../components/Navbar';
+import NavbarContainer from '../NavbarContainer';
 
-export default withRouter(Navbar);
+export default withRouter(NavbarContainer);

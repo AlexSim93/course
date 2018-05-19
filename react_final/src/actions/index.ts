@@ -1,5 +1,4 @@
 export const MOVIES_HAVE_ERROR = 'MOVIES_HAVE_ERROR';
-export const MOVIES_RESET = 'MOVIES_RESET';
 export const MOVIES_ARE_LOADING = 'MOVIES_ARE_LOADING';
 export const MOVIES_FETCH_DATA_SUCCESS = 'MOVIES_FETCH_DATA_SUCCESS';
 export const FILM_HAVE_ERROR = 'FILM_HAVE_ERROR';
@@ -41,12 +40,6 @@ export const moviesAreLoading = (url: string): IDataAreLoading => ({
 export const moviesHaveError = () : IDataHaveError => (
     {
         type: MOVIES_HAVE_ERROR,
-    }
-);
-
-export const moviesReset = () => (
-    {
-        type: MOVIES_RESET
     }
 );
 

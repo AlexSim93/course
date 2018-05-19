@@ -11,6 +11,7 @@ interface IFormProps {
     history: any;
     searchValue: any;
     searchType: string;
+    fetchMovies(url: string): void;
     setSearchByTitle(): void;
     setSearchByTagline(): void; 
 };
@@ -21,7 +22,7 @@ interface IFormState {
 
 class Form extends React.Component<IFormProps, IFormState> {
     public state = {
-        searchValue: this.props.searchValue
+        searchValue: this.props.searchValue||''
     }
 
     public onChange = (evt: any) => {
@@ -33,6 +34,7 @@ class Form extends React.Component<IFormProps, IFormState> {
             <form className={classNames('form')} onSubmit={(evt: React.SyntheticEvent<HTMLElement>): void => {
                 evt.preventDefault();
                 this.props.history.push(`/search/${this.state.searchValue}`);
+                this.props.fetchMovies(`http://localhost:3000/movies?${this.props.searchType}_like=${this.state.searchValue}`);
             }}>
                 <TextField value={this.state.searchValue} onChange={this.onChange} id='search'/>
                 <SwitchField darkTheme uppercased label='search by'>

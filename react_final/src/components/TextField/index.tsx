@@ -11,7 +11,7 @@ class TextField extends React.Component<ITextFieldProps> {
         return (
             <div className='form__text-container'>
                 <label className='form__text-container-label' htmlFor={this.props.id}>Find your movie</label>
-                <input className='form__text-container-input' type='search' name='search' value={this.props.value} onChange={this.props.onChange} id={this.props.id} />
+                <input className='form__text-container-input' type='search' name='search' value={this.props.value} onChange={this.props.onChange} id={this.props.id} required/>
             </div>
         );
     }

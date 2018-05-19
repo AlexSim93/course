@@ -9,22 +9,12 @@ interface IMovieList {
     url?: string;
     movies: any;
     fetchData(url: string): void;
-    moviesReset(): void;
 };
 
 class MovieList extends React.Component<IMovieList> {
     public componentDidMount(){
         if(this.props.url){
             this.props.fetchData(`http://localhost:3000/movies?${this.props.url}`);
-        }
-    }
-    public componentDidUpdate(prevProps: IMovieList) {
-        if(this.props.url !== prevProps.url) {
-            if( this.props.url ){
-                this.props.fetchData(`http://localhost:3000/movies?${this.props.url}`);
-            } else {
-                this.props.moviesReset();
-            }
         }
     }
     public render(){
