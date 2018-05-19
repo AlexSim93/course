@@ -12,24 +12,24 @@ interface ISearchbar {
     sortType: string;
     genre: string;
     onSortByDate(): void;
-    onSortByRating(): void; 
+    onSortByRating(): void;
 };
 
-const Searchbar = ({result, sortType, genre, onSortByDate, onSortByRating}: ISearchbar) => (
+const Searchbar = ({ result, sortType, genre, onSortByDate, onSortByRating }: ISearchbar) => (
     <div className={classNames('searchbar')}>
         <Switch>
             <Route exact
-                path='/search/:searchValue?' 
-                render={() => 
-                    <Sortbar result={result} sortType={sortType} onSortByDate={onSortByDate} onSortByRating={onSortByRating}/>}
+                path='/search/:searchValue?'
+                render={() =>
+                    <Sortbar result={result} sortType={sortType} onSortByDate={onSortByDate} onSortByRating={onSortByRating} />}
             />
             <Route exact
                 path='/film/:film'
-                render={() : JSX.Element => <TextDisplay text={`genre of movies: ${genre}`}/>}
+                render={(): JSX.Element => <TextDisplay text={`genre of movies: ${genre}`} />}
             />
             <Route exact
                 path='/favourites'
-                render={() : JSX.Element => <TextDisplay text={'Your favourite movies'} />}
+                render={(): JSX.Element => <TextDisplay text={'Your favourite movies'} />}
             />
         </Switch>
     </div>

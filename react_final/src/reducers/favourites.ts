@@ -4,7 +4,7 @@ import {get} from 'lodash';
 const favourites = (state=[], action: any) => {
     switch(action.type){
         case GET_FAVOURITES:
-            return get(action, 'payload', []);
+            return get(action, 'payload.id', []);
         case ADD_TO_FAVOURITES:
             return [...state, action.payload];
         case REMOVE_FROM_FAVOURITES:

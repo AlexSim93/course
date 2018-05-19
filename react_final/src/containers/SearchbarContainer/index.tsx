@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch: any) => ({
     onSortByRating: () => dispatch(sortMovies(SortTypes.RATING))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Searchbar);
+export default connect(mapStateToProps, mapDispatchToProps)(Searchbar) as any;

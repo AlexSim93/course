@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 import { Switch, Route } from 'react-router-dom';
 import FormWithRouter from '../../containers/FormWithRouter';
 import NavbarWithRouter from '../../containers/NavbarWithRouter';
-import SearchbarContainer from '../../containers/SearchbarContainer';
+import SearchbarWithRouter from '../../containers/SearchbarWithRouter';
 import ChosenMovieWithRouter from '../../containers/ChosenMovieWithRouter';
 
 import './style.scss'
@@ -19,7 +19,7 @@ const Header = () => (
                 path='/film/:film' 
                 component={ChosenMovieWithRouter}/>
         </Switch>
-        <SearchbarContainer />
+        <SearchbarWithRouter />
     </header>
 );
 
