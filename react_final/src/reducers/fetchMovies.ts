@@ -1,4 +1,4 @@
-import { MOVIES_ARE_LOADING, MOVIES_HAVE_ERROR, MOVIES_FETCH_DATA_SUCCESS } from '../actions/index';
+import { MOVIES_ARE_LOADING, MOVIES_HAVE_ERROR, MOVIES_FETCH_DATA_SUCCESS, RESET_MOVIES } from '../actions/index';
 
 const initialState = {
     movies: [],
@@ -14,6 +14,8 @@ const entities = (state = initialState, action: any) => {
           return { ...state, fetching: false, movies: action.payload.map((element: any) => ({...element, release_date: new Date(element.release_date)})) };
         case MOVIES_HAVE_ERROR:
           return { ...state, fetching: false, error: true };
+        case RESET_MOVIES:
+          return { movies: [], fetching: false, error: false};
         default:
           return state;
     }

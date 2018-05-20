@@ -9,14 +9,18 @@ import './style.scss';
 interface IMovieList {
     url?: string;
     movies: any;
-    fetchData(url: string): void;
+    fetchMovies(url: string): void;
+    resetMovies(): void;
 };
 
 class MovieList extends React.Component<IMovieList> {
     public componentDidMount(){
         if(this.props.url){
-            this.props.fetchData(`http://localhost:3000/movies?${this.props.url}`);
+            this.props.fetchMovies(`http://localhost:3000/movies?${this.props.url}`);
         }
+    }
+    public componentWillUnmount(){
+            this.props.resetMovies();
     }
     public render(){
         return (

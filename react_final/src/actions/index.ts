@@ -1,3 +1,4 @@
+export const RESET_MOVIES = 'RESET_MOVIES';
 export const MOVIES_HAVE_ERROR = 'MOVIES_HAVE_ERROR';
 export const MOVIES_ARE_LOADING = 'MOVIES_ARE_LOADING';
 export const MOVIES_FETCH_DATA_SUCCESS = 'MOVIES_FETCH_DATA_SUCCESS';
@@ -31,6 +32,10 @@ interface ISortMovies {
     type: string;
     sortType: string;
 };
+
+export const resetMovies = () => ({
+    type: RESET_MOVIES
+});
 
 export const moviesAreLoading = (url: string): IDataAreLoading => ({
     type: MOVIES_ARE_LOADING,

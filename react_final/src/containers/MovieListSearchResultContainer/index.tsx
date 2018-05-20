@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { moviesAreLoading, SortTypes } from '../../actions/index';
+import { moviesAreLoading, resetMovies, SortTypes } from '../../actions/index';
 import MovieList from '../../components/MovieList/index';
 
 const getOrderedMovies = (movies:any, sortType:any) => {
@@ -20,7 +20,8 @@ const mapStateToProps = (state: any, ownProps: any) => ({
 }); 
 
 const mapStateToDispatch = (dispatch: any) => ({
-    fetchData: (url: string) => dispatch(moviesAreLoading(url)),
+    fetchMovies: (url: string) => dispatch(moviesAreLoading(url)),
+    resetMovies: () => dispatch(resetMovies())
 });
 
 export default connect(mapStateToProps, mapStateToDispatch)(MovieList);

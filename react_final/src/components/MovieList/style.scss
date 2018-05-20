@@ -18,11 +18,11 @@
 @include tablet {
     .movie-list {
         width: 720px;
-        display: inline-flex;
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: stretch;
-        justify-content: space-between;
+        justify-content: flex-start;
         &__movie-link {
             margin: 15px 30px;
         }
@@ -36,7 +36,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         align-items: stretch;
-        justify-content: space-between;
+        justify-content: flex-start;
         &__movie-link {
             margin: 15px 30px;
         }
