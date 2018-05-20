@@ -1,4 +1,5 @@
 export const RESET_MOVIES = 'RESET_MOVIES';
+export const REMOVE_FROM_MOVIES = 'REMOVE_FROM_MOVIES';
 export const MOVIES_HAVE_ERROR = 'MOVIES_HAVE_ERROR';
 export const MOVIES_ARE_LOADING = 'MOVIES_ARE_LOADING';
 export const MOVIES_FETCH_DATA_SUCCESS = 'MOVIES_FETCH_DATA_SUCCESS';
@@ -35,6 +36,11 @@ interface ISortMovies {
 
 export const resetMovies = () => ({
     type: RESET_MOVIES
+});
+
+export const removeFromMovies = (id: string|number) => ({
+    type: REMOVE_FROM_MOVIES,
+    payload: id
 });
 
 export const moviesAreLoading = (url: string): IDataAreLoading => ({

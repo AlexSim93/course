@@ -2,17 +2,22 @@ import * as React from 'react';
 
 interface IStarIconProps {
     isFavourite: boolean,
-    id: number,
+    id: number;
+    match: any;
     addToFavourites: (id: number) => void,
-    removeFromFavourites: (id: number) => void
+    removeFromFavourites: (id: number) => void,
+    removeFromMovieList: (id: string|number) => void
 };
 
-const StarIcon = ({id ,isFavourite, addToFavourites, removeFromFavourites}: IStarIconProps) => (
+const StarIcon = ({id, match ,isFavourite, addToFavourites, removeFromFavourites, removeFromMovieList}: IStarIconProps) => (
     <div onClick={(evt: React.SyntheticEvent<HTMLElement>)=>{
         evt.preventDefault();
         evt.stopPropagation();
         if(isFavourite){
             removeFromFavourites(id);
+            if(match.path === '/favourites'){
+                removeFromMovieList(id);
+            }
         } else {
             addToFavourites(id);
         }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 import {get} from 'lodash';
-import StarIconContainer from '../../containers/StarIconContainer';
+import StarIconWithRouter from '../../containers/StarIconWithRouter';
 import './style.scss';
 
 interface IChosenMovieInfo {
@@ -16,7 +16,7 @@ const ChosenMovieInfo = ({movie}: IChosenMovieInfo) => (
         </div>
         <span className={classNames('chosen-movie-info__tagline')}>{get(movie, 'tagline', 'Unknown')}</span>
         <div className={classNames('chosen-movie-info__icons-container')}>
-            <StarIconContainer id={movie.id}/>
+            <StarIconWithRouter id={movie.id}/>
         </div>
         <div className={classNames('chosen-movie-info__year-runtime-container')}>
             <span className={classNames('chosen-movie-info__year')}>{get(movie, 'release_date', 'Unknown')}</span>
