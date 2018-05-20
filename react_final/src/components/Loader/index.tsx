@@ -1,10 +1,12 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import loader_img from '../../images/loading_spinner.gif';
+import * as img from '../../images/loader.png';
+
+import './style.scss';
 
 const Loader = () => (
     <div className={classNames('loader')}>
-        <img src={loader_img} alt='Loading' className={classNames('loader__image')}/>
+        <img src={img} alt='Loading' className={classNames('loader__image')}/>
     </div>
 );
 

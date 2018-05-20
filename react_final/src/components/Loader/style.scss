@@ -1,0 +1,9 @@
+.loader {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    &__image {
+        max-width: 80px;
+    }
+}
