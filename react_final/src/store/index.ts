@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import {throttle} from 'lodash';
 import createHistory from 'history/createBrowserHistory';
 import { routerMiddleware } from 'react-router-redux';
 import rootReducer from '../reducers/index';
-import { watcherSaga } from '../middlewares/index';
+import { watcherSaga } from '../middlewares';
 
 export const loadFavourites = () => {
     try {
@@ -18,6 +19,7 @@ export const loadFavourites = () => {
 };
 
 export const history = createHistory();
+
 const sagaMiddleware = createSagaMiddleware();
 
 const middleware = routerMiddleware(history)
@@ -31,7 +33,9 @@ export const store = createStore(
     )
 );
 
-
+store.subscribe(throttle(() => {
+    localStorage.setItem('favourites', JSON.stringify(store.getState().favourites));
+  }, 1000));
 
 sagaMiddleware.run(watcherSaga);
 

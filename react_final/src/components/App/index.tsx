@@ -8,12 +8,22 @@ import {loadFavourites} from '../../store';
 import './style.scss';
 
 interface IAppProps {
+    history: any;
+    match: any;
     getFavourites(item: any): void;
+    resetMovies(): void;
 };
 
-class App extends React.Component<IAppProps> {
+class App extends React.Component<IAppProps>  {
+
     public componentDidMount(){
         this.props.getFavourites(loadFavourites());
+    }
+
+    public componentDidUpdate(prevProps: IAppProps){
+        if(this.props.match.path !== prevProps.match.path){
+            this.props.resetMovies();
+        }
     }
 
     public render() {

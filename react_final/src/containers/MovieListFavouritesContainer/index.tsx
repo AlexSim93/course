@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import {map, join} from 'lodash';
-import { moviesAreLoading, resetMovies } from '../../actions/index';
+import { moviesAreLoading} from '../../actions/index';
 import MovieList from '../../components/MovieList/index';
 
 const mapStateToProps = (state: any, ownProps: any) => ({
@@ -9,8 +9,7 @@ const mapStateToProps = (state: any, ownProps: any) => ({
 }); 
 
 const mapStateToDispatch = (dispatch: any) => ({
-    fetchMovies: (url: string) => dispatch(moviesAreLoading(url)),
-    resetMovies: () => dispatch(resetMovies())
+    fetchMovies: (url: string) => dispatch(moviesAreLoading(url))
 });
 
 export default connect(mapStateToProps, mapStateToDispatch)(MovieList);

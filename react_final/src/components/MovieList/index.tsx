@@ -10,7 +10,6 @@ interface IMovieList {
     url?: string;
     movies: any;
     fetchMovies(url: string): void;
-    resetMovies(): void;
 };
 
 class MovieList extends React.Component<IMovieList> {
@@ -18,9 +17,6 @@ class MovieList extends React.Component<IMovieList> {
         if(this.props.url){
             this.props.fetchMovies(`http://localhost:3000/movies?${this.props.url}`);
         }
-    }
-    public componentWillUnmount(){
-            this.props.resetMovies();
     }
     public render(){
         return (
