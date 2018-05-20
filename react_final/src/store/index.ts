@@ -28,14 +28,20 @@ const getInitialFavourites = (): any => {
     return {favourites};
 };
 
+const composeEnhancers =
+  typeof window === 'object' &&
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+    }) : compose;
+
+const enhancer = composeEnhancers(
+  applyMiddleware(middleware, sagaMiddleware)
+);
+
 export const store = createStore(
     rootReducer,
-    getInitialFavourites(), 
-    compose(
-        applyMiddleware(middleware, sagaMiddleware), 
-        (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
-        (window as any).__REDUX_DEVTOOLS_EXTENSION__()
-    )
+    getInitialFavourites(),
+    enhancer
 );
 
 store.subscribe(throttle(() => {
