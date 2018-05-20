@@ -4,7 +4,9 @@ import {filmAreLoading} from '../../actions/index';
 
 const mapStateToProps = (state: any, ownProps: any) => ({
     movie: state.chosenFilm.film,
-    url: `http://localhost:3000/movies?title=${ownProps.match.params.film}&_limit=1`
+    url: `http://localhost:3000/movies?title=${ownProps.match.params.film}&_limit=1`,
+    hasError: state.chosenFilm.error,
+    isLoading: state.chosenFilm.fetching
 });
 
 const mapStateToDispatch = (dispatch: any) => ({

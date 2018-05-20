@@ -3,6 +3,7 @@ import * as classNames from 'classnames';
 import Header from '../Header';
 import Main from '../Main';
 import Footer from '../Footer';
+import ErrorBoundary from '../ErrorBoundary';
 import {loadFavourites} from '../../store';
 
 import './style.scss';
@@ -30,7 +31,7 @@ class App extends React.Component<IAppProps>  {
         return (
             <div className={classNames('app')}>
                 <Header />
-                <Main />
+                <ErrorBoundary><Main /></ErrorBoundary>
                 <Footer />
             </div>
         );

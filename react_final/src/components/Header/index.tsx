@@ -5,6 +5,7 @@ import FormWithRouter from '../../containers/FormWithRouter';
 import NavbarWithRouter from '../../containers/NavbarWithRouter';
 import SearchbarWithRouter from '../../containers/SearchbarWithRouter';
 import ChosenMovieWithRouter from '../../containers/ChosenMovieWithRouter';
+import ErrorBoundary from '../ErrorBoundary';
 
 import './style.scss'
 
@@ -16,8 +17,9 @@ const Header = () => (
                 path='/search/:searchValue?'
                 component={FormWithRouter}/>
             <Route exact 
-                path='/film/:film' 
-                component={ChosenMovieWithRouter}/>
+                path='/film/:film'
+                render={()=>(<ErrorBoundary><ChosenMovieWithRouter/></ErrorBoundary>)}
+                />
         </Switch>
         <SearchbarWithRouter />
     </header>
