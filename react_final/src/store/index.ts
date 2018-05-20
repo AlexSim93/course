@@ -12,7 +12,7 @@ export const loadFavourites = () => {
         if (serializedState === null) {
             return undefined;
         }
-        return [JSON.parse(serializedState)];
+        return JSON.parse(serializedState);
     } catch (err) {
         return undefined;
     }
@@ -23,9 +23,14 @@ export const history = createHistory();
 const sagaMiddleware = createSagaMiddleware();
 
 const middleware = routerMiddleware(history)
+const getInitialFavourites = (): any => {
+    const favourites = loadFavourites();
+    return {favourites};
+};
 
 export const store = createStore(
-    rootReducer, 
+    rootReducer,
+    getInitialFavourites(), 
     compose(
         applyMiddleware(middleware, sagaMiddleware), 
         (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import {map, join} from 'lodash';
-import { moviesAreLoading} from '../../actions/index';
+import { moviesAreLoading } from '../../actions/index';
 import MovieList from '../../components/MovieList/index';
 
 const mapStateToProps = (state: any, ownProps: any) => ({
