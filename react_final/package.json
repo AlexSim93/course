@@ -22,6 +22,7 @@
     "dotenv-expand": "4.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "extract-text-webpack-plugin": "3.0.2",
+    "fetch-mock": "^6.4.2",
     "file-loader": "0.11.2",
     "fork-ts-checker-webpack-plugin": "^0.2.8",
     "fs-extra": "3.0.1",
@@ -78,6 +79,8 @@
     "@types/react-redux": "^5.0.19",
     "@types/react-router-dom": "^4.2.6",
     "enzyme": "^3.3.0",
+    "redux-mock-store": "^1.5.1",
+    "redux-saga-mock": "^1.2.0",
     "tslint-eslint-rules": "^5.2.0",
     "typescript": "^2.8.3"
   },
@@ -121,7 +124,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "C:\\Users\\Алексей\\Desktop\\course\\aleksei_simatov\\react_final\\tsconfig.test.json"
+        "tsConfigFile": "C:\\Users\\Administrator\\Desktop\\aleksei_simatov\\aleksei_simatov\\react_final\\tsconfig.test.json"
       }
     },
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.ts"

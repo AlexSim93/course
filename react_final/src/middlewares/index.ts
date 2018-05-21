@@ -37,7 +37,7 @@ function* sagaFetchMovies(action: any) {
     }
 };
 
-function* sagaFetchFilm(action: any) {
+export function* sagaFetchFilm(action: any) {
     try {
       const response = yield call(fetchData, action.url);
       const film = response.data[0];
