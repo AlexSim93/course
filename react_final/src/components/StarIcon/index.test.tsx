@@ -10,8 +10,8 @@ const setup = (isFavourite = false) => {
     };
     const component = shallow(<StarIcon isFavourite={isFavourite} id={1} match={{path: ''}} {...actions}/>);
     return {
-        component: component,
-        actions: actions,
+        component,
+        actions,
         icon: component.find('div')
     }
 };
@@ -22,7 +22,7 @@ describe('StarIcon component', ()=> {
         'click on icon should call addToFavourites',
         ()=> {
             const {icon, actions} = setup(false);
-            icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
+            icon.simulate('click', { preventDefault: jest.fn(), stopPropagation: jest.fn()});
             expect(actions.addToFavourites).toBeCalled();
         }
     );
@@ -30,7 +30,7 @@ describe('StarIcon component', ()=> {
         'click on icon should not call removeFromFavourites',
         ()=> {
             const {icon, actions} = setup(false);
-            icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
+            icon.simulate('click', {preventDefault: jest.fn(), stopPropagation: jest.fn()});
             expect(actions.removeFromFavourites).not.toBeCalled();
         }
     );
@@ -38,7 +38,7 @@ describe('StarIcon component', ()=> {
         'click on icon should call removeFromFavourites',
         ()=> {
             const {icon, actions} = setup(true);
-            icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
+            icon.simulate('click', {preventDefault: jest.fn(), stopPropagation: jest.fn()});
             expect(actions.removeFromFavourites).toBeCalled();
         }
     );
@@ -46,7 +46,7 @@ describe('StarIcon component', ()=> {
         'click on icon should not call addToFavourites',
         ()=> {
             const {icon, actions} = setup(true);
-            icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
+            icon.simulate('click', { preventDefault: jest.fn(), stopPropagation: jest.fn() });
             expect(actions.addToFavourites).not.toBeCalled();
         }
     );
@@ -54,7 +54,7 @@ describe('StarIcon component', ()=> {
         'click on icon should not call removeFromMovieList',
         ()=> {
             const {icon, actions} = setup(true);
-            icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
+            icon.simulate('click', {preventDefault: jest.fn(), stopPropagation: jest.fn()});
             expect(actions.removeFromMovieList).not.toBeCalled();
         }
     );

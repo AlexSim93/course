@@ -13,8 +13,8 @@ const setup = (searchValue = '', searchType=SearchTypes.TITLE) => {
     };
     const component = shallow(<Form history={{}} searchType={searchType} searchValue={searchValue} {...actions}/>);
     return {
-        component: component,
-        actions: actions,
+        component,
+        actions,
         buttons: component.find(Button),
         textField: component.find(TextField)
     }

@@ -12,8 +12,8 @@ const setup = (sortType = SortTypes.RELEASE_DATE, result = 0) => {
     };
     const component = shallow(<Sortbar result={result} sortType={sortType} {...actions}/>);
     return {
-        component: component,
-        actions: actions,
+        component,
+        actions,
         buttons: component.find(Button),
         textDisplay: component.find(TextDisplay)
     }

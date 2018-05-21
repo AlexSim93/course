@@ -9,21 +9,21 @@ describe('ChosenMovie component', () => {
     it(
         'Should render ChosenMovieInfo',
         () => {
-            const chosenMovie = shallow(<ChosenMovie isLoading={false} hasError={false} movie={{}} fetchMovie={()=>{}}/>);
+            const chosenMovie = shallow(<ChosenMovie isLoading={false} hasError={false} movie={{}} fetchMovie={jest.fn()}/>);
             expect(chosenMovie.find(ChosenMovieInfo).exists()).toEqual(true);
         }
     );
     it(
         'Should render Poster',
         () => {
-            const chosenMovie = shallow(<ChosenMovie isLoading={false} hasError={false} movie={{}} fetchMovie={()=>{}}/>);
+            const chosenMovie = shallow(<ChosenMovie isLoading={false} hasError={false} movie={{}} fetchMovie={jest.fn()}/>);
             expect(chosenMovie.find(Poster).exists()).toEqual(true);
         }
     );
     it(
         'Should render Loader instead of ChosenMovieInfo',
         () => {
-            const chosenMovie = shallow(<ChosenMovie isLoading={true} hasError={false} movie={{}} fetchMovie={()=>{}}/>);
+            const chosenMovie = shallow(<ChosenMovie isLoading={true} hasError={false} movie={{}} fetchMovie={jest.fn()}/>);
             expect(chosenMovie.find(ChosenMovieInfo).exists()).toEqual(false);
             expect(chosenMovie.find(Poster).exists()).toEqual(false);
             expect(chosenMovie.find(Loader).exists()).toEqual(true);
