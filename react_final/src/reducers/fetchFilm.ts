@@ -1,4 +1,4 @@
-import { FILM_ARE_LOADING, FILM_HAVE_ERROR, FILM_FETCH_DATA_SUCCESS } from '../actions/index';
+import { FILM_ARE_LOADING, FILM_HAVE_ERROR, FILM_FETCH_DATA_SUCCESS, RESET_FILM } from '../actions/index';
 
 const initialState = {
     film: {},
@@ -14,6 +14,8 @@ const chosenFilm = (state = initialState, action: any) => {
           return { ...state, fetching: false, film: {...action.payload, release_date: new Date(action.payload.release_date).getFullYear()} };
         case FILM_HAVE_ERROR:
           return { ...state, fetching: false, error: true };
+        case RESET_FILM:
+          return {fetching: false, error: false, film: {}}
         default:
           return state;
     }

@@ -6,6 +6,7 @@ export const MOVIES_FETCH_DATA_SUCCESS = 'MOVIES_FETCH_DATA_SUCCESS';
 export const FILM_HAVE_ERROR = 'FILM_HAVE_ERROR';
 export const FILM_ARE_LOADING = 'FILM_ARE_LOADING';
 export const FILM_FETCH_DATA_SUCCESS = 'FILM_FETCH_DATA_SUCCESS';
+export const RESET_FILM = 'RESET_FILM';
 export const GET_FAVOURITES = 'GET_FAVOURITES';
 export const TOGGLE_FAVOURITE = 'TOGGLE_FAVOURITE';
 export const SORT_MOVIES = 'SORT_MOVIES';
@@ -77,6 +78,10 @@ export const filmFetchDataSuccess = (film: any) => (
         payload: film,
     }
 );
+
+export const resetFilm = () => ({
+    type: RESET_FILM
+});
 
 export const sortMovies = (sortType: string) : ISortMovies => (
     {

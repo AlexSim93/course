@@ -9,21 +9,21 @@ describe('App component', () => {
     it(
         'Should render Header',
         () => {
-            const app = shallow(<App history={{}} match={{}} resetMovies={jest.fn()} getFavourites={jest.fn()}/>);
+            const app = shallow(<App history={{}} match={{}} resetMovies={jest.fn()} getFavourites={jest.fn()} resetMovie={jest.fn()}/>);
             expect(app.find(Header).exists()).toEqual(true);
         }
     );
     it(
         'Should render Main',
         () => {
-            const app = shallow(<App history={{}} match={{}} resetMovies={jest.fn()} getFavourites={jest.fn()}/>);
+            const app = shallow(<App history={{}} match={{}} resetMovies={jest.fn()} getFavourites={jest.fn()} resetMovie={jest.fn()}/>);
             expect(app.find(Main).exists()).toEqual(true);
         }
     );
     it(
         'Should render Footer',
         () => {
-            const app = shallow(<App history={{}} match={{}} resetMovies={jest.fn()} getFavourites={jest.fn()}/>);
+            const app = shallow(<App history={{}} match={{}} resetMovies={jest.fn()} getFavourites={jest.fn()} resetMovie={jest.fn()}/>);
             expect(app.find(Footer).exists()).toEqual(true);
         }
     );

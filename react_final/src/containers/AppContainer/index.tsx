@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from '../../components/App';
-import {getFavouritesFromStorage, resetMovies } from '../../actions';
+import {getFavouritesFromStorage, resetMovies, resetFilm } from '../../actions';
 
 const mapStateToProps = (state: any, ownProps: any) => ({
     favourites: state.favourites.favouritesIds
@@ -8,7 +8,8 @@ const mapStateToProps = (state: any, ownProps: any) => ({
 
 const mapStateToDispatch = (dispatch: any) => ({
     getFavourites: (item: any) => dispatch(getFavouritesFromStorage(item)),
-    resetMovies: () => dispatch(resetMovies())
+    resetMovies: () => dispatch(resetMovies()),
+    resetMovie: () => dispatch(resetFilm())
 });
 
 export default connect(mapStateToProps, mapStateToDispatch)(App);

@@ -13,6 +13,7 @@ interface IAppProps {
     match: any;
     getFavourites(item: any): void;
     resetMovies(): void;
+    resetMovie():void;
 };
 
 class App extends React.Component<IAppProps>  {
@@ -24,6 +25,9 @@ class App extends React.Component<IAppProps>  {
     public componentDidUpdate(prevProps: IAppProps){
         if(this.props.match.path !== prevProps.match.path){
             this.props.resetMovies();
+        }
+        if(prevProps.match.path === '/film/:film' && this.props.match.path !== '/film/:film'){
+            this.props.resetMovie();
         }
     }
 
