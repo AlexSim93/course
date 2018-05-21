@@ -2,7 +2,7 @@ import { GET_FAVOURITES, ADD_TO_FAVOURITES, REMOVE_FROM_FAVOURITES } from '../ac
 import favourites from './favourites';
 
 describe(
-    'setting handling favourites',
+    'favourites reducer testing',
     () => {
         it('Should return list of favourites from localstorage', () => {
             expect(favourites([], {type: GET_FAVOURITES, payload: [{id: 122}, {id: 123}, {id: 124}]})).toEqual([{id: 122}, {id: 123}, {id: 124}]);
