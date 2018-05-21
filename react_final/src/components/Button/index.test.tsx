@@ -4,7 +4,7 @@ import Button from './index';
 
 describe('Button component', () => {
     test(
-        'Check prop text',
+        'Should render button',
         () => {
             const button = mount(<Button text='TITLE' />);
             expect(button.prop('text')).toEqual('TITLE');

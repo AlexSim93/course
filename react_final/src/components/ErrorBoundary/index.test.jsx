@@ -5,7 +5,7 @@ import TextDisplay from '../TextDisplay';
 
 describe('ErrorBoundary component', () => {
     test(
-        'TextDisplay should appear',
+        'Should render ErrorBoundary',
         () => {
             const errorBoundary = shallow(<ErrorBoundary/>);
             errorBoundary.setState({hasError: true});

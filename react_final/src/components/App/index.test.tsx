@@ -7,21 +7,21 @@ import Footer from '../Footer';
 
 describe('App component', () => {
     test(
-        'Check Header in App',
+        'Should render Header',
         () => {
             const app = shallow(<App history={{}} match={{}} resetMovies={()=>{}} getFavourites={()=> {}}/>);
             expect(app.find(Header).exists()).toEqual(true);
         }
     ),
     test(
-        'Check Main in App',
+        'Should render Main',
         () => {
             const app = shallow(<App history={{}} match={{}} resetMovies={()=>{}} getFavourites={()=> {}}/>);
             expect(app.find(Main).exists()).toEqual(true);
         }
     ),
     test(
-        'Check Footer in App',
+        'Should render Footer',
         () => {
             const app = shallow(<App history={{}} match={{}} resetMovies={()=>{}} getFavourites={()=> {}}/>);
             expect(app.find(Footer).exists()).toEqual(true);

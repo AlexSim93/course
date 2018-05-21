@@ -5,7 +5,7 @@ import Logo from '../Logo';
 
 describe('Footer component', () => {
     test(
-        'Checking Logo in component',
+        'Should render Logo',
         () => {
             const footer = shallow(<Footer />);
             expect(footer.find(Logo).exists()).toEqual(true);

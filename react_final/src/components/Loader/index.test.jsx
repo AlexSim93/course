@@ -4,7 +4,7 @@ import Loader from './index';
 
 describe('Loader component', () => {
     test(
-        'Rendering Loader',
+        'should render img',
         () => {
             const loader = shallow(<Loader />);
             expect(loader.find('img').exists()).toEqual(true);

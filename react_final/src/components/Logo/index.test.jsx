@@ -4,7 +4,7 @@ import Logo from './index';
 
 describe('Logo component', () => {
     test(
-        'Rendering Logo',
+        'Should render logo text',
         () => {
             const logo = shallow(<Logo text='Netflixroulette' />);
             expect(logo.find('.logo__text').text()).toEqual('Netflixroulette');
