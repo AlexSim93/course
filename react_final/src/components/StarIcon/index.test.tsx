@@ -17,7 +17,7 @@ const setup = (isFavourite = false) => {
 };
 
 
-describe('TextField component', ()=> {
+describe('StarIcon component', ()=> {
     it(
         'click on icon should call addToFavourites',
         ()=> {
@@ -25,7 +25,7 @@ describe('TextField component', ()=> {
             icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
             expect(actions.addToFavourites).toBeCalled();
         }
-    ),
+    );
     it(
         'click on icon should not call removeFromFavourites',
         ()=> {
@@ -33,7 +33,7 @@ describe('TextField component', ()=> {
             icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
             expect(actions.removeFromFavourites).not.toBeCalled();
         }
-    ),
+    );
     it(
         'click on icon should call removeFromFavourites',
         ()=> {
@@ -41,7 +41,7 @@ describe('TextField component', ()=> {
             icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
             expect(actions.removeFromFavourites).toBeCalled();
         }
-    ),
+    );
     it(
         'click on icon should not call addToFavourites',
         ()=> {
@@ -49,7 +49,7 @@ describe('TextField component', ()=> {
             icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
             expect(actions.addToFavourites).not.toBeCalled();
         }
-    ),
+    );
     it(
         'click on icon should not call removeFromMovieList',
         ()=> {
@@ -57,5 +57,5 @@ describe('TextField component', ()=> {
             icon.simulate('click', { preventDefault() {}, stopPropagation() {} });
             expect(actions.removeFromMovieList).not.toBeCalled();
         }
-    )
+    );
 });

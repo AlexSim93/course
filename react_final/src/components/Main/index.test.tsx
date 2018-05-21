@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import Main from './index';
 
 
-describe('Movie component', () => {
+describe('Main component', () => {
     test(
         'Should render main',
         () => {

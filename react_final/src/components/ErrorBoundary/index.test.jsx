@@ -11,5 +11,5 @@ describe('ErrorBoundary component', () => {
             errorBoundary.setState({hasError: true});
             expect(errorBoundary.find(TextDisplay).exists()).toEqual(true);
         }
-    )
+    );
 });

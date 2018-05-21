@@ -4,10 +4,10 @@ import SwitchField from './index';
 
 describe('SwitchField component', ()=> {
     test(
-        'Checking text in label',
+        'Should render label',
         ()=> {
             const switchField = shallow(<SwitchField label='sort by' children={null}/>);
             expect(switchField.find('.switchfield__label').text()).toEqual('sort by');
         }
-    )
+    );
 });

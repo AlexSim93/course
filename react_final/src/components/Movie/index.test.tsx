@@ -11,12 +11,12 @@ describe('Movie component', () => {
             const movie = shallow(<Movie />);
             expect(movie.find(Poster).exists()).toEqual(true);
         }
-    ),
+    );
     test(
         'Should render MovieInfo',
         () => {
             const movie = shallow(<Movie />);
             expect(movie.find(MovieInfo).exists()).toEqual(true);
         }
-    )
+    );
 });

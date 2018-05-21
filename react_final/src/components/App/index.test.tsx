@@ -12,19 +12,19 @@ describe('App component', () => {
             const app = shallow(<App history={{}} match={{}} resetMovies={()=>{}} getFavourites={()=> {}}/>);
             expect(app.find(Header).exists()).toEqual(true);
         }
-    ),
+    );
     test(
         'Should render Main',
         () => {
             const app = shallow(<App history={{}} match={{}} resetMovies={()=>{}} getFavourites={()=> {}}/>);
             expect(app.find(Main).exists()).toEqual(true);
         }
-    ),
+    );
     test(
         'Should render Footer',
         () => {
             const app = shallow(<App history={{}} match={{}} resetMovies={()=>{}} getFavourites={()=> {}}/>);
             expect(app.find(Footer).exists()).toEqual(true);
         }
-    )
+    );
 });

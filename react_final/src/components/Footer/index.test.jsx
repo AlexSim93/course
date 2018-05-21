@@ -10,5 +10,5 @@ describe('Footer component', () => {
             const footer = shallow(<Footer />);
             expect(footer.find(Logo).exists()).toEqual(true);
         }
-    )
+    );
 });

@@ -4,19 +4,19 @@ import Header from './index';
 import NavbarWithRouter from '../../containers/NavbarWithRouter';
 import SearchbarWithRouter from '../../containers/SearchbarWithRouter';
 
-describe('Footer component', () => {
+describe('Header component', () => {
     test(
         'Should render NavbarWithRouter',
         () => {
-            const footer = shallow(<Header />);
-            expect(footer.find(NavbarWithRouter).exists()).toEqual(true);
+            const header = shallow(<Header />);
+            expect(header.find(NavbarWithRouter).exists()).toEqual(true);
         }
-    ),
+    );
     test(
         'Should render SearchbarWithRouter',
         () => {
-            const footer = shallow(<Header />);
-            expect(footer.find(SearchbarWithRouter).exists()).toEqual(true);
+            const header = shallow(<Header />);
+            expect(header.find(SearchbarWithRouter).exists()).toEqual(true);
         }
-    )
+    );
 });

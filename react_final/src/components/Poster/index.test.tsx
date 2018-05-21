@@ -4,7 +4,7 @@ import Poster from './index';
 
 describe('Poster component', () => {
     test(
-        'Rendering Loader',
+        'Should render img element',
         () => {
             const poster = shallow(<Poster movie={{}}/>);
             expect(poster.find('img').exists()).toEqual(true);

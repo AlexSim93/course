@@ -12,14 +12,14 @@ describe('ChosenMovie component', () => {
             const chosenMovie = shallow(<ChosenMovie isLoading={false} hasError={false} movie={{}} fetchMovie={()=>{}}/>);
             expect(chosenMovie.find(ChosenMovieInfo).exists()).toEqual(true);
         }
-    ),
+    );
     test(
         'Should render Poster',
         () => {
             const chosenMovie = shallow(<ChosenMovie isLoading={false} hasError={false} movie={{}} fetchMovie={()=>{}}/>);
             expect(chosenMovie.find(Poster).exists()).toEqual(true);
         }
-    ),
+    );
     test(
         'Should render Loader instead of ChosenMovieInfo',
         () => {
@@ -28,5 +28,5 @@ describe('ChosenMovie component', () => {
             expect(chosenMovie.find(Poster).exists()).toEqual(false);
             expect(chosenMovie.find(Loader).exists()).toEqual(true);
         }
-    )
+    );
 });

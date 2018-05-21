@@ -4,19 +4,19 @@ import Navbar from './index';
 import Logo from '../Logo';
 
 
-describe('Movie component', () => {
+describe('Navbar component', () => {
     test(
         'Should render Logo',
         () => {
             const navbar = shallow(<Navbar />);
             expect(navbar.find(Logo).exists()).toEqual(true);
         }
-    ),
+    );
     test(
         'Should have class navbar',
         () => {
             const navbar = shallow(<Navbar />);
             expect(navbar.find('nav').hasClass('navbar')).toEqual(true);
         }
-    )
+    );
 });
