@@ -6,21 +6,21 @@ import Main from '../Main';
 import Footer from '../Footer';
 
 describe('App component', () => {
-    test(
+    it(
         'Should render Header',
         () => {
             const app = shallow(<App history={{}} match={{}} resetMovies={()=>{}} getFavourites={()=> {}}/>);
             expect(app.find(Header).exists()).toEqual(true);
         }
     );
-    test(
+    it(
         'Should render Main',
         () => {
             const app = shallow(<App history={{}} match={{}} resetMovies={()=>{}} getFavourites={()=> {}}/>);
             expect(app.find(Main).exists()).toEqual(true);
         }
     );
-    test(
+    it(
         'Should render Footer',
         () => {
             const app = shallow(<App history={{}} match={{}} resetMovies={()=>{}} getFavourites={()=> {}}/>);

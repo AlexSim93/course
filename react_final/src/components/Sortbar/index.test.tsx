@@ -21,28 +21,28 @@ const setup = (sortType = SortTypes.RELEASE_DATE, result = 0) => {
 
 
 describe('Sortbar component', () => {
-    test(
+    it(
         'Should render TextDisplay',
         () => {
             const {textDisplay} = setup(SortTypes.RATING ,10)
             expect(textDisplay.prop('text')).toEqual('10 movies found');
         }
     );
-    test('first button should call onSortByDate', () => {
+    it('first button should call onSortByDate', () => {
         const { buttons, actions } = setup();
         buttons.at(0).simulate('click');
         expect(actions.onSortByDate).toBeCalled();
     });
-    test('second button should call onSortByRating', () => {
+    it('second button should call onSortByRating', () => {
         const { buttons, actions } = setup();
         buttons.at(1).simulate('click');
         expect(actions.onSortByRating).toBeCalled();
     });
-    test('second button should be inactive by default', () => {
+    it('second button should be inactive by default', () => {
         const { buttons } = setup();
         expect(buttons.at(1).prop('withoutBGInactive')).toEqual(true);
     });
-    test('first button should be inactive if sort type is RATING', () => {
+    it('first button should be inactive if sort type is RATING', () => {
         const { buttons } = setup(SortTypes.RATING ,10);
         expect(buttons.at(0).prop('withoutBGInactive')).toEqual(true);
     });

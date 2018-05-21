@@ -5,14 +5,14 @@ import NavbarWithRouter from '../../containers/NavbarWithRouter';
 import SearchbarWithRouter from '../../containers/SearchbarWithRouter';
 
 describe('Header component', () => {
-    test(
+    it(
         'Should render NavbarWithRouter',
         () => {
             const header = shallow(<Header />);
             expect(header.find(NavbarWithRouter).exists()).toEqual(true);
         }
     );
-    test(
+    it(
         'Should render SearchbarWithRouter',
         () => {
             const header = shallow(<Header />);

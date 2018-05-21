@@ -8,14 +8,14 @@ import Movie from '../Movie';
 const  movies = [{id: 11}, {id: 12}, {id: 13}];
 
 describe('MovieList component', () => {
-    test(
+    it(
         'Should render Loader',
         () => {
             const movieList = shallow(<MovieList isLoading hasError={false} movies={[]} fetchMovies={()=>{}}/>);
             expect(movieList.find(Loader).exists()).toEqual(true);
         }
     );
-    test(
+    it(
         'Should be 3 Links',
         () => {
 
@@ -23,7 +23,7 @@ describe('MovieList component', () => {
             expect(movieList.find(Link)).toHaveLength(movies.length);
         }
     );
-    test(
+    it(
         'Should be 3 Movie',
         () => {
             const movieList = shallow(<MovieList isLoading={false} hasError={false} movies={movies} fetchMovies={()=>{}}/>);

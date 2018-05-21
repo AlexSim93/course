@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import SwitchField from './index';
 
 describe('SwitchField component', ()=> {
-    test(
+    it(
         'Should render label',
         ()=> {
             const switchField = shallow(<SwitchField label='sort by' children={null}/>);

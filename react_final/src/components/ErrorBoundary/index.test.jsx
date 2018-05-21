@@ -4,7 +4,7 @@ import ErrorBoundary from './index';
 import TextDisplay from '../TextDisplay';
 
 describe('ErrorBoundary component', () => {
-    test(
+    it(
         'Should render ErrorBoundary',
         () => {
             const errorBoundary = shallow(<ErrorBoundary/>);

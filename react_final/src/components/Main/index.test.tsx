@@ -4,18 +4,18 @@ import Main from './index';
 
 
 describe('Main component', () => {
-    test(
+    it(
         'Should render main',
         () => {
             const main = shallow(<Main />);
             expect(main.find('main').exists()).toEqual(true);
         }
-    ),
-    test(
+    );
+    it(
         'Should have class main',
         () => {
             const main = shallow(<Main />);
             expect(main.find('main').hasClass('main')).toEqual(true);
         }
-    )
+    );
 });

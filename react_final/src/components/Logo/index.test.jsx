@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import Logo from './index';
 
 describe('Logo component', () => {
-    test(
+    it(
         'Should render logo text',
         () => {
             const logo = shallow(<Logo text='Netflixroulette' />);

@@ -4,7 +4,7 @@ import Footer from './index';
 import Logo from '../Logo';
 
 describe('Footer component', () => {
-    test(
+    it(
         'Should render Logo',
         () => {
             const footer = shallow(<Footer />);

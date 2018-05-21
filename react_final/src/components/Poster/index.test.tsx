@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import Poster from './index';
 
 describe('Poster component', () => {
-    test(
+    it(
         'Should render img element',
         () => {
             const poster = shallow(<Poster movie={{}}/>);

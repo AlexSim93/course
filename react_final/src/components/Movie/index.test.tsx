@@ -5,14 +5,14 @@ import Poster from '../Poster';
 import MovieInfo from '../MovieInfo';
 
 describe('Movie component', () => {
-    test(
+    it(
         'Should render Poster',
         () => {
             const movie = shallow(<Movie />);
             expect(movie.find(Poster).exists()).toEqual(true);
         }
     );
-    test(
+    it(
         'Should render MovieInfo',
         () => {
             const movie = shallow(<Movie />);

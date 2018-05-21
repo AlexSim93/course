@@ -6,21 +6,21 @@ import Poster from '../Poster';
 import Loader from '../Loader';
 
 describe('ChosenMovie component', () => {
-    test(
+    it(
         'Should render ChosenMovieInfo',
         () => {
             const chosenMovie = shallow(<ChosenMovie isLoading={false} hasError={false} movie={{}} fetchMovie={()=>{}}/>);
             expect(chosenMovie.find(ChosenMovieInfo).exists()).toEqual(true);
         }
     );
-    test(
+    it(
         'Should render Poster',
         () => {
             const chosenMovie = shallow(<ChosenMovie isLoading={false} hasError={false} movie={{}} fetchMovie={()=>{}}/>);
             expect(chosenMovie.find(Poster).exists()).toEqual(true);
         }
     );
-    test(
+    it(
         'Should render Loader instead of ChosenMovieInfo',
         () => {
             const chosenMovie = shallow(<ChosenMovie isLoading={true} hasError={false} movie={{}} fetchMovie={()=>{}}/>);

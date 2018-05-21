@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import Loader from './index';
 
 describe('Loader component', () => {
-    test(
+    it(
         'should render img',
         () => {
             const loader = shallow(<Loader />);

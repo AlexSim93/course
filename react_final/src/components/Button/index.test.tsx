@@ -3,7 +3,7 @@ import {mount} from 'enzyme';
 import Button from './index';
 
 describe('Button component', () => {
-    test(
+    it(
         'Should render button',
         () => {
             const button = mount(<Button text='TITLE' />);
