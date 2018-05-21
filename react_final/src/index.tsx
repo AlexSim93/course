@@ -8,6 +8,9 @@ import { ConnectedRouter } from 'react-router-redux';
 import registerServiceWorker from './registerServiceWorker';
 
 import 'normalize.css';
+import './scss/blocks/page.scss';
+import './scss/blocks/body.scss';
+import './scss/blocks/root.scss';
 
 ReactDOM.render(
   <Provider store={store}>

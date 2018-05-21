@@ -18,7 +18,7 @@ const mapStateToProps = (state: any, ownProps: any) => ({
     movies: getOrderedMovies(state.entities.movies, state.sortType),
     hasError: state.entities.error,
     isLoading: state.entities.fetching,
-    url: ownProps.match.params.searchValue && `${state.searchType}_like=${ownProps.match.params.searchValue}`,
+    url: ownProps.match.params.searchValue && `${state.searchType.toLowerCase()}_like=${ownProps.match.params.searchValue}`,
 }); 
 
 const mapStateToDispatch = (dispatch: any) => ({

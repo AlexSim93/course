@@ -1,6 +1,7 @@
 .app {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    min-height: 100%;
+    &__footer {
+        position:absolute;
+        bottom:0;
+    }
 }

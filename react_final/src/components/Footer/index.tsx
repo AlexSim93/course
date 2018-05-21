@@ -5,7 +5,7 @@ import Logo from '../Logo';
 import './style.scss';
 
 const Footer = () => (
-    <footer className={classNames('footer')}>
+    <footer className={classNames('footer', 'app__footer')}>
         <Logo text='netflixroulette'/>
     </footer>
 );

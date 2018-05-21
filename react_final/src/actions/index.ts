@@ -16,8 +16,8 @@ export const SortTypes = {
     RATING: 'RATING'
 };
 export const SearchTypes = {
-    TITLE: 'title',
-    TAGLINE: 'tagline'
+    TITLE: 'TITLE',
+    TAGLINE: 'TAGLINE'
 };
 
 interface IDataAreLoading {

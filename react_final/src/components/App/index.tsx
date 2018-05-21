@@ -33,7 +33,7 @@ class App extends React.Component<IAppProps>  {
 
     public render() {
         return (
-            <div className={classNames('app')}>
+            <div className={classNames('app', 'root__app')}>
                 <Header />
                 <ErrorBoundary><Main /></ErrorBoundary>
                 <Footer />

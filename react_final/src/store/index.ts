@@ -45,7 +45,12 @@ export const store = createStore(
 );
 
 store.subscribe(throttle(() => {
-    localStorage.setItem('favourites', JSON.stringify(store.getState().favourites));
+    try{
+        localStorage.setItem('favourites', JSON.stringify(store.getState().favourites));
+    } catch (e){
+        console.log(e);
+    }
+    
   }, 1000));
 
 sagaMiddleware.run(watcherSaga);
