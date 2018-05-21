@@ -1,25 +1,20 @@
 import * as React from 'react';
 
 interface IStarIconProps {
-    isFavourite: boolean,
+    isFavourite: boolean;
     id: number;
     match: any;
-    addToFavourites: (id: number) => void,
-    removeFromFavourites: (id: number) => void,
-    removeFromMovieList: (id: string|number) => void
+    toggleFavourite: (id: number) => void;
+    removeFromMovieList: (id: string|number) => void;
 };
 
-const StarIcon = ({id, match ,isFavourite, addToFavourites, removeFromFavourites, removeFromMovieList}: IStarIconProps) => (
+const StarIcon = ({id, match ,isFavourite, toggleFavourite, removeFromMovieList}: IStarIconProps) => (
     <div onClick={(evt: React.SyntheticEvent<HTMLElement>)=>{
         evt.preventDefault();
         evt.stopPropagation();
-        if(isFavourite){
-            removeFromFavourites(id);
-            if(match.path === '/favourites'){
-                removeFromMovieList(id);
-            }
-        } else {
-            addToFavourites(id);
+        toggleFavourite(id);
+        if(match.path === '/favourites'){
+            removeFromMovieList(id);
         }
     }}>
         <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 252 252'>

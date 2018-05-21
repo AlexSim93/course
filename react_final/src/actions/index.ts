@@ -7,8 +7,7 @@ export const FILM_HAVE_ERROR = 'FILM_HAVE_ERROR';
 export const FILM_ARE_LOADING = 'FILM_ARE_LOADING';
 export const FILM_FETCH_DATA_SUCCESS = 'FILM_FETCH_DATA_SUCCESS';
 export const GET_FAVOURITES = 'GET_FAVOURITES';
-export const ADD_TO_FAVOURITES = 'ADD_TO_FAVOURITES';
-export const REMOVE_FROM_FAVOURITES = 'REMOVE_FROM_FAVOURITES';
+export const TOGGLE_FAVOURITE = 'TOGGLE_FAVOURITE';
 export const SORT_MOVIES = 'SORT_MOVIES';
 export const SET_SEARCH_TYPE = 'SET_SEARCH_TYPE';
 export const SortTypes = {
@@ -96,13 +95,9 @@ export const getFavouritesFromStorage = (favouritesIds: any) => ({
     payload: favouritesIds
 });
 
-export const addFavouritesToStorage = (movieId: any) => ({
-    type: ADD_TO_FAVOURITES,
+export const toggleFavourite = (movieId: any) => ({
+    type: TOGGLE_FAVOURITE,
     payload: movieId
 });
 
-export const removeFavouritesFromStorage = (movieId: any) => ({
-    type: REMOVE_FROM_FAVOURITES,
-    payload: movieId
-});
 

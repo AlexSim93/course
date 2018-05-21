@@ -4,8 +4,7 @@ import StarIcon from './index';
 
 const setup = (isFavourite = false) => { 
     const actions = {
-        addToFavourites: jest.fn(),
-        removeFromFavourites: jest.fn(),
+        toggleFavourite: jest.fn(),
         removeFromMovieList: jest.fn()
     };
     const component = shallow(<StarIcon isFavourite={isFavourite} id={1} match={{path: ''}} {...actions}/>);
@@ -19,37 +18,14 @@ const setup = (isFavourite = false) => {
 
 describe('StarIcon component', ()=> {
     it(
-        'click on icon should call addToFavourites',
-        ()=> {
-            const {icon, actions} = setup(false);
-            icon.simulate('click', { preventDefault: jest.fn(), stopPropagation: jest.fn()});
-            expect(actions.addToFavourites).toBeCalled();
-        }
-    );
-    it(
-        'click on icon should not call removeFromFavourites',
-        ()=> {
-            const {icon, actions} = setup(false);
-            icon.simulate('click', {preventDefault: jest.fn(), stopPropagation: jest.fn()});
-            expect(actions.removeFromFavourites).not.toBeCalled();
-        }
-    );
-    it(
-        'click on icon should call removeFromFavourites',
+        'click on icon should call toggleFavourite',
         ()=> {
             const {icon, actions} = setup(true);
             icon.simulate('click', {preventDefault: jest.fn(), stopPropagation: jest.fn()});
-            expect(actions.removeFromFavourites).toBeCalled();
+            expect(actions.toggleFavourite).toBeCalled();
         }
     );
-    it(
-        'click on icon should not call addToFavourites',
-        ()=> {
-            const {icon, actions} = setup(true);
-            icon.simulate('click', { preventDefault: jest.fn(), stopPropagation: jest.fn() });
-            expect(actions.addToFavourites).not.toBeCalled();
-        }
-    );
+    
     it(
         'click on icon should not call removeFromMovieList',
         ()=> {
