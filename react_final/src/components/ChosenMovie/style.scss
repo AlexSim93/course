@@ -1,7 +1,17 @@
+@import "../../scss/helpers/mixins.scss";
+
 .chosen-movie {
   box-sizing: border-box;
   padding: 40px 0;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@include desktop{
+  .chosen-movie {
+    flex-direction: row;
+  }
 }

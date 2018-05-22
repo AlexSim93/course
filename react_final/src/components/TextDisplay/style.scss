@@ -1,4 +1,5 @@
 @import "../../scss/helpers/variables.scss";
+@import "../../scss/helpers/mixins.scss";
 
 .text-display {
   display: flex;
@@ -10,10 +11,26 @@
     font-family: $app-font-family;
     &_size_lg {
       font-weight: bold;
-      font-size: 48px;
+      font-size: 24px;
     }
     &_light {
       color: $text-display-light-color;
+    }
+  }
+}
+
+@include tablet {
+  .text-display {
+    &__text_size_lg {
+      font-size: 36px;
+    }
+  }
+}
+
+@include desktop {
+  .text-display {
+    &__text_size_lg {
+      font-size: 48px;
     }
   }
 }

@@ -2,13 +2,16 @@
 .movie-info {
   padding-top: 10px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   flex-basis: 100px;
+  height: 100px;
   align-items: flex-start;
   justify-content: space-between;
   font-family: $app-font-family;
   &__title {
-    flex-basis: 250px;
+    flex-basis: 240px;
+    width: 240px;
     margin: 0 10px 0 0;
     color: $movie-title-color;
     font-size: 18px;
@@ -18,6 +21,7 @@
     box-sizing: border-box;
     padding: 2px 2px;
     flex-basis: 40px;
+    width: 40px;
     color: $movie-year-color;
     text-align: center;
     font-size: 14px;

@@ -15,7 +15,7 @@ const ChosenMovieInfo = ({ movie }: IChosenMovieInfo) => (
         {get(movie, "title", "Unknown")}
       </h2>
       <span className={classNames("chosen-movie-info__rating")}>
-        {get(movie, "vote_average", "-")}
+        {get(movie, "vote_average", 0).toFixed(1)}
       </span>
     </div>
     <span className={classNames("chosen-movie-info__tagline")}>

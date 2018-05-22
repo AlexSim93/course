@@ -1,6 +1,7 @@
 @import "../../scss/helpers/variables.scss";
 .switchfield {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
@@ -16,6 +17,10 @@
   }
   &__button-container {
     margin-right: 10px;
+  }
+  &__buttons-container {
+    display: flex;
+    flex-direction: row;
   }
   &__label_theme_dark {
     color: $switchfield-label-dark-theme-color;

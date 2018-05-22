@@ -2,6 +2,7 @@
 @import "../../scss/helpers/mixins.scss";
 
 .form {
+  box-sizing: border-box;
   padding: 30px 30px;
   display: flex;
   flex-wrap: wrap;
@@ -11,14 +12,19 @@
   &__text-container {
     margin-bottom: 20px;
     flex-basis: 100%;
+    width: 100%;
   }
   &__text-container-input {
     display: block;
     width: 100%;
-    padding: 13px 15px;
-    background: $form-text-input-bg;
+    padding: 9px 3% 9px 15px;
+    background-color: $form-text-input-bg;
+    background-image: url('../../images/input_arrow.png');
+    background-position: 98% center;
+    background-size: 2% auto;
+    background-repeat: no-repeat;
     color: $form-text-input-color;
-    font-size: 20px;
+    font-size: 13px;
     line-height: normal;
     border: 0px solid transparent;
     border-bottom: 2px solid $form-text-input-border-color;
@@ -38,11 +44,32 @@
 @include tablet {
   .form {
     padding: 0 60px;
+    &__text-container-input {
+      display: block;
+      width: 100%;
+      padding: 10px 3% 10px 15px;
+      background-color: $form-text-input-bg;
+      color: $form-text-input-color;
+      font-size: 15px;
+    }
+    &__text-container-label {
+      display: block;
+      margin-bottom: 10px;
+      color: $form-text-container-color;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
   }
 }
 
 @include desktop {
   .form {
     padding: 0 120px;
+    &__text-container-input {
+      padding: 13px 3% 13px 15px;
+    }
+    &__text-container-label {
+      font-size: 20px;
+    }
   }
 }

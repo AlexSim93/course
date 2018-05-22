@@ -26,14 +26,16 @@ const SwitchField = ({
     >
       {label}
     </span>
-    {children.map((child: JSX.Element) => (
-      <div
-        key={uniqid()}
-        className={classNames("switchfield__button-container")}
-      >
-        {child}
-      </div>
-    ))}
+    <div className={classNames("switchfield__buttons-container")}>
+      {children.map((child: JSX.Element) => (
+        <div
+          key={uniqid()}
+          className={classNames("switchfield__button-container")}
+        >
+          {child}
+        </div>
+      ))}
+    </div>
   </div>
 );
 
