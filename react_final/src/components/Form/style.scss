@@ -45,19 +45,8 @@
   .form {
     padding: 0 60px;
     &__text-container-input {
-      display: block;
-      width: 100%;
       padding: 10px 3% 10px 15px;
-      background-color: $form-text-input-bg;
-      color: $form-text-input-color;
       font-size: 15px;
-    }
-    &__text-container-label {
-      display: block;
-      margin-bottom: 10px;
-      color: $form-text-container-color;
-      font-size: 20px;
-      text-transform: uppercase;
     }
   }
 }
@@ -67,8 +56,6 @@
     padding: 0 120px;
     &__text-container-input {
       padding: 13px 3% 13px 15px;
-    }
-    &__text-container-label {
       font-size: 20px;
     }
   }
