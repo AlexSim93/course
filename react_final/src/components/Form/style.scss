@@ -1,6 +1,8 @@
 @import '../../scss/helpers/variables.scss';
+@import '../../scss/helpers/mixins.scss';
+
 .form {
-    padding: 30px 10%;
+    padding: 30px 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -30,5 +32,17 @@
     }
     &__switchfield-container {
         margin-bottom: 20px;
+    }
+}
+
+@include tablet {
+    .form {
+        padding: 0 60px;
+    }
+}
+
+@include desktop {
+    .form {
+        padding: 0 120px;
     }
 }
