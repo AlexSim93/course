@@ -5,8 +5,8 @@ import MovieList from "../../components/MovieList/index";
 
 const mapStateToProps = (state: any, ownProps: any) => ({
   movies: state.entities.movies,
-  hasError: state.entities.error,
-  isLoading: state.entities.fetching,
+  hasError: state.entities.hasError,
+  isLoading: state.entities.isFetching,
   url: `${join(map(state.favourites, favourite => `id=${favourite.id}`), "&")}`
 });
 

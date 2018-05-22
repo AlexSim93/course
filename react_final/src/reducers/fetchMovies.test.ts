@@ -9,23 +9,23 @@ describe("entities reducer testing", () => {
   it("Should start loading", () => {
     expect(
       entities(
-        { movies: [], error: false, fetching: false },
+        { movies: [], hasError: false, isFetching: false },
         { type: MOVIES_ARE_LOADING }
       )
-    ).toEqual({ movies: [], error: false, fetching: true });
+    ).toEqual({ movies: [], hasError: false, isFetching: true });
   });
   it("Should return error", () => {
     expect(
       entities(
-        { movies: [], error: false, fetching: true },
+        { movies: [], hasError: false, isFetching: true },
         { type: MOVIES_HAVE_ERROR }
       )
-    ).toEqual({ movies: [], error: true, fetching: false });
+    ).toEqual({ movies: [], hasError: true, isFetching: false });
   });
   it("Should return data", () => {
     expect(
       entities(
-        { movies: [], error: false, fetching: true },
+        { movies: [], isFetching: true, hasError: false },
         {
           type: MOVIES_FETCH_DATA_SUCCESS,
           payload: [{ id: 122, release_date: "1980-01-01" }]
@@ -33,8 +33,8 @@ describe("entities reducer testing", () => {
       )
     ).toEqual({
       movies: [{ id: 122, release_date: new Date("1980-01-01") }],
-      error: false,
-      fetching: false
+      hasError: false,
+      isFetching: false
     });
   });
 });

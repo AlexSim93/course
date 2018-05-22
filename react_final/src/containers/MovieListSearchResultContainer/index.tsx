@@ -19,8 +19,8 @@ const getOrderedMovies = (movies: any, sortType: any) => {
 
 const mapStateToProps = (state: any, ownProps: any) => ({
   movies: getOrderedMovies(state.entities.movies, state.sortType),
-  hasError: state.entities.error,
-  isLoading: state.entities.fetching,
+  hasError: state.entities.hasError,
+  isLoading: state.entities.isFetching,
   url:
     ownProps.match.params.searchValue &&
     `${state.searchType.toLowerCase()}_like=${

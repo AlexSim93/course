@@ -7,27 +7,27 @@ import {
 
 const initialState = {
   film: {},
-  error: false,
-  fetching: false
+  hasError: false,
+  isFetching: false
 };
 
 const chosenFilm = (state = initialState, action: any) => {
   switch (action.type) {
     case FILM_ARE_LOADING:
-      return { ...state, fetching: true, error: false };
+      return { ...state, isFetching: true, hasError: false };
     case FILM_FETCH_DATA_SUCCESS:
       return {
         ...state,
-        fetching: false,
+        isFetching: false,
         film: {
           ...action.payload,
           release_date: new Date(action.payload.release_date).getFullYear()
         }
       };
     case FILM_HAVE_ERROR:
-      return { ...state, fetching: false, error: true };
+      return { ...state, isFetching: false, hasError: true };
     case RESET_FILM:
-      return { fetching: false, error: false, film: {} };
+      return { ...state, film: {} };
     default:
       return state;
   }

@@ -7,8 +7,8 @@ const mapStateToProps = (state: any, ownProps: any) => ({
   url: `http://localhost:3000/movies?title=${
     ownProps.match.params.film
   }&_limit=1`,
-  hasError: state.chosenFilm.error,
-  isLoading: state.chosenFilm.fetching
+  hasError: state.chosenFilm.hasError,
+  isLoading: state.chosenFilm.isFetching
 });
 
 const mapStateToDispatch = (dispatch: any) => ({
