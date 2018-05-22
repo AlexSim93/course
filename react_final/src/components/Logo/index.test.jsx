@@ -1,13 +1,10 @@
-import * as React from 'react';
-import {shallow} from 'enzyme';
-import Logo from './index';
+import * as React from "react";
+import { shallow } from "enzyme";
+import Logo from "./index";
 
-describe('Logo component', () => {
-    it(
-        'Should render logo text',
-        () => {
-            const logo = shallow(<Logo text='Netflixroulette' />);
-            expect(logo.find('.logo__text').text()).toEqual('Netflixroulette');
-        }
-    );
+describe("Logo component", () => {
+  it("Should render logo text", () => {
+    const logo = shallow(<Logo text="Netflixroulette" />);
+    expect(logo.find(".logo__text").text()).toEqual("Netflixroulette");
+  });
 });

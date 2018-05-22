@@ -79,6 +79,8 @@
     "@types/react-redux": "^5.0.19",
     "@types/react-router-dom": "^4.2.6",
     "enzyme": "^3.3.0",
+    "prettier": "1.12.1",
+    "prettier-tslint": "^0.4.0",
     "redux-mock-store": "^1.5.1",
     "redux-saga-mock": "^1.2.0",
     "tslint-eslint-rules": "^5.2.0",
@@ -124,7 +126,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "C:\\Users\\Administrator\\Desktop\\aleksei_simatov\\aleksei_simatov\\react_final\\tsconfig.test.json"
+        "tsConfigFile": "C:\\Users\\Алексей\\Desktop\\course\\aleksei_simatov\\react_final\\tsconfig.test.json"
       }
     },
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.ts"

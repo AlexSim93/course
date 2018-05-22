@@ -1,19 +1,19 @@
-@import '../../scss/helpers/variables.scss';
+@import "../../scss/helpers/variables.scss";
 
 .text-display {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    &__text {
-        color: $text-display-color;
-        font-size: 14px;
-        font-family: $app-font-family;
-        &_size_lg {
-            font-weight: bold;
-            font-size: 48px;
-        }
-        &_light {
-            color: $text-display-light-color;
-        }
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  &__text {
+    color: $text-display-color;
+    font-size: 14px;
+    font-family: $app-font-family;
+    &_size_lg {
+      font-weight: bold;
+      font-size: 48px;
     }
+    &_light {
+      color: $text-display-light-color;
+    }
+  }
 }

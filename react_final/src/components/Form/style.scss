@@ -1,48 +1,48 @@
-@import '../../scss/helpers/variables.scss';
-@import '../../scss/helpers/mixins.scss';
+@import "../../scss/helpers/variables.scss";
+@import "../../scss/helpers/mixins.scss";
 
 .form {
-    padding: 30px 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    font-family: $app-font-family;
-    &__text-container {
-        margin-bottom: 20px;
-        flex-basis: 100%;
-    }
-    &__text-container-input {
-        display: block;
-        width: 100%;
-        padding: 13px 15px;
-        background: $form-text-input-bg;
-        color: $form-text-input-color;
-        font-size: 20px;
-        line-height: normal;
-        border: 0px solid transparent;
-        border-bottom: 2px solid $form-text-input-border-color;
-    }
-    &__text-container-label {
-        display: block;
-        margin-bottom: 10px;
-        color: $form-text-container-color;
-        font-size: 20px;
-        text-transform: uppercase;
-    }
-    &__switchfield-container {
-        margin-bottom: 20px;
-    }
+  padding: 30px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: $app-font-family;
+  &__text-container {
+    margin-bottom: 20px;
+    flex-basis: 100%;
+  }
+  &__text-container-input {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    background: $form-text-input-bg;
+    color: $form-text-input-color;
+    font-size: 20px;
+    line-height: normal;
+    border: 0px solid transparent;
+    border-bottom: 2px solid $form-text-input-border-color;
+  }
+  &__text-container-label {
+    display: block;
+    margin-bottom: 10px;
+    color: $form-text-container-color;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  &__switchfield-container {
+    margin-bottom: 20px;
+  }
 }
 
 @include tablet {
-    .form {
-        padding: 0 60px;
-    }
+  .form {
+    padding: 0 60px;
+  }
 }
 
 @include desktop {
-    .form {
-        padding: 0 120px;
-    }
+  .form {
+    padding: 0 120px;
+  }
 }

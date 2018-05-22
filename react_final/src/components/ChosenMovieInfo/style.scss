@@ -1,73 +1,73 @@
-@import '../../scss/helpers/variables';
-@import '../../scss/helpers/mixins';
+@import "../../scss/helpers/variables";
+@import "../../scss/helpers/mixins";
 .chosen-movie-info {
-    box-sizing: border-box;
-    padding: 10px 20px 10px 20px;
+  box-sizing: border-box;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: $app-font-family;
+  &__title-container {
+    margin-bottom: 10px;
     display: flex;
+    align-items: center;
     justify-content: flex-start;
-    flex-direction: column;
-    align-items: stretch;
-    font-family: $app-font-family;
-    &__title-container {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    &__title {
-        margin: 0 20px 0 0;
-        color: $chosen-movie-info-title-color;
-        font-size: 32px;
-    }
-    &__rating {
-        padding: 6px;
-        color: $chosen-movie-info-rating-color;
-        font-size: 20px;
-        border: 2px solid $chosen-movie-info-rating-border-color;
-        border-radius: 50%;
-    }
-    &__tagline {
-        margin-bottom: 15px;
-        color: $chosen-movie-info-tagline-color;
-        font-size: 20px;
-    }
-    &__year-runtime-container {
-        margin-bottom: 20px;
-        display: flex;
-    }
-    &__year {
-        margin-right: 40px;
-        color: $chosen-movie-info-year-color;
-        font-weight: bold;
-        font-size: 20px;
-    }
-    &__runtime {
-        color: $chosen-movie-info-runtime-color;
-        font-weight: bold;
-        font-size: 20px;  
-    }
-    &__icons-container {
-        margin-bottom: 15px;
-    }
-    &__overview {
-        color: $chosen-movie-info-overview-color;
-        font-size: 20px;
-    }
+  }
+  &__title {
+    margin: 0 20px 0 0;
+    color: $chosen-movie-info-title-color;
+    font-size: 32px;
+  }
+  &__rating {
+    padding: 6px;
+    color: $chosen-movie-info-rating-color;
+    font-size: 20px;
+    border: 2px solid $chosen-movie-info-rating-border-color;
+    border-radius: 50%;
+  }
+  &__tagline {
+    margin-bottom: 15px;
+    color: $chosen-movie-info-tagline-color;
+    font-size: 20px;
+  }
+  &__year-runtime-container {
+    margin-bottom: 20px;
+    display: flex;
+  }
+  &__year {
+    margin-right: 40px;
+    color: $chosen-movie-info-year-color;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  &__runtime {
+    color: $chosen-movie-info-runtime-color;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  &__icons-container {
+    margin-bottom: 15px;
+  }
+  &__overview {
+    color: $chosen-movie-info-overview-color;
+    font-size: 20px;
+  }
 }
 
 @include tablet {
-    .chosen-movie-info {
-        padding: 10px 20px 10px 20px;
-        width: 700px;
-        min-width: 700px;
-    }
+  .chosen-movie-info {
+    padding: 10px 20px 10px 20px;
+    width: 700px;
+    min-width: 700px;
+  }
 }
 
 @include desktop {
-    .chosen-movie-info {
-        padding: 10px 50px 10px 50px;
-        flex-basis: 800px;
-        width: 800px;
-        min-width: 800px;
-    }
+  .chosen-movie-info {
+    padding: 10px 50px 10px 50px;
+    flex-basis: 800px;
+    width: 800px;
+    min-width: 800px;
+  }
 }
