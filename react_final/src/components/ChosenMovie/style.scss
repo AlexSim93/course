@@ -13,5 +13,6 @@
 @include desktop{
   .chosen-movie {
     flex-direction: row;
+    align-items: flex-start;
   }
 }
