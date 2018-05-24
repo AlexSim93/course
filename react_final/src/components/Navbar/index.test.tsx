@@ -5,11 +5,11 @@ import Logo from "../Logo";
 
 describe("Navbar component", () => {
   it("Should render Logo", () => {
-    const navbar = shallow(<Navbar />);
+    const navbar = shallow(<Navbar favourites={{}}/>);
     expect(navbar.find(Logo).exists()).toEqual(true);
   });
   it("Should have class navbar", () => {
-    const navbar = shallow(<Navbar />);
+    const navbar = shallow(<Navbar favourites={{}}/>);
     expect(navbar.find("nav").hasClass("navbar")).toEqual(true);
   });
 });

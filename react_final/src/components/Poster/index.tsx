@@ -2,7 +2,11 @@ import * as React from "react";
 import "./style.scss";
 import default_poster from "../../images/poster_none.png";
 
-const Poster = ({ movie }: any) => (
+interface IPosterProps {
+  movie: any;
+}
+
+const Poster = ({ movie }: IPosterProps): JSX.Element => (
   <div className="poster">
     <img
       className="poster__img"

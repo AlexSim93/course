@@ -7,7 +7,7 @@ interface ITextFieldProps {
 }
 
 class TextField extends React.Component<ITextFieldProps> {
-  public render() {
+  public render(): JSX.Element {
     return (
       <div className="form__text-container">
         <label className="form__text-container-label" htmlFor={this.props.id}>

@@ -15,7 +15,7 @@ interface IChosenMovie {
 }
 
 class ChosenMovie extends React.Component<IChosenMovie> {
-  public componentDidMount() {
+  public componentDidMount(): void {
     this.props.fetchMovie(this.props.url);
   }
   public componentDidUpdate(prevProps: any) {
@@ -23,7 +23,7 @@ class ChosenMovie extends React.Component<IChosenMovie> {
       this.props.fetchMovie(this.props.url);
     }
   }
-  public render() {
+  public render(): JSX.Element {
     if (this.props.hasError) {
       throw new Error("Cannot load chosen movie");
     }

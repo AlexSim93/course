@@ -9,7 +9,7 @@ import "./style.scss";
 
 interface IFormProps {
   history: any;
-  searchValue: any;
+  searchValue: string;
   searchType: string;
   fetchMovies(url: string): void;
   setSearchByTitle(): void;
@@ -21,15 +21,19 @@ interface IFormState {
 }
 
 class Form extends React.Component<IFormProps, IFormState> {
-  public state = {
-    searchValue: this.props.searchValue || ""
+  public static defaultProps: Partial<IFormProps> = {
+    searchValue: ""
   };
 
-  public onChange = (evt: any) => {
+  public state = {
+    searchValue: this.props.searchValue
+  };
+
+  public onChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
     this.setState({ searchValue: evt.target.value });
   };
 
-  public render() {
+  public render(): JSX.Element {
     return (
       <form
         className={classNames("form")}

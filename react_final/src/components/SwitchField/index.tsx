@@ -6,7 +6,7 @@ import "./style.scss";
 
 interface ISwitchFieldProps {
   label: string;
-  children: any;
+  children: JSX.Element[];
   darkTheme?: boolean;
   uppercased?: boolean;
 }
@@ -16,7 +16,7 @@ const SwitchField = ({
   children,
   darkTheme,
   uppercased
-}: ISwitchFieldProps) => (
+}: ISwitchFieldProps): JSX.Element => (
   <div className={classNames("switchfield")}>
     <span
       className={classNames("switchfield__label", {

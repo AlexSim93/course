@@ -19,7 +19,7 @@ const Sortbar = ({
   sortType,
   onSortByDate,
   onSortByRating
-}: ISortbar) => (
+}: ISortbar): JSX.Element => (
   <div className={classNames("sortbar")}>
     <TextDisplay text={`${result} movies found`} />
     <SwitchField label="Sort by">

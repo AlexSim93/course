@@ -4,7 +4,7 @@ import Logo from "../Logo";
 
 import "./style.scss";
 
-const Footer = () => (
+const Footer = (): JSX.Element => (
   <footer className={classNames("footer", "app__footer")}>
     <Logo text="netflixroulette" />
   </footer>

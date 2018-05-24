@@ -4,7 +4,11 @@ import StarIconWithouter from "../../containers/StarIconWithRouter";
 
 import "./style.scss";
 
-const MovieInfo = ({ movie }: any) => (
+interface IMovieInfoProps {
+  movie: any;
+}
+
+const MovieInfo = ({ movie }: IMovieInfoProps) => (
   <div className="movie-info">
     <h2 className="movie-info__title">{get(movie, "title", "unknown")}</h2>
     <span className="movie-info__year">{movie.release_date.getFullYear()}</span>

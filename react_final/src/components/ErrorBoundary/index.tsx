@@ -9,20 +9,24 @@ interface IErrorBoundaryState {
   error: string;
 }
 
-class ErrorBoundary extends React.Component<any, IErrorBoundaryState> {
+interface IErrorBoundaryProps {
+  children: JSX.Element[]|JSX.Element
+}
+
+class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBoundaryState> {
   public state = {
     hasError: false,
     error: ""
   };
 
-  public componentDidCatch(error: any) {
+  public componentDidCatch(error: any): void {
     this.setState({
       hasError: true,
       error
     });
   }
 
-  public render() {
+  public render(): JSX.Element|JSX.Element[] {
     if (this.state.hasError) {
       return (
         <div className={classNames("error-message")}>

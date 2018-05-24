@@ -7,7 +7,7 @@ import MovieListChosenMovieContainer from "../../containers/MovieListChosenMovie
 
 import "./style.scss";
 
-const Main = () => (
+const Main = (): JSX.Element => (
   <main className={classNames("main")}>
     <Switch>
       <Route

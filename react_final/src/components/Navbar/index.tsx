@@ -6,14 +6,23 @@ import Button from "../Button";
 
 import "./style.scss";
 
-const Navbar = ({ favourites, fetchMovies }: any) => (
+interface INavbarProps {
+  favourites: any;
+}
+
+const Navbar = ({ favourites }: INavbarProps): JSX.Element => (
   <nav className={classNames("navbar")}>
-    <Logo text="netflixroulette" />
+    <Link 
+      to="/search/"
+      className={classNames("navbar__logo-container")}
+    >
+      <Logo text="netflixroulette" />
+    </Link>
     <Switch>
       <Route
         exact
         path="/search/:searchValue?"
-        render={() => (
+        render={(): JSX.Element => (
           <Link to="/favourites/">
             <Button light text="Favourites" />
           </Link>

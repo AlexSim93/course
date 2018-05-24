@@ -9,7 +9,7 @@ import ErrorBoundary from "../ErrorBoundary";
 
 import "./style.scss";
 
-const Header = () => (
+const Header = (): JSX.Element => (
   <header className={classNames("header")}>
     <NavbarWithRouter />
     <Switch>

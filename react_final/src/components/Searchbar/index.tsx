@@ -20,7 +20,7 @@ const Searchbar = ({
   genre,
   onSortByDate,
   onSortByRating
-}: ISearchbar) => (
+}: ISearchbar): JSX.Element => (
   <div className={classNames("searchbar")}>
     <Switch>
       <Route

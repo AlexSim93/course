@@ -4,7 +4,11 @@ import MovieInfo from "../MovieInfo";
 
 import "./style.scss";
 
-const Movie = ({ movie }: any) => (
+interface IMovieProps {
+  movie: any;
+}
+
+const Movie = ({ movie }: IMovieProps): JSX.Element => (
   <div className="movie">
     <Poster movie={movie} />
     <MovieInfo movie={movie} />

@@ -17,11 +17,11 @@ interface IAppProps {
 }
 
 class App extends React.Component<IAppProps> {
-  public componentDidMount() {
+  public componentDidMount(): void {
     this.props.getFavourites(loadFavourites());
   }
 
-  public componentDidUpdate(prevProps: IAppProps) {
+  public componentDidUpdate(prevProps: IAppProps): void {
     if (this.props.match.path !== prevProps.match.path) {
       this.props.resetMovies();
     }
@@ -33,7 +33,7 @@ class App extends React.Component<IAppProps> {
     }
   }
 
-  public render() {
+  public render(): JSX.Element {
     return (
       <div className={classNames("app", "root__app")}>
         <Header />

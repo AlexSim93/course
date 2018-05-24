@@ -4,7 +4,7 @@ import * as img from "../../images/loader.png";
 
 import "./style.scss";
 
-const Loader = () => (
+const Loader = (): JSX.Element => (
   <div className={classNames("loader")}>
     <img src={img} alt="Loading" className={classNames("loader__image")} />
   </div>

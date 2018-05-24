@@ -17,10 +17,10 @@ const StarIcon = ({
   isFavourite,
   toggleFavourite,
   removeFromMovieList
-}: IStarIconProps) => (
+}: IStarIconProps): JSX.Element => (
   <div
     className={classNames("star-icon")}
-    onClick={(evt: React.SyntheticEvent<HTMLElement>) => {
+    onClick={(evt: React.SyntheticEvent<HTMLElement>): void => {
       evt.preventDefault();
       evt.stopPropagation();
       toggleFavourite(id);

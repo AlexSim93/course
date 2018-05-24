@@ -16,12 +16,12 @@ interface IMovieList {
 }
 
 class MovieList extends React.Component<IMovieList> {
-  public componentDidMount() {
+  public componentDidMount(): void {
     if (this.props.url) {
       this.props.fetchMovies(`http://localhost:3000/movies?${this.props.url}`);
     }
   }
-  public render() {
+  public render(): JSX.Element {
     if (this.props.hasError) {
       throw new Error("Cannot load data");
     }

@@ -6,7 +6,7 @@ interface ILogoProps {
   text: string;
 }
 
-const Logo = ({ text }: ILogoProps) => (
+const Logo = ({ text }: ILogoProps): JSX.Element => (
   <div className={classNames("logo")}>
     <span className={classNames("logo__text")}>{text}</span>
   </div>
